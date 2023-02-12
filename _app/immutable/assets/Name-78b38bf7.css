@@ -1060,3 +1060,4 @@
   src: url('./zen-kaku-gothic-new-119-900-normal-9e3ad794.woff2') format('woff2'), url('./zen-kaku-gothic-new-all-900-normal-d9b27624.woff') format('woff');
   unicode-range: U+20,U+2027,U+3001-3002,U+3041-307f,U+3081-308f,U+3091-3093,U+3099-309a,U+309d-309e,U+30a1-30e1,U+30e3-30ed,U+30ef-30f0,U+30f2-30f4,U+30fb-30fe,U+ff0c,U+ff0e;
 }
+h1.svelte-pgku0c{margin:0;font-family:'Zen Antique Soft', serif;font-size:5vw;font-weight:400}h2.svelte-pgku0c{margin:0;font-size:2vw;line-height:0}.bubble.svelte-pgku0c{display:flex;flex-direction:column;padding:2rem 5rem}@media(max-width: 815px){h1.svelte-pgku0c{font-size:min(12vw, 5rem)}h2.svelte-pgku0c{font-size:min(6vw, 2rem)}.bubble.svelte-pgku0c{padding:0;margin:0}}

@@ -91,6 +91,9 @@ function get_all_dirty_from_scope($$scope) {
   }
   return -1;
 }
+function null_to_empty(value) {
+  return value == null ? "" : value;
+}
 const is_client = typeof window !== "undefined";
 let now = is_client ? () => window.performance.now() : () => Date.now();
 let raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
@@ -483,6 +486,9 @@ function tick() {
 function add_render_callback(fn) {
   render_callbacks.push(fn);
 }
+function add_flush_callback(fn) {
+  flush_callbacks.push(fn);
+}
 const seen_callbacks = /* @__PURE__ */ new Set();
 let flushidx = 0;
 function flush() {
@@ -704,6 +710,13 @@ function create_out_transition(node, fn, params) {
     }
   };
 }
+function bind(component, name, callback) {
+  const index = component.$$.props[name];
+  if (index !== void 0) {
+    component.$$.bound[index] = callback;
+    callback(component.$$.ctx[index]);
+  }
+}
 function create_component(block) {
   block && block.c();
 }
@@ -839,13 +852,16 @@ export {
   append_hydration as K,
   component_subscribe as L,
   src_url_equal as M,
-  listen as N,
-  add_render_callback as O,
-  create_in_transition as P,
-  create_out_transition as Q,
-  get_store_value as R,
+  add_render_callback as N,
+  create_in_transition as O,
+  create_out_transition as P,
+  listen as Q,
+  null_to_empty as R,
   SvelteComponent as S,
-  head_selector as T,
+  bind as T,
+  add_flush_callback as U,
+  get_store_value as V,
+  head_selector as W,
   space as a,
   insert_hydration as b,
   claim_space as c,
