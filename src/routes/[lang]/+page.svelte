@@ -3,21 +3,17 @@
 	import '@fontsource/zen-antique-soft/400.css';
 	import '@fontsource/zen-kaku-gothic-new/500.css';
 	import '@fontsource/zen-kaku-gothic-new/900.css';
-	import { blur } from 'svelte/transition';
-	import { navigating } from '$app/stores';
+	import { blurIn, blurOut } from '$lib/customBlur';
+	import Name from '$lib/components/Name.svelte';
 </script>
 
 <svelte:head>
 	<title>Jaakko Nakaza</title>
 </svelte:head>
 
-<div
-	in:blur={{ delay: $navigating?.from?.params === $navigating?.to?.params ? 0 : 400 }}
-	out:blur={{ duration: $navigating?.from?.params === $navigating?.to?.params ? 0 : 400 }}
->
-	<div class="bubble">
-		<h1>{$t('name')}</h1>
-		<h2>{$t('role')}</h2>
+<div in:blurIn out:blurOut>
+	<div id="name-container">
+		<Name />
 	</div>
 	<p class="bubble">
 		{$t('about')}
@@ -25,17 +21,6 @@
 </div>
 
 <style>
-	h1 {
-		margin: 0;
-		font-family: 'Zen Antique Soft', serif;
-		font-size: 6rem;
-		font-weight: 400;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.8rem;
-		line-height: 0;
-	}
 	p {
 		font-size: 1.5rem;
 		line-height: 3rem;
@@ -44,5 +29,21 @@
 		display: flex;
 		flex-direction: column;
 		padding: 2rem 5rem;
+	}
+
+	@media (max-width: 815px) {
+		p {
+			font-size: max(1.2rem, 3.5vw);
+			line-height: max(2rem, 6vw);
+		}
+
+		.bubble {
+			padding: 1rem 0;
+			margin: 0;
+		}
+
+		#name-container {
+			display: none;
+		}
 	}
 </style>
