@@ -1,3 +1,11 @@
+<script lang="ts" context="module">
+	export enum BackgroundColor {
+		Green = 'green',
+		Blue = 'blue',
+		Orange = 'orange'
+	}
+</script>
+
 <script lang="ts">
 	import '@fontsource/zen-kaku-gothic-new/900.css';
 	import { t, locale } from '$lib/translations';
@@ -11,22 +19,41 @@
 	import bgImageLight from '$lib/assets/bg-light.jpg';
 	import { onMount } from 'svelte';
 	import ProfilePhoto from '$lib/components/ProfilePhoto.svelte';
+	import { browser } from '$app/environment';
+	import NavLink from './NavLink.svelte';
 
 	let darkMode = true;
 	$: bgColor = darkMode ? '#000000' : '#FFFFFF';
 	$: fgColor = darkMode ? '#FFFBFA' : '#262422';
+
+	let backgroundColor: BackgroundColor | undefined;
+
+	$: currentPageBackgroundColor =
+		$page.route.id === '/[lang]/workHistory'
+			? BackgroundColor.Green
+			: $page.route.id === '/[lang]/projects'
+			? BackgroundColor.Blue
+			: $page.route.id === '/[lang]/graphicDesign'
+			? BackgroundColor.Orange
+			: undefined;
+
+	$: backgroundClass =
+		currentPageBackgroundColor === backgroundColor
+			? currentPageBackgroundColor
+			: backgroundColor
+			? backgroundColor + '-hover'
+			: currentPageBackgroundColor;
 
 	onMount(() => (darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches));
 </script>
 
 {#key darkMode}
 	<div
-		in:blur
-		style="--bg-color: {bgColor}; --fg-color: {fgColor}; background-image: url({darkMode
-			? bgImageDark
-			: bgImageLight})"
-		id="container"
-	>
+		id="background"
+		class={backgroundClass}
+		style="background-image: url({darkMode ? bgImageDark : bgImageLight})"
+	/>
+	<div in:blur style="--bg-color: {bgColor}; --fg-color: {fgColor};)" id="container">
 		<div />
 		<div class="column" id="page-content">
 			{#key $lang}
@@ -35,16 +62,28 @@
 		</div>
 		<nav class="column" id="nav-content">
 			<ProfilePhoto {darkMode} {lang} />
-			{#if document.body.getBoundingClientRect().width > 815 || $page.route.id === '/[lang]'}
+			{#if (browser && document.body.getBoundingClientRect().width > 815) || $page.route.id === '/[lang]'}
 				<div
 					class="column {$page.route.id !== '/[lang]' ? 'links-hidden' : ''}"
 					in:blurIn
 					out:blurOut
 				>
 					<div class="link-group">
-						<a href="/{$lang}/workHistory">{$t('workHistory')}</a>
-						<a href="/{$lang}/projects">{$t('projects')}</a>
-						<a href="/{$lang}/graphicDesign">{$t('graphicDesign')}</a>
+						<NavLink
+							bind:backgroundColor
+							newBackgroundColor={BackgroundColor.Green}
+							location="workHistory"
+						/>
+						<NavLink
+							bind:backgroundColor
+							newBackgroundColor={BackgroundColor.Blue}
+							location="projects"
+						/>
+						<NavLink
+							bind:backgroundColor
+							newBackgroundColor={BackgroundColor.Orange}
+							location="graphicDesign"
+						/>
 					</div>
 					<div class="link-group">
 						<a href="https://github.com/jaakkonakaza">GitHub</a>
@@ -76,6 +115,42 @@
 		grid-template-columns: 1fr 55vw 20rem 1fr;
 		grid-template-rows: 1fr;
 		background-attachment: fixed;
+	}
+
+	#background {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+
+		background-attachment: fixed;
+
+		transition: filter 2s;
+	}
+
+	#background.green {
+		filter: hue-rotate(120deg);
+	}
+	#background.green-hover {
+		filter: hue-rotate(120deg) saturate(0.3) brightness(0.8);
+	}
+
+	#background.blue {
+		filter: hue-rotate(180deg);
+	}
+
+	#background.blue-hover {
+		filter: hue-rotate(180deg) saturate(0.3) brightness(0.8);
+	}
+
+	#background.orange {
+		filter: hue-rotate(60deg);
+	}
+
+	#background.orange-hover {
+		filter: hue-rotate(60deg) saturate(0.3) brightness(0.8);
 	}
 
 	.column {
