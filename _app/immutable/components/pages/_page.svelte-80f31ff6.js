@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, b as insert_hydration, C as noop, o as onMount } from "../../chunks/index-53c03a89.js";
-import { l as client } from "../../chunks/singletons-07b90433.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, b as insert_hydration, C as noop, o as onMount } from "../../chunks/index-f811e5e3.js";
+import { l as client } from "../../chunks/singletons-0d31848a.js";
 client.disable_scroll_handling;
 const goto = client.goto;
 client.invalidate;

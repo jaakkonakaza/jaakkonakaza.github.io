@@ -1,7 +1,7 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, x as create_component, q as text, W as head_selector, h as detach, c as claim_space, l as claim_element, m as children, y as claim_component, r as claim_text, n as attr, b as insert_hydration, K as append_hydration, z as mount_component, u as set_data, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, L as component_subscribe, O as create_in_transition } from "../../../chunks/index-53c03a89.js";
-import { t } from "../../../chunks/translations-4985351b.js";
-import { N as Name } from "../../../chunks/Name-6e59ca55.js";
-import { c as blurOut, a as blurIn } from "../../../chunks/customBlur-c889f464.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, x as create_component, q as text, T as head_selector, h as detach, c as claim_space, l as claim_element, m as children, y as claim_component, r as claim_text, n as attr, b as insert_hydration, K as append_hydration, z as mount_component, u as set_data, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, L as component_subscribe, O as create_in_transition } from "../../../chunks/index-f811e5e3.js";
+import { t } from "../../../chunks/translations-697a085f.js";
+import { N as Name } from "../../../chunks/Name-67bc2027.js";
+import { c as blurOut, a as blurIn } from "../../../chunks/customBlur-4ed7b2fc.js";
 const _400 = "";
 const _500 = "";
 const _page_svelte_svelte_type_style_lang = "";
@@ -53,8 +53,8 @@ function create_fragment(ctx) {
     h() {
       document.title = "Jaakko Nakaza";
       attr(div0, "id", "name-container");
-      attr(div0, "class", "svelte-19uvke6");
-      attr(p, "class", "bubble svelte-19uvke6");
+      attr(div0, "class", "svelte-1qzijxq");
+      attr(p, "class", "bubble svelte-1qzijxq");
     },
     m(target, anchor) {
       insert_hydration(target, t0, anchor);

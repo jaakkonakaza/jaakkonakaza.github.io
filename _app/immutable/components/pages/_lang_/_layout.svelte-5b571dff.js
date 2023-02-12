@@ -1,10 +1,8 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, e as empty, o as onMount, R as null_to_empty, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes, v as binding_callbacks, T as bind, U as add_flush_callback } from "../../../chunks/index-53c03a89.js";
-import { N as Name } from "../../../chunks/Name-6e59ca55.js";
-import { t, l as locale } from "../../../chunks/translations-4985351b.js";
-import { p as page } from "../../../chunks/stores-11b4562e.js";
-import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-c889f464.js";
-const bgImageDark = "" + new URL("../../../assets/bg-dark-a2ef3ad6.jpg", import.meta.url).href;
-const bgImageLight = "" + new URL("../../../assets/bg-light-9cd26f46.jpg", import.meta.url).href;
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-f811e5e3.js";
+import { N as Name } from "../../../chunks/Name-67bc2027.js";
+import { t, l as locale } from "../../../chunks/translations-697a085f.js";
+import { p as page } from "../../../chunks/stores-32abb2fb.js";
+import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-4ed7b2fc.js";
 const profilePhoto = "" + new URL("../../../assets/profile-photo-dcbaf9a7.jpg", import.meta.url).href;
 const ProfilePhoto_svelte_svelte_type_style_lang = "";
 function create_if_block$1(ctx) {
@@ -27,7 +25,7 @@ function create_if_block$1(ctx) {
       this.h();
     },
     h() {
-      attr(span, "class", "home-link svelte-1rauru5");
+      attr(span, "class", "home-link svelte-12m3s79");
     },
     m(target, anchor) {
       insert_hydration(target, span, anchor);
@@ -59,13 +57,16 @@ function create_if_block$1(ctx) {
     }
   };
 }
-function create_fragment$2(ctx) {
+function create_fragment$3(ctx) {
   let a;
-  let img;
-  let img_src_value;
+  let img0;
+  let img0_src_value;
   let t0;
-  let a_href_value;
+  let img1;
+  let img1_src_value;
   let t1;
+  let a_href_value;
+  let t2;
   let div;
   let name;
   let current;
@@ -77,11 +78,13 @@ function create_fragment$2(ctx) {
   return {
     c() {
       a = element("a");
-      img = element("img");
+      img0 = element("img");
       t0 = space();
+      img1 = element("img");
+      t1 = space();
       if (if_block)
         if_block.c();
-      t1 = space();
+      t2 = space();
       div = element("div");
       create_component(name.$$.fragment);
       this.h();
@@ -89,17 +92,25 @@ function create_fragment$2(ctx) {
     l(nodes) {
       a = claim_element(nodes, "A", { class: true, href: true });
       var a_nodes = children(a);
-      img = claim_element(a_nodes, "IMG", {
+      img0 = claim_element(a_nodes, "IMG", {
         style: true,
         class: true,
         src: true,
         alt: true
       });
       t0 = claim_space(a_nodes);
+      img1 = claim_element(a_nodes, "IMG", {
+        style: true,
+        class: true,
+        id: true,
+        src: true,
+        alt: true
+      });
+      t1 = claim_space(a_nodes);
       if (if_block)
         if_block.l(a_nodes);
       a_nodes.forEach(detach);
-      t1 = claim_space(nodes);
+      t2 = claim_space(nodes);
       div = claim_element(nodes, "DIV", { id: true, class: true });
       var div_nodes = children(div);
       claim_component(name.$$.fragment, div_nodes);
@@ -108,28 +119,41 @@ function create_fragment$2(ctx) {
     },
     h() {
       set_style(
-        img,
+        img0,
         "opacity",
         /*darkMode*/
         ctx[1] ? 1 : 0.7
       );
-      attr(img, "class", "profile-photo svelte-1rauru5");
-      if (!src_url_equal(img.src, img_src_value = profilePhoto))
-        attr(img, "src", img_src_value);
-      attr(img, "alt", "");
-      attr(a, "class", "profile-photo-container svelte-1rauru5");
+      attr(img0, "class", "profile-photo svelte-12m3s79");
+      if (!src_url_equal(img0.src, img0_src_value = profilePhoto))
+        attr(img0, "src", img0_src_value);
+      attr(img0, "alt", "");
+      set_style(
+        img1,
+        "opacity",
+        /*darkMode*/
+        ctx[1] ? 1 : 0.7
+      );
+      attr(img1, "class", "profile-photo svelte-12m3s79");
+      attr(img1, "id", "blur");
+      if (!src_url_equal(img1.src, img1_src_value = profilePhoto))
+        attr(img1, "src", img1_src_value);
+      attr(img1, "alt", "");
+      attr(a, "class", "profile-photo-container svelte-12m3s79");
       attr(a, "href", a_href_value = "/" + /*$lang*/
       ctx[2]);
       attr(div, "id", "name-container");
-      attr(div, "class", "svelte-1rauru5");
+      attr(div, "class", "svelte-12m3s79");
     },
     m(target, anchor) {
       insert_hydration(target, a, anchor);
-      append_hydration(a, img);
+      append_hydration(a, img0);
       append_hydration(a, t0);
+      append_hydration(a, img1);
+      append_hydration(a, t1);
       if (if_block)
         if_block.m(a, null);
-      insert_hydration(target, t1, anchor);
+      insert_hydration(target, t2, anchor);
       insert_hydration(target, div, anchor);
       mount_component(name, div, null);
       current = true;
@@ -138,7 +162,16 @@ function create_fragment$2(ctx) {
       if (!current || dirty & /*darkMode*/
       2) {
         set_style(
-          img,
+          img0,
+          "opacity",
+          /*darkMode*/
+          ctx2[1] ? 1 : 0.7
+        );
+      }
+      if (!current || dirty & /*darkMode*/
+      2) {
+        set_style(
+          img1,
           "opacity",
           /*darkMode*/
           ctx2[1] ? 1 : 0.7
@@ -190,14 +223,14 @@ function create_fragment$2(ctx) {
       if (if_block)
         if_block.d();
       if (detaching)
-        detach(t1);
+        detach(t2);
       if (detaching)
         detach(div);
       destroy_component(name);
     }
   };
 }
-function instance$2($$self, $$props, $$invalidate) {
+function instance$3($$self, $$props, $$invalidate) {
   let $lang, $$unsubscribe_lang = noop, $$subscribe_lang = () => ($$unsubscribe_lang(), $$unsubscribe_lang = subscribe(lang, ($$value) => $$invalidate(2, $lang = $$value)), lang);
   let $page;
   component_subscribe($$self, page, ($$value) => $$invalidate(3, $page = $$value));
@@ -216,17 +249,17 @@ function instance$2($$self, $$props, $$invalidate) {
 class ProfilePhoto extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$2, create_fragment$2, safe_not_equal, { lang: 0, darkMode: 1 });
+    init(this, options, instance$3, create_fragment$3, safe_not_equal, { lang: 0, darkMode: 1 });
   }
 }
 const NavLink_svelte_svelte_type_style_lang = "";
-function create_fragment$1(ctx) {
+function create_fragment$2(ctx) {
   let a;
   let t_1_value = (
     /*$t*/
-    ctx[5](
+    ctx[3](
       /*location*/
-      ctx[2]
+      ctx[0]
     ) + ""
   );
   let t_1;
@@ -248,8 +281,8 @@ function create_fragment$1(ctx) {
     },
     h() {
       attr(a, "href", a_href_value = "/" + /*$lang*/
-      ctx[4] + "/" + /*location*/
-      ctx[2]);
+      ctx[2] + "/" + /*location*/
+      ctx[0]);
       attr(a, "class", "svelte-qyyw96");
     },
     m(target, anchor) {
@@ -260,32 +293,38 @@ function create_fragment$1(ctx) {
           listen(
             a,
             "focus",
-            /*focus_handler*/
-            ctx[6]
+            /*setColor*/
+            ctx[4]
           ),
           listen(
             a,
             "mouseenter",
-            /*mouseenter_handler*/
-            ctx[7]
+            /*setColor*/
+            ctx[4]
           ),
           listen(
             a,
             "mouseleave",
-            /*mouseleave_handler*/
-            ctx[8]
+            /*resetColor*/
+            ctx[5]
           ),
           listen(
             a,
             "mouseout",
-            /*mouseout_handler*/
-            ctx[9]
+            /*resetColor*/
+            ctx[5]
           ),
           listen(
             a,
             "blur",
-            /*blur_handler*/
-            ctx[10]
+            /*resetColor*/
+            ctx[5]
+          ),
+          listen(
+            a,
+            "click",
+            /*resetColor*/
+            ctx[5]
           )
         ];
         mounted = true;
@@ -293,16 +332,16 @@ function create_fragment$1(ctx) {
     },
     p(ctx2, [dirty]) {
       if (dirty & /*$t, location*/
-      36 && t_1_value !== (t_1_value = /*$t*/
-      ctx2[5](
+      9 && t_1_value !== (t_1_value = /*$t*/
+      ctx2[3](
         /*location*/
-        ctx2[2]
+        ctx2[0]
       ) + ""))
         set_data(t_1, t_1_value);
       if (dirty & /*$lang, location*/
-      20 && a_href_value !== (a_href_value = "/" + /*$lang*/
-      ctx2[4] + "/" + /*location*/
-      ctx2[2])) {
+      5 && a_href_value !== (a_href_value = "/" + /*$lang*/
+      ctx2[2] + "/" + /*location*/
+      ctx2[0])) {
         attr(a, "href", a_href_value);
       }
     },
@@ -316,60 +355,116 @@ function create_fragment$1(ctx) {
     }
   };
 }
-function instance$1($$self, $$props, $$invalidate) {
+function instance$2($$self, $$props, $$invalidate) {
   let lang;
-  let $lang, $$unsubscribe_lang = noop, $$subscribe_lang = () => ($$unsubscribe_lang(), $$unsubscribe_lang = subscribe(lang, ($$value) => $$invalidate(4, $lang = $$value)), lang);
+  let $lang, $$unsubscribe_lang = noop, $$subscribe_lang = () => ($$unsubscribe_lang(), $$unsubscribe_lang = subscribe(lang, ($$value) => $$invalidate(2, $lang = $$value)), lang);
   let $t;
-  component_subscribe($$self, t, ($$value) => $$invalidate(5, $t = $$value));
+  component_subscribe($$self, t, ($$value) => $$invalidate(3, $t = $$value));
   $$self.$$.on_destroy.push(() => $$unsubscribe_lang());
   let { backgroundColor } = $$props;
   let { newBackgroundColor } = $$props;
   let { location } = $$props;
-  const focus_handler = () => $$invalidate(0, backgroundColor = newBackgroundColor);
-  const mouseenter_handler = () => $$invalidate(0, backgroundColor = newBackgroundColor);
-  const mouseleave_handler = () => {
-    $$invalidate(0, backgroundColor = void 0);
-  };
-  const mouseout_handler = () => {
-    $$invalidate(0, backgroundColor = void 0);
-  };
-  const blur_handler = () => {
-    $$invalidate(0, backgroundColor = void 0);
-  };
+  const setColor = () => $$invalidate(6, backgroundColor = newBackgroundColor);
+  const resetColor = () => $$invalidate(6, backgroundColor = void 0);
   $$self.$$set = ($$props2) => {
     if ("backgroundColor" in $$props2)
-      $$invalidate(0, backgroundColor = $$props2.backgroundColor);
+      $$invalidate(6, backgroundColor = $$props2.backgroundColor);
     if ("newBackgroundColor" in $$props2)
-      $$invalidate(1, newBackgroundColor = $$props2.newBackgroundColor);
+      $$invalidate(7, newBackgroundColor = $$props2.newBackgroundColor);
     if ("location" in $$props2)
-      $$invalidate(2, location = $$props2.location);
+      $$invalidate(0, location = $$props2.location);
   };
-  $$subscribe_lang($$invalidate(3, lang = locale ?? "en"));
+  $$subscribe_lang($$invalidate(1, lang = locale ?? "en"));
   return [
-    backgroundColor,
-    newBackgroundColor,
     location,
     lang,
     $lang,
     $t,
-    focus_handler,
-    mouseenter_handler,
-    mouseleave_handler,
-    mouseout_handler,
-    blur_handler
+    setColor,
+    resetColor,
+    backgroundColor,
+    newBackgroundColor
   ];
 }
 class NavLink extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1, create_fragment$1, safe_not_equal, {
-      backgroundColor: 0,
-      newBackgroundColor: 1,
-      location: 2
+    init(this, options, instance$2, create_fragment$2, safe_not_equal, {
+      backgroundColor: 6,
+      newBackgroundColor: 7,
+      location: 0
     });
   }
 }
+const bgImageDark = "" + new URL("../../../assets/bg-dark-a2ef3ad6.jpg", import.meta.url).href;
+const bgImageLight = "" + new URL("../../../assets/bg-light-9cd26f46.jpg", import.meta.url).href;
+const Background_svelte_svelte_type_style_lang = "";
+function create_fragment$1(ctx) {
+  let div;
+  let div_class_value;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { id: true, class: true, style: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      attr(div, "id", "background");
+      attr(div, "class", div_class_value = null_to_empty(
+        /*backgroundClass*/
+        ctx[0]
+      ) + " svelte-114izek");
+      set_style(div, "background-image", "url(" + /*darkMode*/
+      (ctx[1] ? bgImageDark : bgImageLight) + ")");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*backgroundClass*/
+      1 && div_class_value !== (div_class_value = null_to_empty(
+        /*backgroundClass*/
+        ctx2[0]
+      ) + " svelte-114izek")) {
+        attr(div, "class", div_class_value);
+      }
+      if (dirty & /*darkMode*/
+      2) {
+        set_style(div, "background-image", "url(" + /*darkMode*/
+        (ctx2[1] ? bgImageDark : bgImageLight) + ")");
+      }
+    },
+    i: noop,
+    o: noop,
+    d(detaching) {
+      if (detaching)
+        detach(div);
+    }
+  };
+}
+function instance$1($$self, $$props, $$invalidate) {
+  let { backgroundClass } = $$props;
+  let { darkMode } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("backgroundClass" in $$props2)
+      $$invalidate(0, backgroundClass = $$props2.backgroundClass);
+    if ("darkMode" in $$props2)
+      $$invalidate(1, darkMode = $$props2.darkMode);
+  };
+  return [backgroundClass, darkMode];
+}
+class Background extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1, create_fragment$1, safe_not_equal, { backgroundClass: 0, darkMode: 1 });
+  }
+}
 const _layout_svelte_svelte_type_style_lang = "";
+const { document: document_1 } = globals;
 function create_key_block_1(ctx) {
   let current;
   const default_slot_template = (
@@ -487,7 +582,7 @@ function create_if_block(ctx) {
   let mounted;
   let dispose;
   function navlink0_backgroundColor_binding(value) {
-    ctx[12](value);
+    ctx[14](value);
   }
   let navlink0_props = {
     newBackgroundColor: BackgroundColor.Green,
@@ -503,7 +598,7 @@ function create_if_block(ctx) {
   navlink0 = new NavLink({ props: navlink0_props });
   binding_callbacks.push(() => bind(navlink0, "backgroundColor", navlink0_backgroundColor_binding));
   function navlink1_backgroundColor_binding(value) {
-    ctx[13](value);
+    ctx[15](value);
   }
   let navlink1_props = {
     newBackgroundColor: BackgroundColor.Blue,
@@ -519,7 +614,7 @@ function create_if_block(ctx) {
   navlink1 = new NavLink({ props: navlink1_props });
   binding_callbacks.push(() => bind(navlink1, "backgroundColor", navlink1_backgroundColor_binding));
   function navlink2_backgroundColor_binding(value) {
-    ctx[14](value);
+    ctx[16](value);
   }
   let navlink2_props = {
     newBackgroundColor: BackgroundColor.Orange,
@@ -628,26 +723,26 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "link-group svelte-kmvj6l");
+      attr(div0, "class", "link-group svelte-ye9skj");
       attr(a0, "href", "https://github.com/jaakkonakaza");
-      attr(a0, "class", "svelte-kmvj6l");
+      attr(a0, "class", "svelte-ye9skj");
       attr(a1, "href", "https://www.linkedin.com/in/jaakkonakaza/");
-      attr(a1, "class", "svelte-kmvj6l");
-      attr(div1, "class", "link-group svelte-kmvj6l");
-      attr(button, "class", "svelte-kmvj6l");
+      attr(a1, "class", "svelte-ye9skj");
+      attr(div1, "class", "link-group svelte-ye9skj");
+      attr(button, "class", "svelte-ye9skj");
       attr(a2, "data-sveltekit-preload-data", "tap");
       attr(a2, "href", "/en");
-      attr(a2, "class", "svelte-kmvj6l");
+      attr(a2, "class", "svelte-ye9skj");
       attr(a3, "data-sveltekit-preload-data", "tap");
       attr(a3, "href", "/fi");
-      attr(a3, "class", "svelte-kmvj6l");
+      attr(a3, "class", "svelte-ye9skj");
       attr(a4, "data-sveltekit-preload-data", "tap");
       attr(a4, "href", "/ja");
-      attr(a4, "class", "svelte-kmvj6l");
+      attr(a4, "class", "svelte-ye9skj");
       attr(div2, "id", "languages");
-      attr(div2, "class", "svelte-kmvj6l");
+      attr(div2, "class", "svelte-ye9skj");
       attr(div3, "class", div3_class_value = "column " + /*$page*/
-      (ctx[2].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-kmvj6l");
+      (ctx[2].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-ye9skj");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -683,7 +778,7 @@ function create_if_block(ctx) {
           button,
           "click",
           /*click_handler*/
-          ctx[15]
+          ctx[17]
         );
         mounted = true;
       }
@@ -728,7 +823,7 @@ function create_if_block(ctx) {
         set_data(t7, t7_value);
       if (!current || dirty & /*$page*/
       4 && div3_class_value !== (div3_class_value = "column " + /*$page*/
-      (ctx2[2].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-kmvj6l")) {
+      (ctx2[2].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-ye9skj")) {
         attr(div3, "class", div3_class_value);
       }
     },
@@ -769,13 +864,14 @@ function create_if_block(ctx) {
   };
 }
 function create_key_block(ctx) {
-  let div0;
-  let div0_class_value;
+  let background;
+  let updating_backgroundClass;
+  let updating_darkMode;
   let t0;
-  let div4;
-  let div1;
+  let div3;
+  let div0;
   let t1;
-  let div2;
+  let div1;
   let previous_key = (
     /*$lang*/
     ctx[7]
@@ -787,10 +883,34 @@ function create_key_block(ctx) {
   let show_if = document.body.getBoundingClientRect().width > 815 || /*$page*/
   ctx[2].route.id === "/[lang]";
   let t4;
-  let div3;
-  let div4_style_value;
-  let div4_intro;
+  let div2;
+  let div3_style_value;
+  let div3_intro;
   let current;
+  function background_backgroundClass_binding(value) {
+    ctx[12](value);
+  }
+  function background_darkMode_binding(value) {
+    ctx[13](value);
+  }
+  let background_props = {};
+  if (
+    /*backgroundClass*/
+    ctx[3] !== void 0
+  ) {
+    background_props.backgroundClass = /*backgroundClass*/
+    ctx[3];
+  }
+  if (
+    /*darkMode*/
+    ctx[0] !== void 0
+  ) {
+    background_props.darkMode = /*darkMode*/
+    ctx[0];
+  }
+  background = new Background({ props: background_props });
+  binding_callbacks.push(() => bind(background, "backgroundClass", background_backgroundClass_binding));
+  binding_callbacks.push(() => bind(background, "darkMode", background_darkMode_binding));
   let key_block = create_key_block_1(ctx);
   profilephoto = new ProfilePhoto({
     props: {
@@ -807,12 +927,12 @@ function create_key_block(ctx) {
   let if_block = show_if && create_if_block(ctx);
   return {
     c() {
-      div0 = element("div");
+      create_component(background.$$.fragment);
       t0 = space();
-      div4 = element("div");
-      div1 = element("div");
+      div3 = element("div");
+      div0 = element("div");
       t1 = space();
-      div2 = element("div");
+      div1 = element("div");
       key_block.c();
       t2 = space();
       nav = element("nav");
@@ -821,85 +941,81 @@ function create_key_block(ctx) {
       if (if_block)
         if_block.c();
       t4 = space();
-      div3 = element("div");
+      div2 = element("div");
       this.h();
     },
     l(nodes) {
-      div0 = claim_element(nodes, "DIV", { id: true, class: true, style: true });
-      children(div0).forEach(detach);
+      claim_component(background.$$.fragment, nodes);
       t0 = claim_space(nodes);
-      div4 = claim_element(nodes, "DIV", { style: true, id: true, class: true });
-      var div4_nodes = children(div4);
-      div1 = claim_element(div4_nodes, "DIV", {});
-      children(div1).forEach(detach);
-      t1 = claim_space(div4_nodes);
-      div2 = claim_element(div4_nodes, "DIV", { class: true, id: true });
-      var div2_nodes = children(div2);
-      key_block.l(div2_nodes);
-      div2_nodes.forEach(detach);
-      t2 = claim_space(div4_nodes);
-      nav = claim_element(div4_nodes, "NAV", { class: true, id: true });
+      div3 = claim_element(nodes, "DIV", { style: true, id: true, class: true });
+      var div3_nodes = children(div3);
+      div0 = claim_element(div3_nodes, "DIV", {});
+      children(div0).forEach(detach);
+      t1 = claim_space(div3_nodes);
+      div1 = claim_element(div3_nodes, "DIV", { class: true, id: true });
+      var div1_nodes = children(div1);
+      key_block.l(div1_nodes);
+      div1_nodes.forEach(detach);
+      t2 = claim_space(div3_nodes);
+      nav = claim_element(div3_nodes, "NAV", { class: true, id: true });
       var nav_nodes = children(nav);
       claim_component(profilephoto.$$.fragment, nav_nodes);
       t3 = claim_space(nav_nodes);
       if (if_block)
         if_block.l(nav_nodes);
       nav_nodes.forEach(detach);
-      t4 = claim_space(div4_nodes);
-      div3 = claim_element(div4_nodes, "DIV", {});
-      children(div3).forEach(detach);
-      div4_nodes.forEach(detach);
+      t4 = claim_space(div3_nodes);
+      div2 = claim_element(div3_nodes, "DIV", {});
+      children(div2).forEach(detach);
+      div3_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(div0, "id", "background");
-      attr(div0, "class", div0_class_value = null_to_empty(
-        /*backgroundClass*/
-        ctx[3]
-      ) + " svelte-kmvj6l");
-      set_style(div0, "background-image", "url(" + /*darkMode*/
-      (ctx[0] ? bgImageDark : bgImageLight) + ")");
-      attr(div2, "class", "column svelte-kmvj6l");
-      attr(div2, "id", "page-content");
-      attr(nav, "class", "column svelte-kmvj6l");
+      attr(div1, "class", "column svelte-ye9skj");
+      attr(div1, "id", "page-content");
+      attr(nav, "class", "column svelte-ye9skj");
       attr(nav, "id", "nav-content");
-      attr(div4, "style", div4_style_value = "--bg-color: " + /*bgColor*/
+      attr(div3, "style", div3_style_value = "--bg-color: " + /*bgColor*/
       ctx[5] + "; --fg-color: " + /*fgColor*/
       ctx[4] + ";)");
-      attr(div4, "id", "container");
-      attr(div4, "class", "svelte-kmvj6l");
+      attr(div3, "id", "container");
+      attr(div3, "class", "svelte-ye9skj");
     },
     m(target, anchor) {
-      insert_hydration(target, div0, anchor);
+      mount_component(background, target, anchor);
       insert_hydration(target, t0, anchor);
-      insert_hydration(target, div4, anchor);
-      append_hydration(div4, div1);
-      append_hydration(div4, t1);
-      append_hydration(div4, div2);
-      key_block.m(div2, null);
-      append_hydration(div4, t2);
-      append_hydration(div4, nav);
+      insert_hydration(target, div3, anchor);
+      append_hydration(div3, div0);
+      append_hydration(div3, t1);
+      append_hydration(div3, div1);
+      key_block.m(div1, null);
+      append_hydration(div3, t2);
+      append_hydration(div3, nav);
       mount_component(profilephoto, nav, null);
       append_hydration(nav, t3);
       if (if_block)
         if_block.m(nav, null);
-      append_hydration(div4, t4);
-      append_hydration(div4, div3);
+      append_hydration(div3, t4);
+      append_hydration(div3, div2);
       current = true;
     },
     p(ctx2, dirty) {
-      if (!current || dirty & /*backgroundClass*/
-      8 && div0_class_value !== (div0_class_value = null_to_empty(
-        /*backgroundClass*/
-        ctx2[3]
-      ) + " svelte-kmvj6l")) {
-        attr(div0, "class", div0_class_value);
+      const background_changes = {};
+      if (!updating_backgroundClass && dirty & /*backgroundClass*/
+      8) {
+        updating_backgroundClass = true;
+        background_changes.backgroundClass = /*backgroundClass*/
+        ctx2[3];
+        add_flush_callback(() => updating_backgroundClass = false);
       }
-      if (!current || dirty & /*darkMode*/
+      if (!updating_darkMode && dirty & /*darkMode*/
       1) {
-        set_style(div0, "background-image", "url(" + /*darkMode*/
-        (ctx2[0] ? bgImageDark : bgImageLight) + ")");
+        updating_darkMode = true;
+        background_changes.darkMode = /*darkMode*/
+        ctx2[0];
+        add_flush_callback(() => updating_darkMode = false);
       }
+      background.$set(background_changes);
       if (dirty & /*$lang*/
       128 && safe_not_equal(previous_key, previous_key = /*$lang*/
       ctx2[7])) {
@@ -909,7 +1025,7 @@ function create_key_block(ctx) {
         key_block = create_key_block_1(ctx2);
         key_block.c();
         transition_in(key_block, 1);
-        key_block.m(div2, null);
+        key_block.m(div1, null);
       } else {
         key_block.p(ctx2, dirty);
       }
@@ -948,39 +1064,40 @@ function create_key_block(ctx) {
         check_outros();
       }
       if (!current || dirty & /*bgColor, fgColor*/
-      48 && div4_style_value !== (div4_style_value = "--bg-color: " + /*bgColor*/
+      48 && div3_style_value !== (div3_style_value = "--bg-color: " + /*bgColor*/
       ctx2[5] + "; --fg-color: " + /*fgColor*/
       ctx2[4] + ";)")) {
-        attr(div4, "style", div4_style_value);
+        attr(div3, "style", div3_style_value);
       }
     },
     i(local) {
       if (current)
         return;
+      transition_in(background.$$.fragment, local);
       transition_in(key_block);
       transition_in(profilephoto.$$.fragment, local);
       transition_in(if_block);
-      if (!div4_intro) {
+      if (!div3_intro) {
         add_render_callback(() => {
-          div4_intro = create_in_transition(div4, blur, {});
-          div4_intro.start();
+          div3_intro = create_in_transition(div3, blur, {});
+          div3_intro.start();
         });
       }
       current = true;
     },
     o(local) {
+      transition_out(background.$$.fragment, local);
       transition_out(key_block);
       transition_out(profilephoto.$$.fragment, local);
       transition_out(if_block);
       current = false;
     },
     d(detaching) {
-      if (detaching)
-        detach(div0);
+      destroy_component(background, detaching);
       if (detaching)
         detach(t0);
       if (detaching)
-        detach(div4);
+        detach(div3);
       key_block.d(detaching);
       destroy_component(profilephoto);
       if (if_block)
@@ -989,6 +1106,9 @@ function create_key_block(ctx) {
   };
 }
 function create_fragment(ctx) {
+  let meta;
+  let meta_content_value;
+  let t_1;
   let previous_key = (
     /*darkMode*/
     ctx[0]
@@ -998,19 +1118,39 @@ function create_fragment(ctx) {
   let key_block = create_key_block(ctx);
   return {
     c() {
+      meta = element("meta");
+      t_1 = space();
       key_block.c();
       key_block_anchor = empty();
+      this.h();
     },
     l(nodes) {
+      const head_nodes = head_selector("svelte-yk52po", document_1.head);
+      meta = claim_element(head_nodes, "META", { name: true, content: true });
+      head_nodes.forEach(detach);
+      t_1 = claim_space(nodes);
       key_block.l(nodes);
       key_block_anchor = empty();
+      this.h();
+    },
+    h() {
+      attr(meta, "name", "theme-color");
+      attr(meta, "content", meta_content_value = /*darkMode*/
+      ctx[0] ? "#000000" : "#FFFFFF");
     },
     m(target, anchor) {
+      append_hydration(document_1.head, meta);
+      insert_hydration(target, t_1, anchor);
       key_block.m(target, anchor);
       insert_hydration(target, key_block_anchor, anchor);
       current = true;
     },
     p(ctx2, [dirty]) {
+      if (!current || dirty & /*darkMode*/
+      1 && meta_content_value !== (meta_content_value = /*darkMode*/
+      ctx2[0] ? "#000000" : "#FFFFFF")) {
+        attr(meta, "content", meta_content_value);
+      }
       if (dirty & /*darkMode*/
       1 && safe_not_equal(previous_key, previous_key = /*darkMode*/
       ctx2[0])) {
@@ -1036,6 +1176,9 @@ function create_fragment(ctx) {
       current = false;
     },
     d(detaching) {
+      detach(meta);
+      if (detaching)
+        detach(t_1);
       if (detaching)
         detach(key_block_anchor);
       key_block.d(detaching);
@@ -1064,6 +1207,14 @@ function instance($$self, $$props, $$invalidate) {
   let darkMode = true;
   let backgroundColor;
   onMount(() => $$invalidate(0, darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches));
+  function background_backgroundClass_binding(value) {
+    backgroundClass = value;
+    $$invalidate(3, backgroundClass), $$invalidate(9, currentPageBackgroundColor), $$invalidate(1, backgroundColor), $$invalidate(2, $page);
+  }
+  function background_darkMode_binding(value) {
+    darkMode = value;
+    $$invalidate(0, darkMode);
+  }
   function navlink0_backgroundColor_binding(value) {
     backgroundColor = value;
     $$invalidate(1, backgroundColor);
@@ -1113,6 +1264,8 @@ function instance($$self, $$props, $$invalidate) {
     currentPageBackgroundColor,
     $$scope,
     slots,
+    background_backgroundClass_binding,
+    background_darkMode_binding,
     navlink0_backgroundColor_binding,
     navlink1_backgroundColor_binding,
     navlink2_backgroundColor_binding,

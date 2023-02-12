@@ -1,5 +1,5 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, q as text, W as head_selector, h as detach, c as claim_space, l as claim_element, m as children, r as claim_text, b as insert_hydration, K as append_hydration, C as noop, N as add_render_callback, P as create_out_transition, O as create_in_transition } from "../../../../chunks/index-53c03a89.js";
-import { c as blurOut, a as blurIn } from "../../../../chunks/customBlur-c889f464.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, q as text, T as head_selector, h as detach, c as claim_space, l as claim_element, m as children, r as claim_text, b as insert_hydration, K as append_hydration, C as noop, N as add_render_callback, P as create_out_transition, O as create_in_transition } from "../../../../chunks/index-f811e5e3.js";
+import { c as blurOut, a as blurIn } from "../../../../chunks/customBlur-4ed7b2fc.js";
 function create_fragment(ctx) {
   let t0;
   let div;
@@ -13,24 +13,24 @@ function create_fragment(ctx) {
       t0 = space();
       div = element("div");
       p = element("p");
-      t1 = text("This is where the projects will be");
+      t1 = text("This is where the work history will be");
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-1c2duyp", document.head);
+      const head_nodes = head_selector("svelte-1xjvk26", document.head);
       head_nodes.forEach(detach);
       t0 = claim_space(nodes);
       div = claim_element(nodes, "DIV", {});
       var div_nodes = children(div);
       p = claim_element(div_nodes, "P", {});
       var p_nodes = children(p);
-      t1 = claim_text(p_nodes, "This is where the projects will be");
+      t1 = claim_text(p_nodes, "This is where the work history will be");
       p_nodes.forEach(detach);
       div_nodes.forEach(detach);
       this.h();
     },
     h() {
-      document.title = "Jaakko Nakaza|Projects";
+      document.title = "Jaakko Nakaza|Work History";
     },
     m(target, anchor) {
       insert_hydration(target, t0, anchor);

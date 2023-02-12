@@ -710,6 +710,7 @@ function create_out_transition(node, fn, params) {
     }
   };
 }
+const globals = typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : global;
 function bind(component, name, callback) {
   const index = component.$$.props[name];
   if (index !== void 0) {
@@ -858,10 +859,11 @@ export {
   listen as Q,
   null_to_empty as R,
   SvelteComponent as S,
-  bind as T,
-  add_flush_callback as U,
-  get_store_value as V,
-  head_selector as W,
+  head_selector as T,
+  globals as U,
+  bind as V,
+  add_flush_callback as W,
+  get_store_value as X,
   space as a,
   insert_hydration as b,
   claim_space as c,
