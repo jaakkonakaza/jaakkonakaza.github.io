@@ -11,6 +11,13 @@
 
 <a class="profile-photo-container" href="/{$lang}">
 	<img style="opacity: {darkMode ? 1 : 0.7}" class="profile-photo" src={profilePhoto} alt="" />
+	<img
+		style="opacity: {darkMode ? 1 : 0.7}"
+		class="profile-photo"
+		id="blur"
+		src={profilePhoto}
+		alt=""
+	/>
 	{#if $page.route.id !== '/[lang]'}
 		<span in:blur out:blur class="home-link"> HOME </span>
 	{/if}
@@ -34,6 +41,13 @@
 	.profile-photo {
 		border-radius: 3rem;
 		width: 100%;
+	}
+	#blur {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		filter: blur(24px);
 	}
 	a {
 		color: #e74680;

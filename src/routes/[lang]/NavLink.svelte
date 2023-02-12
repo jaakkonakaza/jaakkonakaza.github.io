@@ -6,20 +6,18 @@
 	export let backgroundColor: BackgroundColor | undefined;
 	export let newBackgroundColor: BackgroundColor;
 	export let location: string;
+
+	const setColor = () => (backgroundColor = newBackgroundColor);
+	const resetColor = () => (backgroundColor = undefined);
 </script>
 
 <a
-	on:focus={() => (backgroundColor = newBackgroundColor)}
-	on:mouseenter={() => (backgroundColor = newBackgroundColor)}
-	on:mouseleave={() => {
-		backgroundColor = undefined;
-	}}
-	on:mouseout={() => {
-		backgroundColor = undefined;
-	}}
-	on:blur={() => {
-		backgroundColor = undefined;
-	}}
+	on:focus={setColor}
+	on:mouseenter={setColor}
+	on:mouseleave={resetColor}
+	on:mouseout={resetColor}
+	on:blur={resetColor}
+	on:click={resetColor}
 	href="/{$lang}/{location}">{$t(location)}</a
 >
 

@@ -22,8 +22,9 @@
 
 <style>
 	p {
-		font-size: 1.5rem;
-		line-height: 3rem;
+		font-size: 1rem;
+		line-height: 2rem;
+		width: max(20vw, 20rem);
 	}
 	.bubble {
 		display: flex;
@@ -33,8 +34,9 @@
 
 	@media (max-width: 815px) {
 		p {
-			font-size: max(1.2rem, 3.5vw);
+			font-size: max(1.2rem, 2.5vw);
 			line-height: max(2rem, 6vw);
+			width: 100%;
 		}
 
 		.bubble {
