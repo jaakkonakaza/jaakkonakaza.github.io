@@ -8,6 +8,11 @@
 
 <svelte:head>
 	<title>Jaakko Nakaza|Graphic Design</title>
+	<style>
+		html {
+			scroll-snap-type: y mandatory;
+		}
+	</style>
 </svelte:head>
 
 <div in:blurIn>
@@ -46,9 +51,6 @@
 </div>
 
 <style>
-	:global(html):has(#graphic-container) {
-		scroll-snap-type: y mandatory;
-	}
 	#graphic-container {
 		display: flex;
 		flex-direction: column;
