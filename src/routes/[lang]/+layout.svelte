@@ -2,6 +2,8 @@
 	export enum BackgroundColor {
 		Green = 'green',
 		Blue = 'blue',
+		LightBlue = 'light-blue',
+		Pink = 'pink',
 		Orange = 'orange'
 	}
 </script>
@@ -33,6 +35,10 @@
 			? BackgroundColor.Green
 			: $page.route.id === '/[lang]/projects'
 			? BackgroundColor.Blue
+			: $page.url.hash === '#o1'
+			? BackgroundColor.LightBlue
+			: $page.url.hash === '#aPlusCourses'
+			? BackgroundColor.Pink
 			: $page.route.id === '/[lang]/graphicDesign'
 			? BackgroundColor.Orange
 			: undefined;
@@ -76,7 +82,11 @@
 
 {#key loaded && darkMode}
 	<Background bind:backgroundClass />
-	<div in:blur id="container">
+	<div
+		in:blur
+		id="container"
+		style={$page.route.id?.includes('graphicDesign') ? 'scroll-snap-type: y mandatory;' : ''}
+	>
 		<div />
 		<div class="column" id="page-content">
 			{#key $lang}
@@ -153,6 +163,10 @@
 		--bg-color: #000000;
 	}
 
+	:global(a) {
+		color: #e74680;
+	}
+
 	#container {
 		min-height: 100vh;
 		min-width: 100vw;
@@ -220,10 +234,15 @@
 			margin-top: 1rem;
 		}
 
+		#page-content:has(#graphic-container) {
+			padding: 0;
+		}
+
 		#nav-content {
 			grid-row-start: 2;
 			align-items: center;
 			position: relative;
+			scroll-snap-align: start;
 		}
 
 		.link-group {
@@ -241,7 +260,6 @@
 	}
 	a {
 		padding: 1rem;
-		color: #e74680;
 		user-select: none;
 		cursor: pointer;
 	}

@@ -21,12 +21,14 @@
 		role={$t('assistantRole')}
 		description={$t('assistantDescription')}
 		period={$t('assistantPeriod')}
+		link="o1"
 	/>
 	<WorkItem
 		company={$t('aalto')}
 		role={$t('aaltoRole')}
 		description={$t('aaltoDescription')}
 		period={$t('aaltoPeriod')}
+		link="aPlusCourses"
 	/>
 	<div id="line">
 		{#each Array(3) as _, i}
@@ -52,6 +54,7 @@
 			font-size: max(1.2rem, 2.5vw);
 			line-height: max(2rem, 6vw);
 			width: 100%;
+			padding-bottom: 4rem;
 		}
 	}
 

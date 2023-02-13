@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { t, locale } from '$lib/translations';
+
+	$: lang = locale ?? 'en';
 	export let company: string;
 	export let role: string;
 	export let description: string;
 	export let period: string;
+	export let link: string | undefined = undefined;
 </script>
 
 <div class="item">
@@ -11,7 +15,12 @@
 			<h2>{company}</h2>
 			<h2 class="role">{role}</h2>
 		</div>
-		<p>{description}</p>
+		<p>
+			{description}
+			{#if link}
+				(see <a href="/{$lang}/graphicDesign#{link}"> Graphic Design</a>).
+			{/if}
+		</p>
 	</div>
 	<div class="circle">
 		<p class="period">{period}</p>
@@ -43,7 +52,7 @@
 	}
 	.info {
 		width: max(30vw, 7rem);
-		margin-left: 50px;
+		margin-left: 1rem;
 		white-space: pre-wrap;
 	}
 	.title {

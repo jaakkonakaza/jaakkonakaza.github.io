@@ -23,6 +23,37 @@
 		transition: filter 2s;
 	}
 
+	#background.green {
+		filter: hue-rotate(120deg);
+	}
+	#background.green-hover {
+		filter: hue-rotate(120deg) saturate(0.3) brightness(0.8);
+	}
+
+	#background.blue {
+		filter: hue-rotate(180deg);
+	}
+
+	#background.blue-hover {
+		filter: hue-rotate(180deg) saturate(0.3) brightness(0.8);
+	}
+
+	#background.light-blue {
+		filter: hue-rotate(200deg);
+	}
+
+	#background.pink {
+		filter: hue-rotate(-20deg);
+	}
+
+	#background.orange {
+		filter: hue-rotate(60deg);
+	}
+
+	#background.orange-hover {
+		filter: hue-rotate(60deg) saturate(0.3) brightness(0.8);
+	}
+
 	#background-noise {
 		height: 600%;
 		left: -100%;
@@ -75,28 +106,5 @@
 		90% {
 			background-position: -10% 10%;
 		}
-	}
-
-	#background.green {
-		filter: hue-rotate(120deg);
-	}
-	#background.green-hover {
-		filter: hue-rotate(120deg) saturate(0.3) brightness(0.8);
-	}
-
-	#background.blue {
-		filter: hue-rotate(180deg);
-	}
-
-	#background.blue-hover {
-		filter: hue-rotate(180deg) saturate(0.3) brightness(0.8);
-	}
-
-	#background.orange {
-		filter: hue-rotate(60deg);
-	}
-
-	#background.orange-hover {
-		filter: hue-rotate(60deg) saturate(0.3) brightness(0.8);
 	}
 </style>
