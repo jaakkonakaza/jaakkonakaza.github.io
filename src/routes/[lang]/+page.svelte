@@ -1,8 +1,5 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
-	import '@fontsource/zen-antique-soft/400.css';
-	import '@fontsource/zen-kaku-gothic-new/500.css';
-	import '@fontsource/zen-kaku-gothic-new/900.css';
 	import { blurIn, blurOut } from '$lib/customBlur';
 	import Name from '$lib/components/Name.svelte';
 </script>

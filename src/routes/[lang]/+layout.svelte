@@ -9,6 +9,7 @@
 <script lang="ts">
 	import '@fontsource/zen-kaku-gothic-new/900.css';
 	import '@fontsource/zen-kaku-gothic-new/400.css';
+	import '@fontsource/zen-antique-soft/400.css';
 
 	import { t, locale } from '$lib/translations';
 	import { page } from '$app/stores';
@@ -19,7 +20,6 @@
 
 	import { onMount, tick } from 'svelte';
 	import ProfilePhoto from '$lib/components/ProfilePhoto.svelte';
-	import { browser } from '$app/environment';
 	import NavLink from './NavLink.svelte';
 	import Background from '$lib/components/Background.svelte';
 
@@ -165,6 +165,7 @@
 		--fg-color: #262422;
 		--bg-color: #ffffff;
 		color: var(--fg-color);
+		overflow-y: auto;
 	}
 
 	.column {
@@ -187,10 +188,11 @@
 
 	#nav-content {
 		justify-content: center;
+		position: sticky;
+		top: 0;
 	}
 
 	#page-content {
-		overflow-y: auto;
 		height: 100vh;
 		margin-right: 3rem;
 	}
@@ -221,6 +223,7 @@
 		#nav-content {
 			grid-row-start: 2;
 			align-items: center;
+			position: relative;
 		}
 
 		.link-group {
