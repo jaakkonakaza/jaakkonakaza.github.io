@@ -8,6 +8,8 @@
 
 <script lang="ts">
 	import '@fontsource/zen-kaku-gothic-new/900.css';
+	import '@fontsource/zen-kaku-gothic-new/400.css';
+
 	import { t, locale } from '$lib/translations';
 	import { page } from '$app/stores';
 	import { blur } from 'svelte/transition';
@@ -15,15 +17,14 @@
 
 	$: lang = locale ?? 'en';
 
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import ProfilePhoto from '$lib/components/ProfilePhoto.svelte';
 	import { browser } from '$app/environment';
 	import NavLink from './NavLink.svelte';
 	import Background from '$lib/components/Background.svelte';
 
 	let darkMode = true;
-	$: bgColor = darkMode ? '#000000' : '#FFFFFF';
-	$: fgColor = darkMode ? '#FFFBFA' : '#262422';
+	let loaded = false;
 
 	let backgroundColor: BackgroundColor | undefined;
 
@@ -43,16 +44,29 @@
 			? backgroundColor + '-hover'
 			: currentPageBackgroundColor;
 
-	onMount(() => (darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches));
+	const setDarkMode = (isDarkMode: boolean) => {
+		darkMode = isDarkMode;
+		const theme = isDarkMode ? 'dark' : '';
+		document.body.className = theme;
+	};
+
+	onMount(async () => {
+		darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+			setDarkMode(event.matches);
+		});
+		await tick();
+		loaded = true;
+	});
 </script>
 
 <svelte:head>
 	<meta name="theme-color" content={darkMode ? '#000000' : '#FFFFFF'} />
 </svelte:head>
 
-{#key darkMode}
-	<Background bind:backgroundClass bind:darkMode />
-	<div in:blur style="--bg-color: {bgColor}; --fg-color: {fgColor};)" id="container">
+{#key loaded && darkMode}
+	<Background bind:backgroundClass />
+	<div in:blur id="container">
 		<div />
 		<div class="column" id="page-content">
 			{#key $lang}
@@ -88,8 +102,10 @@
 						<a href="https://github.com/jaakkonakaza">GitHub</a>
 						<a href="https://www.linkedin.com/in/jaakkonakaza/">LinkedIn</a>
 					</div>
-					<button on:click={() => (darkMode = !darkMode)}
-						>{darkMode ? $t('lightMode') : $t('darkMode')}</button
+					<button
+						on:click={() => {
+							setDarkMode(!darkMode);
+						}}>{darkMode ? $t('lightMode') : $t('darkMode')}</button
 					>
 					<div id="languages">
 						<a data-sveltekit-preload-data="tap" href="/en">ENGLISH</a>
@@ -104,22 +120,46 @@
 {/key}
 
 <style>
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	:global(.dark) {
+		background-color: #000000;
+	}
+
+	:global(body) {
+		background-color: #ffffff;
+		animation: 3s ease-in-out 0s 1 fadeIn;
+	}
+
+	:global(.dark) #container {
+		--fg-color: #fffbfa;
+		--bg-color: #000000;
+	}
+
 	#container {
 		min-height: 100vh;
 		min-width: 100vw;
-		overflow: hidden;
 		font-family: 'Zen Kaku Gothic New', sans-serif;
 		color: var(--fg-color);
 		display: grid;
 		grid-template-columns: 1fr 55vw 20rem 1fr;
 		grid-template-rows: 1fr;
 		background-attachment: fixed;
+		--fg-color: #262422;
+		--bg-color: #ffffff;
+		color: var(--fg-color);
 	}
 
 	.column {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		padding: 2rem 0;
 		gap: 2rem;
 	}

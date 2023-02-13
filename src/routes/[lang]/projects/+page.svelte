@@ -7,5 +7,5 @@
 </svelte:head>
 
 <div in:blurIn out:blurOut>
-	<p>This is where the projects will be</p>
+	<p />
 </div>

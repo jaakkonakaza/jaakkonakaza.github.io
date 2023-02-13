@@ -7,6 +7,11 @@
 		%sveltekit.head%
 	</head>
 	<body style="margin: 0" data-sveltekit-preload-data="hover">
+		<script>
+			const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			const theme = darkMode ? 'dark' : '';
+			document.body.className = theme;
+		</script>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

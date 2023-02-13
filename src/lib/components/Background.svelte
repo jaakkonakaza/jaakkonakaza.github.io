@@ -3,22 +3,26 @@
 	import bgImageLight from '$lib/assets/bg-light.jpg';
 
 	export let backgroundClass: string | undefined;
-	export let darkMode: boolean;
 </script>
 
 <div
 	id="background"
 	class={backgroundClass}
-	style="background-image: url({darkMode ? bgImageDark : bgImageLight})"
+	style="--background-image-dark: url({bgImageDark}); --background-image-light: url({bgImageLight})"
 />
+<div id="background-noise" />
 
 <style>
+	:global(.dark) #background {
+		background-image: url(/bg-dark.jpg);
+	}
 	#background {
+		background-image: url(/bg-light.jpg);
 		position: fixed;
 		left: 0;
-		right: 0;
 		top: 0;
-		bottom: 0;
+		height: 100vh;
+		width: 100vw;
 		z-index: -2;
 
 		background-size: cover;
@@ -26,12 +30,10 @@
 		transition: filter 2s;
 	}
 
-	#background:after {
-		content: '';
-		display: block;
+	#background-noise {
 		height: 300%;
 		left: -100%;
-		position: absolute;
+		position: fixed;
 		top: -100%;
 		width: 300%;
 		z-index: -1;
