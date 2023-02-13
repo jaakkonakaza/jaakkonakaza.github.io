@@ -6,12 +6,12 @@
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
-	<body style="margin: 0" data-sveltekit-preload-data="hover">
+	<body style="margin: 0; overflow-x: hidden" data-sveltekit-preload-data="hover">
 		<script>
 			const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 			const theme = darkMode ? 'dark' : '';
 			document.body.className = theme;
 		</script>
-		<div style="overflow: clip">%sveltekit.body%</div>
+		<div>%sveltekit.body%</div>
 	</body>
 </html>

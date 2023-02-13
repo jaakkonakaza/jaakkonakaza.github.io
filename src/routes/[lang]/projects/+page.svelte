@@ -6,6 +6,6 @@
 	<title>Jaakko Nakaza|Projects</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut>
+<div out:blurOut>
 	<p />
 </div>

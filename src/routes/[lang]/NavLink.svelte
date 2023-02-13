@@ -18,6 +18,7 @@
 	on:mouseout={resetColor}
 	on:blur={resetColor}
 	on:click={resetColor}
+	data-sveltekit-preload-data="hover"
 	href="/{$lang}/{location}">{$t(location)}</a
 >
 

@@ -82,11 +82,7 @@
 
 {#key loaded && darkMode}
 	<Background bind:backgroundClass />
-	<div
-		in:blur
-		id="container"
-		style={$page.route.id?.includes('graphicDesign') ? 'scroll-snap-type: y mandatory;' : ''}
-	>
+	<div in:blur id="container">
 		<div />
 		<div class="column" id="page-content">
 			{#key $lang}
@@ -179,7 +175,6 @@
 		--fg-color: #262422;
 		--bg-color: #ffffff;
 		color: var(--fg-color);
-		overflow-y: auto;
 	}
 
 	.column {
@@ -201,26 +196,24 @@
 	}
 
 	#nav-content {
+		align-self: flex-start;
+		height: 100vh;
 		justify-content: center;
 		position: sticky;
 		top: 0;
 	}
 
 	#page-content {
-		height: 100vh;
 		margin-right: 3rem;
 	}
 	@media (max-width: 815px) {
 		#container {
 			grid-template-columns: 1fr;
 			grid-template-rows: 4vh auto auto 0;
-			overflow: auto;
-			height: 100vh;
 		}
 
 		#page-content {
 			height: fit-content;
-			overflow-y: unset;
 			margin-right: 0;
 		}
 
@@ -243,6 +236,7 @@
 			align-items: center;
 			position: relative;
 			scroll-snap-align: start;
+			height: auto;
 		}
 
 		.link-group {

@@ -18,7 +18,7 @@
 		<p>
 			{description}
 			{#if link}
-				(see <a href="/{$lang}/graphicDesign#{link}"> Graphic Design</a>).
+				(see <a href="/{$lang}/graphicDesign#{link}">Graphic Design</a>).
 			{/if}
 		</p>
 	</div>

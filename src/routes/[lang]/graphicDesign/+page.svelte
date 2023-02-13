@@ -3,7 +3,6 @@
 	import aPlusCourses from '$lib/assets/apluscourses.png';
 	import aPlusFooter from '$lib/assets/aplusfooter.png';
 	import o1 from '$lib/assets/o1.png';
-	import { onMount } from 'svelte';
 	import { autoHash } from '$lib/autoHash';
 </script>
 
@@ -11,7 +10,7 @@
 	<title>Jaakko Nakaza|Graphic Design</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut>
+<div in:blurIn>
 	<div id="graphic-container">
 		<section use:autoHash id="aPlusCourses" class="page">
 			<img src={aPlusCourses} alt="" width="2000" height="1000" />
@@ -47,10 +46,13 @@
 </div>
 
 <style>
+	:global(html):has(#graphic-container) {
+		scroll-snap-type: y mandatory;
+	}
 	#graphic-container {
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
+		gap: 10rem;
 		padding-right: 5rem;
 	}
 	@media (max-width: 815px) {

@@ -9,7 +9,7 @@
 	<title>Jaakko Nakaza|Work History</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut id="work-container">
+<div in:blurIn id="work-container">
 	<WorkItem
 		company={$t('beamex')}
 		role={$t('beamexRole')}
