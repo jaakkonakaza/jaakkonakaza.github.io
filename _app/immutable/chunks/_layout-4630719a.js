@@ -1,4 +1,4 @@
-import { a as loadTranslations } from "./translations-e60dcc4c.js";
+import { a as loadTranslations } from "./translations-ef1f04a1.js";
 const load = async ({ params }) => {
   const lang = params.lang;
   await loadTranslations(lang);

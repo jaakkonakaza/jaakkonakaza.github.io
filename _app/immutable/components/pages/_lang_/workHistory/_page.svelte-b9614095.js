@@ -1,8 +1,8 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, b as insert_hydration, K as append_hydration, u as set_data, C as noop, x as create_component, T as head_selector, y as claim_component, z as mount_component, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, L as component_subscribe, O as create_in_transition } from "../../../../chunks/index-f811e5e3.js";
-import { t } from "../../../../chunks/translations-e60dcc4c.js";
-import { c as blurOut, a as blurIn } from "../../../../chunks/customBlur-4ed7b2fc.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, b as insert_hydration, K as append_hydration, u as set_data, C as noop, p as set_style, x as create_component, T as head_selector, y as claim_component, z as mount_component, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, Y as destroy_each, L as component_subscribe, O as create_in_transition } from "../../../../chunks/index-e28e1104.js";
+import { t } from "../../../../chunks/translations-ef1f04a1.js";
+import { c as blurOut, a as blurIn } from "../../../../chunks/customBlur-bdc8c2b6.js";
 const WorkItem_svelte_svelte_type_style_lang = "";
-function create_fragment$1(ctx) {
+function create_fragment$2(ctx) {
   let div3;
   let div1;
   let div0;
@@ -100,13 +100,13 @@ function create_fragment$1(ctx) {
       this.h();
     },
     h() {
-      attr(h21, "class", "role svelte-1x9ob8u");
-      attr(div0, "class", "title svelte-1x9ob8u");
-      attr(p0, "class", "svelte-1x9ob8u");
-      attr(div1, "class", "info svelte-1x9ob8u");
-      attr(p1, "class", "period svelte-1x9ob8u");
-      attr(div2, "class", "circle svelte-1x9ob8u");
-      attr(div3, "class", "item svelte-1x9ob8u");
+      attr(h21, "class", "role svelte-11is0np");
+      attr(div0, "class", "title svelte-11is0np");
+      attr(p0, "class", "svelte-11is0np");
+      attr(div1, "class", "info svelte-11is0np");
+      attr(p1, "class", "period svelte-11is0np");
+      attr(div2, "class", "circle svelte-11is0np");
+      attr(div3, "class", "item svelte-11is0np");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -163,7 +163,7 @@ function create_fragment$1(ctx) {
     }
   };
 }
-function instance$1($$self, $$props, $$invalidate) {
+function instance$2($$self, $$props, $$invalidate) {
   let { company } = $$props;
   let { role } = $$props;
   let { description } = $$props;
@@ -183,7 +183,7 @@ function instance$1($$self, $$props, $$invalidate) {
 class WorkItem extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance$1, create_fragment$1, safe_not_equal, {
+    init(this, options, instance$2, create_fragment$2, safe_not_equal, {
       company: 0,
       role: 1,
       description: 2,
@@ -191,7 +191,129 @@ class WorkItem extends SvelteComponent {
     });
   }
 }
+const Arrow_svelte_svelte_type_style_lang = "";
+function create_fragment$1(ctx) {
+  let div;
+  return {
+    c() {
+      div = element("div");
+      this.h();
+    },
+    l(nodes) {
+      div = claim_element(nodes, "DIV", { style: true, class: true });
+      children(div).forEach(detach);
+      this.h();
+    },
+    h() {
+      set_style(
+        div,
+        "--delay",
+        /*delay*/
+        ctx[0] + "ms"
+      );
+      set_style(
+        div,
+        "--i",
+        /*i*/
+        ctx[1] * 3 + 1
+      );
+      attr(div, "class", "arrow svelte-szuqoq");
+    },
+    m(target, anchor) {
+      insert_hydration(target, div, anchor);
+    },
+    p(ctx2, [dirty]) {
+      if (dirty & /*delay*/
+      1) {
+        set_style(
+          div,
+          "--delay",
+          /*delay*/
+          ctx2[0] + "ms"
+        );
+      }
+      if (dirty & /*i*/
+      2) {
+        set_style(
+          div,
+          "--i",
+          /*i*/
+          ctx2[1] * 3 + 1
+        );
+      }
+    },
+    i: noop,
+    o: noop,
+    d(detaching) {
+      if (detaching)
+        detach(div);
+    }
+  };
+}
+function instance$1($$self, $$props, $$invalidate) {
+  let { delay } = $$props;
+  let { i } = $$props;
+  $$self.$$set = ($$props2) => {
+    if ("delay" in $$props2)
+      $$invalidate(0, delay = $$props2.delay);
+    if ("i" in $$props2)
+      $$invalidate(1, i = $$props2.i);
+  };
+  return [delay, i];
+}
+class Arrow extends SvelteComponent {
+  constructor(options) {
+    super();
+    init(this, options, instance$1, create_fragment$1, safe_not_equal, { delay: 0, i: 1 });
+  }
+}
 const _page_svelte_svelte_type_style_lang = "";
+function get_each_context(ctx, list, i) {
+  const child_ctx = ctx.slice();
+  child_ctx[1] = list[i];
+  child_ctx[3] = i;
+  return child_ctx;
+}
+function create_each_block(ctx) {
+  let arrow;
+  let current;
+  arrow = new Arrow({
+    props: {
+      delay: 400 + /*i*/
+      ctx[3] * 300,
+      i: (
+        /*i*/
+        ctx[3]
+      )
+    }
+  });
+  return {
+    c() {
+      create_component(arrow.$$.fragment);
+    },
+    l(nodes) {
+      claim_component(arrow.$$.fragment, nodes);
+    },
+    m(target, anchor) {
+      mount_component(arrow, target, anchor);
+      current = true;
+    },
+    p: noop,
+    i(local) {
+      if (current)
+        return;
+      transition_in(arrow.$$.fragment, local);
+      current = true;
+    },
+    o(local) {
+      transition_out(arrow.$$.fragment, local);
+      current = false;
+    },
+    d(detaching) {
+      destroy_component(arrow, detaching);
+    }
+  };
+}
 function create_fragment(ctx) {
   let t0;
   let div1;
@@ -265,6 +387,11 @@ function create_fragment(ctx) {
       )
     }
   });
+  let each_value = Array(3);
+  let each_blocks = [];
+  for (let i = 0; i < each_value.length; i += 1) {
+    each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+  }
   return {
     c() {
       t0 = space();
@@ -276,6 +403,9 @@ function create_fragment(ctx) {
       create_component(workitem2.$$.fragment);
       t3 = space();
       div0 = element("div");
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].c();
+      }
       this.h();
     },
     l(nodes) {
@@ -291,16 +421,20 @@ function create_fragment(ctx) {
       claim_component(workitem2.$$.fragment, div1_nodes);
       t3 = claim_space(div1_nodes);
       div0 = claim_element(div1_nodes, "DIV", { id: true, class: true });
-      children(div0).forEach(detach);
+      var div0_nodes = children(div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].l(div0_nodes);
+      }
+      div0_nodes.forEach(detach);
       div1_nodes.forEach(detach);
       this.h();
     },
     h() {
       document.title = "Jaakko Nakaza|Work History";
       attr(div0, "id", "line");
-      attr(div0, "class", "svelte-3uac4");
-      attr(div1, "id", "container");
-      attr(div1, "class", "svelte-3uac4");
+      attr(div0, "class", "svelte-gigutp");
+      attr(div1, "id", "work-container");
+      attr(div1, "class", "svelte-gigutp");
     },
     m(target, anchor) {
       insert_hydration(target, t0, anchor);
@@ -312,6 +446,9 @@ function create_fragment(ctx) {
       mount_component(workitem2, div1, null);
       append_hydration(div1, t3);
       append_hydration(div1, div0);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        each_blocks[i].m(div0, null);
+      }
       current = true;
     },
     p(ctx2, [dirty]) {
@@ -376,6 +513,9 @@ function create_fragment(ctx) {
       transition_in(workitem0.$$.fragment, local);
       transition_in(workitem1.$$.fragment, local);
       transition_in(workitem2.$$.fragment, local);
+      for (let i = 0; i < each_value.length; i += 1) {
+        transition_in(each_blocks[i]);
+      }
       add_render_callback(() => {
         if (div1_outro)
           div1_outro.end(1);
@@ -388,6 +528,10 @@ function create_fragment(ctx) {
       transition_out(workitem0.$$.fragment, local);
       transition_out(workitem1.$$.fragment, local);
       transition_out(workitem2.$$.fragment, local);
+      each_blocks = each_blocks.filter(Boolean);
+      for (let i = 0; i < each_blocks.length; i += 1) {
+        transition_out(each_blocks[i]);
+      }
       if (div1_intro)
         div1_intro.invalidate();
       div1_outro = create_out_transition(div1, blurOut, {});
@@ -401,6 +545,7 @@ function create_fragment(ctx) {
       destroy_component(workitem0);
       destroy_component(workitem1);
       destroy_component(workitem2);
+      destroy_each(each_blocks, detaching);
       if (detaching && div1_outro)
         div1_outro.end();
     }

@@ -242,6 +242,12 @@ function detach(node) {
     node.parentNode.removeChild(node);
   }
 }
+function destroy_each(iterations, detaching) {
+  for (let i = 0; i < iterations.length; i += 1) {
+    if (iterations[i])
+      iterations[i].d(detaching);
+  }
+}
 function element(name) {
   return document.createElement(name);
 }
@@ -864,6 +870,7 @@ export {
   bind as V,
   add_flush_callback as W,
   get_store_value as X,
+  destroy_each as Y,
   space as a,
   insert_hydration as b,
   claim_space as c,

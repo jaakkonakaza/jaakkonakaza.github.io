@@ -1,7 +1,7 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, x as create_component, q as text, T as head_selector, h as detach, c as claim_space, l as claim_element, m as children, y as claim_component, r as claim_text, n as attr, b as insert_hydration, K as append_hydration, z as mount_component, u as set_data, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, L as component_subscribe, O as create_in_transition } from "../../../chunks/index-f811e5e3.js";
-import { t } from "../../../chunks/translations-e60dcc4c.js";
-import { N as Name } from "../../../chunks/Name-4744e24e.js";
-import { c as blurOut, a as blurIn } from "../../../chunks/customBlur-4ed7b2fc.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, a as space, k as element, x as create_component, q as text, T as head_selector, h as detach, c as claim_space, l as claim_element, m as children, y as claim_component, r as claim_text, n as attr, b as insert_hydration, K as append_hydration, z as mount_component, u as set_data, f as transition_in, N as add_render_callback, t as transition_out, P as create_out_transition, A as destroy_component, L as component_subscribe, O as create_in_transition } from "../../../chunks/index-e28e1104.js";
+import { t } from "../../../chunks/translations-ef1f04a1.js";
+import { N as Name } from "../../../chunks/Name-bcdb5824.js";
+import { c as blurOut, a as blurIn } from "../../../chunks/customBlur-bdc8c2b6.js";
 const _400 = "";
 const _500 = "";
 const _page_svelte_svelte_type_style_lang = "";
@@ -36,7 +36,7 @@ function create_fragment(ctx) {
       const head_nodes = head_selector("svelte-1eo4e2f", document.head);
       head_nodes.forEach(detach);
       t0 = claim_space(nodes);
-      div1 = claim_element(nodes, "DIV", {});
+      div1 = claim_element(nodes, "DIV", { id: true, class: true });
       var div1_nodes = children(div1);
       div0 = claim_element(div1_nodes, "DIV", { id: true, class: true });
       var div0_nodes = children(div0);
@@ -53,8 +53,10 @@ function create_fragment(ctx) {
     h() {
       document.title = "Jaakko Nakaza";
       attr(div0, "id", "name-container");
-      attr(div0, "class", "svelte-1qzijxq");
-      attr(p, "class", "bubble svelte-1qzijxq");
+      attr(div0, "class", "svelte-weiww2");
+      attr(p, "class", "bubble svelte-weiww2");
+      attr(div1, "id", "about-container");
+      attr(div1, "class", "svelte-weiww2");
     },
     m(target, anchor) {
       insert_hydration(target, t0, anchor);

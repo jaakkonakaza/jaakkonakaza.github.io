@@ -1,8 +1,8 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-f811e5e3.js";
-import { N as Name } from "../../../chunks/Name-4744e24e.js";
-import { t, l as locale } from "../../../chunks/translations-e60dcc4c.js";
-import { p as page } from "../../../chunks/stores-32abb2fb.js";
-import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-4ed7b2fc.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-e28e1104.js";
+import { N as Name } from "../../../chunks/Name-bcdb5824.js";
+import { t, l as locale } from "../../../chunks/translations-ef1f04a1.js";
+import { p as page } from "../../../chunks/stores-4ae0ef08.js";
+import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-bdc8c2b6.js";
 const _400 = "";
 const profilePhoto = "" + new URL("../../../assets/profile-photo-dcbaf9a7.jpg", import.meta.url).href;
 const ProfilePhoto_svelte_svelte_type_style_lang = "";
@@ -473,13 +473,13 @@ function create_key_block_1(ctx) {
   let current;
   const default_slot_template = (
     /*#slots*/
-    ctx[11].default
+    ctx[12].default
   );
   const default_slot = create_slot(
     default_slot_template,
     ctx,
     /*$$scope*/
-    ctx[10],
+    ctx[11],
     null
   );
   return {
@@ -500,20 +500,20 @@ function create_key_block_1(ctx) {
     p(ctx2, dirty) {
       if (default_slot) {
         if (default_slot.p && (!current || dirty & /*$$scope*/
-        1024)) {
+        2048)) {
           update_slot_base(
             default_slot,
             default_slot_template,
             ctx2,
             /*$$scope*/
-            ctx2[10],
+            ctx2[11],
             !current ? get_all_dirty_from_scope(
               /*$$scope*/
-              ctx2[10]
+              ctx2[11]
             ) : get_slot_changes(
               default_slot_template,
               /*$$scope*/
-              ctx2[10],
+              ctx2[11],
               dirty,
               null
             ),
@@ -562,10 +562,10 @@ function create_if_block(ctx) {
     /*darkMode*/
     (ctx[2] ? (
       /*$t*/
-      ctx[7]("lightMode")
+      ctx[8]("lightMode")
     ) : (
       /*$t*/
-      ctx[7]("darkMode")
+      ctx[8]("darkMode")
     )) + ""
   );
   let t7;
@@ -586,7 +586,7 @@ function create_if_block(ctx) {
   let mounted;
   let dispose;
   function navlink0_backgroundColor_binding(value) {
-    ctx[13](value);
+    ctx[14](value);
   }
   let navlink0_props = {
     newBackgroundColor: BackgroundColor.Green,
@@ -602,7 +602,7 @@ function create_if_block(ctx) {
   navlink0 = new NavLink({ props: navlink0_props });
   binding_callbacks.push(() => bind(navlink0, "backgroundColor", navlink0_backgroundColor_binding));
   function navlink1_backgroundColor_binding(value) {
-    ctx[14](value);
+    ctx[15](value);
   }
   let navlink1_props = {
     newBackgroundColor: BackgroundColor.Blue,
@@ -618,7 +618,7 @@ function create_if_block(ctx) {
   navlink1 = new NavLink({ props: navlink1_props });
   binding_callbacks.push(() => bind(navlink1, "backgroundColor", navlink1_backgroundColor_binding));
   function navlink2_backgroundColor_binding(value) {
-    ctx[15](value);
+    ctx[16](value);
   }
   let navlink2_props = {
     newBackgroundColor: BackgroundColor.Orange,
@@ -727,26 +727,26 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "link-group svelte-2leqj3");
+      attr(div0, "class", "link-group svelte-icqu88");
       attr(a0, "href", "https://github.com/jaakkonakaza");
-      attr(a0, "class", "svelte-2leqj3");
+      attr(a0, "class", "svelte-icqu88");
       attr(a1, "href", "https://www.linkedin.com/in/jaakkonakaza/");
-      attr(a1, "class", "svelte-2leqj3");
-      attr(div1, "class", "link-group svelte-2leqj3");
-      attr(button, "class", "svelte-2leqj3");
+      attr(a1, "class", "svelte-icqu88");
+      attr(div1, "class", "link-group svelte-icqu88");
+      attr(button, "class", "svelte-icqu88");
       attr(a2, "data-sveltekit-preload-data", "tap");
       attr(a2, "href", "/en");
-      attr(a2, "class", "svelte-2leqj3");
+      attr(a2, "class", "svelte-icqu88");
       attr(a3, "data-sveltekit-preload-data", "tap");
       attr(a3, "href", "/fi");
-      attr(a3, "class", "svelte-2leqj3");
+      attr(a3, "class", "svelte-icqu88");
       attr(a4, "data-sveltekit-preload-data", "tap");
       attr(a4, "href", "/ja");
-      attr(a4, "class", "svelte-2leqj3");
+      attr(a4, "class", "svelte-icqu88");
       attr(div2, "id", "languages");
-      attr(div2, "class", "svelte-2leqj3");
+      attr(div2, "class", "svelte-icqu88");
       attr(div3, "class", div3_class_value = "column " + /*$page*/
-      (ctx[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-2leqj3");
+      (ctx[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-icqu88");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -782,7 +782,7 @@ function create_if_block(ctx) {
           button,
           "click",
           /*click_handler*/
-          ctx[16]
+          ctx[17]
         );
         mounted = true;
       }
@@ -816,18 +816,18 @@ function create_if_block(ctx) {
       }
       navlink2.$set(navlink2_changes);
       if ((!current || dirty & /*darkMode, $t*/
-      132) && t7_value !== (t7_value = /*darkMode*/
+      260) && t7_value !== (t7_value = /*darkMode*/
       (ctx2[2] ? (
         /*$t*/
-        ctx2[7]("lightMode")
+        ctx2[8]("lightMode")
       ) : (
         /*$t*/
-        ctx2[7]("darkMode")
+        ctx2[8]("darkMode")
       )) + ""))
         set_data(t7, t7_value);
       if (!current || dirty & /*$page*/
       2 && div3_class_value !== (div3_class_value = "column " + /*$page*/
-      (ctx2[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-2leqj3")) {
+      (ctx2[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-icqu88")) {
         attr(div3, "class", div3_class_value);
       }
     },
@@ -877,28 +877,26 @@ function create_key_block(ctx) {
   let div1;
   let previous_key = (
     /*$lang*/
-    ctx[6]
+    ctx[7]
   );
   let t2;
   let nav;
   let profilephoto;
   let t3;
-  let show_if = document.body.getBoundingClientRect().width > 815 || /*$page*/
-  ctx[1].route.id === "/[lang]";
   let t4;
   let div2;
   let div3_intro;
   let current;
   function background_backgroundClass_binding(value) {
-    ctx[12](value);
+    ctx[13](value);
   }
   let background_props = {};
   if (
     /*backgroundClass*/
-    ctx[4] !== void 0
+    ctx[5] !== void 0
   ) {
     background_props.backgroundClass = /*backgroundClass*/
-    ctx[4];
+    ctx[5];
   }
   background = new Background({ props: background_props });
   binding_callbacks.push(() => bind(background, "backgroundClass", background_backgroundClass_binding));
@@ -911,11 +909,13 @@ function create_key_block(ctx) {
       ),
       lang: (
         /*lang*/
-        ctx[5]
+        ctx[6]
       )
     }
   });
-  let if_block = show_if && create_if_block(ctx);
+  let if_block = (!/*isMobileWidth*/
+  ctx[4] || /*$page*/
+  ctx[1].route.id === "/[lang]") && create_if_block(ctx);
   return {
     c() {
       create_component(background.$$.fragment);
@@ -962,12 +962,12 @@ function create_key_block(ctx) {
       this.h();
     },
     h() {
-      attr(div1, "class", "column svelte-2leqj3");
+      attr(div1, "class", "column svelte-icqu88");
       attr(div1, "id", "page-content");
-      attr(nav, "class", "column svelte-2leqj3");
+      attr(nav, "class", "column svelte-icqu88");
       attr(nav, "id", "nav-content");
       attr(div3, "id", "container");
-      attr(div3, "class", "svelte-2leqj3");
+      attr(div3, "class", "svelte-icqu88");
     },
     m(target, anchor) {
       mount_component(background, target, anchor);
@@ -990,16 +990,16 @@ function create_key_block(ctx) {
     p(ctx2, dirty) {
       const background_changes = {};
       if (!updating_backgroundClass && dirty & /*backgroundClass*/
-      16) {
+      32) {
         updating_backgroundClass = true;
         background_changes.backgroundClass = /*backgroundClass*/
-        ctx2[4];
+        ctx2[5];
         add_flush_callback(() => updating_backgroundClass = false);
       }
       background.$set(background_changes);
       if (dirty & /*$lang*/
-      64 && safe_not_equal(previous_key, previous_key = /*$lang*/
-      ctx2[6])) {
+      128 && safe_not_equal(previous_key, previous_key = /*$lang*/
+      ctx2[7])) {
         group_outros();
         transition_out(key_block, 1, 1, noop);
         check_outros();
@@ -1016,19 +1016,17 @@ function create_key_block(ctx) {
         profilephoto_changes.darkMode = /*darkMode*/
         ctx2[2];
       if (dirty & /*lang*/
-      32)
+      64)
         profilephoto_changes.lang = /*lang*/
-        ctx2[5];
+        ctx2[6];
       profilephoto.$set(profilephoto_changes);
-      if (dirty & /*$page*/
-      2)
-        show_if = document.body.getBoundingClientRect().width > 815 || /*$page*/
-        ctx2[1].route.id === "/[lang]";
-      if (show_if) {
+      if (!/*isMobileWidth*/
+      ctx2[4] || /*$page*/
+      ctx2[1].route.id === "/[lang]") {
         if (if_block) {
           if_block.p(ctx2, dirty);
-          if (dirty & /*$page*/
-          2) {
+          if (dirty & /*isMobileWidth, $page*/
+          18) {
             transition_in(if_block, 1);
           }
         } else {
@@ -1168,15 +1166,16 @@ var BackgroundColor = /* @__PURE__ */ ((BackgroundColor2) => {
   BackgroundColor2["Orange"] = "orange";
   return BackgroundColor2;
 })(BackgroundColor || {});
+const mobileWidth = 815;
 function instance($$self, $$props, $$invalidate) {
   let lang;
   let currentPageBackgroundColor;
   let backgroundClass;
   let $page;
-  let $lang, $$unsubscribe_lang = noop, $$subscribe_lang = () => ($$unsubscribe_lang(), $$unsubscribe_lang = subscribe(lang, ($$value) => $$invalidate(6, $lang = $$value)), lang);
+  let $lang, $$unsubscribe_lang = noop, $$subscribe_lang = () => ($$unsubscribe_lang(), $$unsubscribe_lang = subscribe(lang, ($$value) => $$invalidate(7, $lang = $$value)), lang);
   let $t;
   component_subscribe($$self, page, ($$value) => $$invalidate(1, $page = $$value));
-  component_subscribe($$self, t, ($$value) => $$invalidate(7, $t = $$value));
+  component_subscribe($$self, t, ($$value) => $$invalidate(8, $t = $$value));
   $$self.$$.on_destroy.push(() => $$unsubscribe_lang());
   let { $$slots: slots = {}, $$scope } = $$props;
   let darkMode = true;
@@ -1187,17 +1186,25 @@ function instance($$self, $$props, $$invalidate) {
     const theme = isDarkMode ? "dark" : "";
     document.body.className = theme;
   };
+  let isMobileWidth = false;
+  let resizeObserver;
   onMount(async () => {
     $$invalidate(2, darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches);
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
       setDarkMode(event.matches);
     });
+    resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        $$invalidate(4, isMobileWidth = entry.contentRect.width < mobileWidth);
+      }
+    });
+    resizeObserver.observe(document.body);
     await tick();
     $$invalidate(3, loaded = true);
   });
   function background_backgroundClass_binding(value) {
     backgroundClass = value;
-    $$invalidate(4, backgroundClass), $$invalidate(9, currentPageBackgroundColor), $$invalidate(0, backgroundColor), $$invalidate(1, $page);
+    $$invalidate(5, backgroundClass), $$invalidate(10, currentPageBackgroundColor), $$invalidate(0, backgroundColor), $$invalidate(1, $page);
   }
   function navlink0_backgroundColor_binding(value) {
     backgroundColor = value;
@@ -1216,24 +1223,25 @@ function instance($$self, $$props, $$invalidate) {
   };
   $$self.$$set = ($$props2) => {
     if ("$$scope" in $$props2)
-      $$invalidate(10, $$scope = $$props2.$$scope);
+      $$invalidate(11, $$scope = $$props2.$$scope);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & /*$page*/
     2) {
-      $$invalidate(9, currentPageBackgroundColor = $page.route.id === "/[lang]/workHistory" ? BackgroundColor.Green : $page.route.id === "/[lang]/projects" ? BackgroundColor.Blue : $page.route.id === "/[lang]/graphicDesign" ? BackgroundColor.Orange : void 0);
+      $$invalidate(10, currentPageBackgroundColor = $page.route.id === "/[lang]/workHistory" ? BackgroundColor.Green : $page.route.id === "/[lang]/projects" ? BackgroundColor.Blue : $page.route.id === "/[lang]/graphicDesign" ? BackgroundColor.Orange : void 0);
     }
     if ($$self.$$.dirty & /*currentPageBackgroundColor, backgroundColor*/
-    513) {
-      $$invalidate(4, backgroundClass = currentPageBackgroundColor === backgroundColor ? currentPageBackgroundColor : backgroundColor ? backgroundColor + "-hover" : currentPageBackgroundColor);
+    1025) {
+      $$invalidate(5, backgroundClass = currentPageBackgroundColor === backgroundColor ? currentPageBackgroundColor : backgroundColor ? backgroundColor + "-hover" : currentPageBackgroundColor);
     }
   };
-  $$subscribe_lang($$invalidate(5, lang = locale ?? "en"));
+  $$subscribe_lang($$invalidate(6, lang = locale ?? "en"));
   return [
     backgroundColor,
     $page,
     darkMode,
     loaded,
+    isMobileWidth,
     backgroundClass,
     lang,
     $lang,
