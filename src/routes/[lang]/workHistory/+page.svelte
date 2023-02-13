@@ -2,13 +2,14 @@
 	import { t } from '$lib/translations';
 	import { blurIn, blurOut } from '$lib/customBlur';
 	import WorkItem from './WorkItem.svelte';
+	import Arrow from './Arrow.svelte';
 </script>
 
 <svelte:head>
 	<title>Jaakko Nakaza|Work History</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut id="container">
+<div in:blurIn out:blurOut id="work-container">
 	<WorkItem
 		company={$t('beamex')}
 		role={$t('beamexRole')}
@@ -27,19 +28,27 @@
 		description={$t('aaltoDescription')}
 		period={$t('aaltoPeriod')}
 	/>
-	<div id="line" />
+	<div id="line">
+		{#each Array(3) as _, i}
+			<Arrow delay={400 + i * 300} {i} />
+		{/each}
+	</div>
 </div>
 
 <style>
-	#container {
+	#work-container {
 		font-size: 1rem;
 		line-height: 2rem;
 		width: 40vw;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 4rem 0;
 	}
 
 	@media (max-width: 815px) {
-		#container {
+		#work-container {
 			font-size: max(1.2rem, 2.5vw);
 			line-height: max(2rem, 6vw);
 			width: 100%;
@@ -47,12 +56,12 @@
 	}
 
 	#line {
-		background: black;
+		background: var(--fg-color);
 		content: '';
-		height: calc(100% + 4rem);
 		right: 16px;
 		position: absolute;
-		top: -2rem;
+		top: 0;
+		bottom: 0;
 		width: 1px;
 		z-index: -1;
 	}

@@ -28,12 +28,14 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 100%;
-		border: 1px solid black;
+		border: 1px solid var(--fg-color);
 		position: absolute;
 		right: 0;
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 	}
 	.period {
-		transform: rotate(-90deg);
+		transform: rotate(-90deg) translateX(-50%);
 		position: relative;
 		right: 35px;
 		top: 30px;
@@ -48,7 +50,8 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
-		line-height: 1.2rem;
+		line-height: 1.5rem;
+		margin-bottom: -2rem;
 	}
 	.role,
 	.period,

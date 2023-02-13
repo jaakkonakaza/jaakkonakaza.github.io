@@ -14,7 +14,8 @@ const config: Config = {
 			lightMode: 'Light Mode',
 			beamex: 'Beamex',
 			beamexRole: 'Software Engineer',
-			beamexDescription: '',
+			beamexDescription:
+				'As a key contributor to the development of an app for smart glasses running Android, I utilized my expertise in React Native to design and build a solution for calibrating factory equipment using machine vision. I played a significant role in creating a user-friendly interface and ensuring the functionality of the app met the needs of the client. My problem-solving skills were utilized to assist my team in overcoming technical obstacles, and I demonstrated my versatility by developing a custom Expo module for BLE Peripheral communication using Kotlin. I also set up a CI pipeline in Azure DevOps, running unit tests and code style checks automatically to maintain code quality.',
 			beamexPeriod: 'Aug 2022 - Present',
 			aalto: 'Aalto University',
 			assistantRole: 'Head Teaching Assistant',

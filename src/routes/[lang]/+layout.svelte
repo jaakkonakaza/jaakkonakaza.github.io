@@ -50,11 +50,21 @@
 		document.body.className = theme;
 	};
 
+	const mobileWidth = 815;
+	let isMobileWidth = false;
+	let resizeObserver: ResizeObserver;
+
 	onMount(async () => {
 		darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
 			setDarkMode(event.matches);
 		});
+		resizeObserver = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				isMobileWidth = entry.contentRect.width < mobileWidth;
+			}
+		});
+		resizeObserver.observe(document.body);
 		await tick();
 		loaded = true;
 	});
@@ -75,7 +85,7 @@
 		</div>
 		<nav class="column" id="nav-content">
 			<ProfilePhoto {darkMode} {lang} />
-			{#if (browser && document.body.getBoundingClientRect().width > 815) || $page.route.id === '/[lang]'}
+			{#if !isMobileWidth || $page.route.id === '/[lang]'}
 				<div
 					class="column {$page.route.id !== '/[lang]' ? 'links-hidden' : ''}"
 					in:blurIn
@@ -160,7 +170,7 @@
 	.column {
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 0;
+		padding: 0;
 		gap: 2rem;
 	}
 
@@ -174,10 +184,28 @@
 		font-weight: 900;
 		padding: 0.2rem 0rem;
 	}
+
+	#nav-content {
+		justify-content: center;
+	}
+
+	#page-content {
+		overflow-y: auto;
+		height: 100vh;
+		margin-right: 3rem;
+	}
 	@media (max-width: 815px) {
 		#container {
 			grid-template-columns: 1fr;
-			grid-template-rows: 4vh 1fr 1fr 0;
+			grid-template-rows: 4vh auto auto 0;
+			overflow: auto;
+			height: 100vh;
+		}
+
+		#page-content {
+			height: fit-content;
+			overflow-y: unset;
+			margin-right: 0;
 		}
 
 		.column {

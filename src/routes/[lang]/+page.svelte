@@ -11,7 +11,7 @@
 	<title>Jaakko Nakaza</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut>
+<div in:blurIn out:blurOut id="about-container">
 	<div id="name-container">
 		<Name />
 	</div>
@@ -21,6 +21,12 @@
 </div>
 
 <style>
+	#about-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+	}
 	p {
 		font-size: 1rem;
 		line-height: 2rem;
