@@ -1,15 +1,8 @@
 <script lang="ts">
-	import bgImageDark from '$lib/assets/bg-dark.jpg';
-	import bgImageLight from '$lib/assets/bg-light.jpg';
-
 	export let backgroundClass: string | undefined;
 </script>
 
-<div
-	id="background"
-	class={backgroundClass}
-	style="--background-image-dark: url({bgImageDark}); --background-image-light: url({bgImageLight})"
-/>
+<div id="background" class={backgroundClass} />
 <div id="background-noise" />
 
 <style>
