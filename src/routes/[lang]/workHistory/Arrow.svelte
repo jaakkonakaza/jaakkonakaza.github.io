@@ -23,7 +23,7 @@
 	.arrow:before,
 	.arrow:after {
 		content: '';
-		background: #fff;
+		background: var(--fg-color);
 		position: absolute;
 		top: 100%;
 		height: 1.2px;
