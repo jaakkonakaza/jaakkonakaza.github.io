@@ -267,6 +267,12 @@ function listen(node, event, handler, options) {
   node.addEventListener(event, handler, options);
   return () => node.removeEventListener(event, handler, options);
 }
+function stop_propagation(fn) {
+  return function(event) {
+    event.stopPropagation();
+    return fn.call(this, event);
+  };
+}
 function attr(node, attribute, value) {
   if (value == null)
     node.removeAttribute(attribute);
@@ -475,6 +481,15 @@ function onMount(fn) {
 }
 function afterUpdate(fn) {
   get_current_component().$$.after_update.push(fn);
+}
+function onDestroy(fn) {
+  get_current_component().$$.on_destroy.push(fn);
+}
+function bubble(component, event) {
+  const callbacks = component.$$.callbacks[event.type];
+  if (callbacks) {
+    callbacks.slice().forEach((fn) => fn.call(this, event));
+  }
 }
 const dirty_components = [];
 const binding_callbacks = [];
@@ -849,6 +864,7 @@ class SvelteComponent {
   }
 }
 export {
+  bubble as $,
   destroy_component as A,
   tick as B,
   noop as C,
@@ -874,8 +890,10 @@ export {
   add_flush_callback as W,
   get_store_value as X,
   action_destroyer as Y,
-  destroy_each as Z,
+  onDestroy as Z,
+  stop_propagation as _,
   space as a,
+  destroy_each as a0,
   insert_hydration as b,
   claim_space as c,
   check_outros as d,

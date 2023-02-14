@@ -1,5 +1,4 @@
-import { X as get_store_value } from "./index-4bc72cb7.js";
-import { n as navigating } from "./stores-dd10c2d2.js";
+import "./index-72c9b203.js";
 function cubicInOut(t) {
   return t < 0.5 ? 4 * t * t * t : 0.5 * Math.pow(2 * t - 2, 3) + 1;
 }
@@ -15,13 +14,9 @@ function blur(node, { delay = 0, duration: duration2 = 400, easing = cubicInOut,
     css: (_t, u) => `opacity: ${target_opacity - od * u}; filter: ${f} blur(${u * amount}px);`
   };
 }
-const isSameSite = () => {
-  var _a, _b, _c, _d;
-  return ((_b = (_a = get_store_value(navigating)) == null ? void 0 : _a.from) == null ? void 0 : _b.params) === ((_d = (_c = get_store_value(navigating)) == null ? void 0 : _c.to) == null ? void 0 : _d.params);
-};
 const duration = 200;
-const blurIn = (node) => blur(node, { delay: isSameSite() ? 0 : duration, duration });
-const blurOut = (node) => blur(node, { duration: isSameSite() ? 0 : duration });
+const blurIn = (node) => blur(node, { delay: 0, duration });
+const blurOut = (node) => blur(node, { duration });
 export {
   blurIn as a,
   blur as b,

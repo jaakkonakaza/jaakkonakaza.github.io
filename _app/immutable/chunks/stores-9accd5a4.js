@@ -1,5 +1,5 @@
-import "./index-4bc72cb7.js";
-import { s as stores } from "./singletons-dda2a49f.js";
+import "./index-72c9b203.js";
+import { s as stores } from "./singletons-d75ad7ac.js";
 const getStores = () => {
   const stores$1 = stores;
   return {
@@ -19,13 +19,6 @@ const page = {
     return store.subscribe(fn);
   }
 };
-const navigating = {
-  subscribe(fn) {
-    const store = getStores().navigating;
-    return store.subscribe(fn);
-  }
-};
 export {
-  navigating as n,
   page as p
 };

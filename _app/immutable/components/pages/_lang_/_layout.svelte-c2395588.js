@@ -1,8 +1,8 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-4bc72cb7.js";
-import { t, l as locale } from "../../../chunks/translations-978d7dd3.js";
-import { p as page } from "../../../chunks/stores-dd10c2d2.js";
-import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-c5b5585c.js";
-import { N as Name } from "../../../chunks/Name-2b6464ba.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-72c9b203.js";
+import { t, l as locale } from "../../../chunks/translations-931747f1.js";
+import { p as page } from "../../../chunks/stores-9accd5a4.js";
+import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-e613ac26.js";
+import { N as Name } from "../../../chunks/Name-db0adf49.js";
 const _900 = "";
 const _400$1 = "";
 const _400 = "";
@@ -276,13 +276,18 @@ function create_fragment$2(ctx) {
       this.h();
     },
     l(nodes) {
-      a = claim_element(nodes, "A", { href: true, class: true });
+      a = claim_element(nodes, "A", {
+        "data-sveltekit-preload-data": true,
+        href: true,
+        class: true
+      });
       var a_nodes = children(a);
       t_1 = claim_text(a_nodes, t_1_value);
       a_nodes.forEach(detach);
       this.h();
     },
     h() {
+      attr(a, "data-sveltekit-preload-data", "hover");
       attr(a, "href", a_href_value = "/" + /*$lang*/
       ctx[2] + "/" + /*location*/
       ctx[0]);
@@ -729,26 +734,26 @@ function create_if_block(ctx) {
       this.h();
     },
     h() {
-      attr(div0, "class", "link-group svelte-4bi8w4");
+      attr(div0, "class", "link-group svelte-co2i6n");
       attr(a0, "href", "https://github.com/jaakkonakaza");
-      attr(a0, "class", "svelte-4bi8w4");
+      attr(a0, "class", "svelte-co2i6n");
       attr(a1, "href", "https://www.linkedin.com/in/jaakkonakaza/");
-      attr(a1, "class", "svelte-4bi8w4");
-      attr(div1, "class", "link-group svelte-4bi8w4");
-      attr(button, "class", "svelte-4bi8w4");
+      attr(a1, "class", "svelte-co2i6n");
+      attr(div1, "class", "link-group svelte-co2i6n");
+      attr(button, "class", "svelte-co2i6n");
       attr(a2, "data-sveltekit-preload-data", "tap");
       attr(a2, "href", "/en");
-      attr(a2, "class", "svelte-4bi8w4");
+      attr(a2, "class", "svelte-co2i6n");
       attr(a3, "data-sveltekit-preload-data", "tap");
       attr(a3, "href", "/fi");
-      attr(a3, "class", "svelte-4bi8w4");
+      attr(a3, "class", "svelte-co2i6n");
       attr(a4, "data-sveltekit-preload-data", "tap");
       attr(a4, "href", "/ja");
-      attr(a4, "class", "svelte-4bi8w4");
+      attr(a4, "class", "svelte-co2i6n");
       attr(div2, "id", "languages");
-      attr(div2, "class", "svelte-4bi8w4");
+      attr(div2, "class", "svelte-co2i6n");
       attr(div3, "class", div3_class_value = "column " + /*$page*/
-      (ctx[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-4bi8w4");
+      (ctx[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-co2i6n");
     },
     m(target, anchor) {
       insert_hydration(target, div3, anchor);
@@ -829,7 +834,7 @@ function create_if_block(ctx) {
         set_data(t7, t7_value);
       if (!current || dirty & /*$page*/
       2 && div3_class_value !== (div3_class_value = "column " + /*$page*/
-      (ctx2[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-4bi8w4")) {
+      (ctx2[1].route.id !== "/[lang]" ? "links-hidden" : "") + " svelte-co2i6n")) {
         attr(div3, "class", div3_class_value);
       }
     },
@@ -887,7 +892,6 @@ function create_key_block(ctx) {
   let t3;
   let t4;
   let div2;
-  let div3_style_value;
   let div3_intro;
   let current;
   function background_backgroundClass_binding(value) {
@@ -941,7 +945,7 @@ function create_key_block(ctx) {
     l(nodes) {
       claim_component(background.$$.fragment, nodes);
       t0 = claim_space(nodes);
-      div3 = claim_element(nodes, "DIV", { id: true, style: true, class: true });
+      div3 = claim_element(nodes, "DIV", { id: true, class: true });
       var div3_nodes = children(div3);
       div0 = claim_element(div3_nodes, "DIV", {});
       children(div0).forEach(detach);
@@ -965,15 +969,12 @@ function create_key_block(ctx) {
       this.h();
     },
     h() {
-      var _a;
-      attr(div1, "class", "column svelte-4bi8w4");
+      attr(div1, "class", "column svelte-co2i6n");
       attr(div1, "id", "page-content");
-      attr(nav, "class", "column svelte-4bi8w4");
+      attr(nav, "class", "column svelte-co2i6n");
       attr(nav, "id", "nav-content");
       attr(div3, "id", "container");
-      attr(div3, "style", div3_style_value = /*$page*/
-      ((_a = ctx[1].route.id) == null ? void 0 : _a.includes("graphicDesign")) ? "scroll-snap-type: y mandatory;" : "");
-      attr(div3, "class", "svelte-4bi8w4");
+      attr(div3, "class", "svelte-co2i6n");
     },
     m(target, anchor) {
       mount_component(background, target, anchor);
@@ -994,7 +995,6 @@ function create_key_block(ctx) {
       current = true;
     },
     p(ctx2, dirty) {
-      var _a;
       const background_changes = {};
       if (!updating_backgroundClass && dirty & /*backgroundClass*/
       32) {
@@ -1048,11 +1048,6 @@ function create_key_block(ctx) {
           if_block = null;
         });
         check_outros();
-      }
-      if (!current || dirty & /*$page*/
-      2 && div3_style_value !== (div3_style_value = /*$page*/
-      ((_a = ctx2[1].route.id) == null ? void 0 : _a.includes("graphicDesign")) ? "scroll-snap-type: y mandatory;" : "")) {
-        attr(div3, "style", div3_style_value);
       }
     },
     i(local) {
