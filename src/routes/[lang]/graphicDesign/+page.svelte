@@ -57,14 +57,13 @@
 		gap: 10rem;
 		padding-right: 5rem;
 	}
+	.info {
+		padding: 0 2rem;
+	}
 	@media (max-width: 815px) {
 		#graphic-container {
 			margin-top: 5rem;
 			padding-right: 0;
-		}
-
-		.info {
-			padding: 0 2rem;
 		}
 	}
 	#graphic-container img {
@@ -78,6 +77,7 @@
 		position: relative;
 		height: 100vh;
 		scroll-snap-align: start;
+		backdrop-filter: blur(100px);
 	}
 	.blur {
 		position: absolute;
