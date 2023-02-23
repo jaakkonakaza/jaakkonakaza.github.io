@@ -1,8 +1,29 @@
 <script lang="ts">
+	import { onDestroy, onMount } from 'svelte';
+
 	export let backgroundClass: string | undefined;
+	let backgroundRef: HTMLElement;
+
+	const mouseMoveEvent = (ev: MouseEvent) => {
+		const { x, y } = backgroundRef.getBoundingClientRect();
+		const { clientWidth, clientHeight } = backgroundRef;
+		const { clientX, clientY } = ev;
+
+		const translateX = (clientX - x - clientWidth / 2) / 50;
+		const translateY = (clientY - y - clientHeight / 2) / 50;
+
+		backgroundRef.animate(
+			{ transform: `scale(1.05) translate(${translateX}px, ${translateY}px)` },
+			{ duration: 3000, easing: 'ease-in-out', fill: 'forwards' }
+		);
+	};
+
+	onMount(() => {
+		window.addEventListener('mousemove', mouseMoveEvent);
+	});
 </script>
 
-<div id="background" class={backgroundClass} />
+<div id="background" bind:this={backgroundRef} class={backgroundClass} />
 <div id="background-noise" />
 
 <style>
@@ -17,6 +38,7 @@
 		height: 100vh;
 		width: 100vw;
 		z-index: -2;
+		transform: scale(1.05);
 
 		background-size: cover;
 
