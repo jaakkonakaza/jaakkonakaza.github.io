@@ -1,4 +1,4 @@
-import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-72c9b203.js";
+import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, o as onMount, v as binding_callbacks, e as empty, T as head_selector, B as tick, U as globals, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-72c9b203.js";
 import { t, l as locale } from "../../../chunks/translations-931747f1.js";
 import { p as page } from "../../../chunks/stores-9accd5a4.js";
 import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-dab8199c.js";
@@ -425,12 +425,13 @@ function create_fragment$1(ctx) {
       attr(div0, "class", div0_class_value = null_to_empty(
         /*backgroundClass*/
         ctx[0]
-      ) + " svelte-jo3p8u");
+      ) + " svelte-79rp4a");
       attr(div1, "id", "background-noise");
-      attr(div1, "class", "svelte-jo3p8u");
+      attr(div1, "class", "svelte-79rp4a");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
+      ctx[2](div0);
       insert_hydration(target, t2, anchor);
       insert_hydration(target, div1, anchor);
     },
@@ -439,7 +440,7 @@ function create_fragment$1(ctx) {
       1 && div0_class_value !== (div0_class_value = null_to_empty(
         /*backgroundClass*/
         ctx2[0]
-      ) + " svelte-jo3p8u")) {
+      ) + " svelte-79rp4a")) {
         attr(div0, "class", div0_class_value);
       }
     },
@@ -448,6 +449,7 @@ function create_fragment$1(ctx) {
     d(detaching) {
       if (detaching)
         detach(div0);
+      ctx[2](null);
       if (detaching)
         detach(t2);
       if (detaching)
@@ -457,11 +459,38 @@ function create_fragment$1(ctx) {
 }
 function instance$1($$self, $$props, $$invalidate) {
   let { backgroundClass } = $$props;
+  let backgroundRef;
+  const mouseMoveEvent = (ev) => {
+    const { x, y } = backgroundRef.getBoundingClientRect();
+    const { clientWidth, clientHeight } = backgroundRef;
+    const { clientX, clientY } = ev;
+    const translateX = (clientX - x - clientWidth / 2) / 50;
+    const translateY = (clientY - y - clientHeight / 2) / 50;
+    backgroundRef.animate(
+      {
+        transform: `scale(1.05) translate(${translateX}px, ${translateY}px)`
+      },
+      {
+        duration: 3e3,
+        easing: "ease-in-out",
+        fill: "forwards"
+      }
+    );
+  };
+  onMount(() => {
+    window.addEventListener("mousemove", mouseMoveEvent);
+  });
+  function div0_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      backgroundRef = $$value;
+      $$invalidate(1, backgroundRef);
+    });
+  }
   $$self.$$set = ($$props2) => {
     if ("backgroundClass" in $$props2)
       $$invalidate(0, backgroundClass = $$props2.backgroundClass);
   };
-  return [backgroundClass];
+  return [backgroundClass, backgroundRef, div0_binding];
 }
 class Background extends SvelteComponent {
   constructor(options) {
