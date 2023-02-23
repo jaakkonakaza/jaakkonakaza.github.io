@@ -7,7 +7,7 @@
 	<title>Jaakko Nakaza|Projects</title>
 </svelte:head>
 
-<div out:blurOut id="projects-container">
+<div in:blurIn id="projects-container">
 	<div class="year">2023</div>
 	<div class="grid">
 		<Project

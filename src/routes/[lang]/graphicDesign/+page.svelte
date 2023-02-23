@@ -10,7 +10,7 @@
 	<title>Jaakko Nakaza|Graphic Design</title>
 	<style>
 		html {
-			scroll-snap-type: y mandatory;
+			scroll-snap-type: y proximity;
 		}
 	</style>
 </svelte:head>
