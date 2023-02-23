@@ -1,7 +1,7 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, a as space, x as create_component, l as claim_element, m as children, c as claim_space, h as detach, y as claim_component, p as set_style, n as attr, M as src_url_equal, b as insert_hydration, K as append_hydration, z as mount_component, f as transition_in, g as group_outros, t as transition_out, d as check_outros, A as destroy_component, L as component_subscribe, q as text, r as claim_text, N as add_render_callback, O as create_in_transition, P as create_out_transition, C as noop, D as subscribe, Q as listen, u as set_data, E as run_all, R as null_to_empty, e as empty, T as head_selector, o as onMount, B as tick, U as globals, v as binding_callbacks, V as bind, W as add_flush_callback, G as create_slot, H as update_slot_base, I as get_all_dirty_from_scope, J as get_slot_changes } from "../../../chunks/index-72c9b203.js";
 import { t, l as locale } from "../../../chunks/translations-931747f1.js";
 import { p as page } from "../../../chunks/stores-9accd5a4.js";
-import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-e613ac26.js";
+import { b as blur, a as blurIn, c as blurOut } from "../../../chunks/customBlur-dab8199c.js";
 import { N as Name } from "../../../chunks/Name-db0adf49.js";
 const _900 = "";
 const _400$1 = "";
@@ -276,18 +276,13 @@ function create_fragment$2(ctx) {
       this.h();
     },
     l(nodes) {
-      a = claim_element(nodes, "A", {
-        "data-sveltekit-preload-data": true,
-        href: true,
-        class: true
-      });
+      a = claim_element(nodes, "A", { href: true, class: true });
       var a_nodes = children(a);
       t_1 = claim_text(a_nodes, t_1_value);
       a_nodes.forEach(detach);
       this.h();
     },
     h() {
-      attr(a, "data-sveltekit-preload-data", "hover");
       attr(a, "href", a_href_value = "/" + /*$lang*/
       ctx[2] + "/" + /*location*/
       ctx[0]);
@@ -430,9 +425,9 @@ function create_fragment$1(ctx) {
       attr(div0, "class", div0_class_value = null_to_empty(
         /*backgroundClass*/
         ctx[0]
-      ) + " svelte-13lju9z");
+      ) + " svelte-jo3p8u");
       attr(div1, "id", "background-noise");
-      attr(div1, "class", "svelte-13lju9z");
+      attr(div1, "class", "svelte-jo3p8u");
     },
     m(target, anchor) {
       insert_hydration(target, div0, anchor);
@@ -444,7 +439,7 @@ function create_fragment$1(ctx) {
       1 && div0_class_value !== (div0_class_value = null_to_empty(
         /*backgroundClass*/
         ctx2[0]
-      ) + " svelte-13lju9z")) {
+      ) + " svelte-jo3p8u")) {
         attr(div0, "class", div0_class_value);
       }
     },

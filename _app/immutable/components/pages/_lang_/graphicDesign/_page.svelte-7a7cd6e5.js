@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, T as head_selector, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, M as src_url_equal, n as attr, K as append_hydration, b as insert_hydration, Y as action_destroyer, C as noop, N as add_render_callback, E as run_all, O as create_in_transition } from "../../../../chunks/index-72c9b203.js";
-import { a as blurIn } from "../../../../chunks/customBlur-e613ac26.js";
+import { a as blurIn } from "../../../../chunks/customBlur-dab8199c.js";
 import { g as goto } from "../../../../chunks/navigation-90bf89fc.js";
 const aPlusCourses = "" + new URL("../../../../assets/apluscourses-3ac0e90f.png", import.meta.url).href;
 const aPlusFooter = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdwAAAAyCAYAAABGQxkxAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA/RJREFUeJzt3F2LG2UYBuBnTLKERJAuRLZ0f8KuInhWRfBXqPiBiLWUoiAqiuiBIooVQSmlVkT8QP0VgmjPBNHdn7BlFwNbBDOETMJ41MOkb+i7M0Wu6/R55p2bHL17L0wREXUAAAAAAAB35J62AwAAAAAAwP+Bwh0AAAAAADJQuAMAAAAAQAYKdwAAAAAAyEDhDgAAAAAAGSjcAQAAAAAgA4U7AAAAAABk0G07AAAAnJTRaBRbW6eXzo9vHseNg4MGE6UpiiJ2dnZX7uzv70Vd1w0lSndmezs2T20unR8dHcZ4PG4wEQAANKeIiLvvlg4AABm8+trr8eFHHy+df//dt/HC8881mCjNcDiM43/+Xbmzed+9MZlMGkqU7quvv4mnn3l26fytN9+ITz+51GAiAABojk/KAAAAAABABgp3AAAAAADIQOEOAAAAAAAZKNwBAAAAACADhTsAAAAAAGSgcAcAAAAAgAwU7gAAAAAAkIHCHQAAAAAAMlC4AwAAAABABgp3AAAAAADIoNt2AAAASLWxsRG9Xi95/3a73W43hsNh8nmLxSKm02ny/i1FUcRgMEjeT9ld57yIiLIso67rtZ6JiOj3+9HpdJL3u93Vf2L0er21fvOqqmI2myXvAwBAm4qIWP/WDQAALbh85Wq8eO6l1t5//fpv8fhjj6793O7uA/H7H3+eQKJ0Dz/0YOzt/bX2cz//8mucPfvICSRK8+W1L+LihfOtvR8AANbhkzIAAAAAAJCBwh0AAAAAADJQuAMAAAAAQAYKdwAAAAAAyEDhDgAAAAAAGSjcAQAAAAAgA4U7AAAAAABkUERE3XYIAABIsbGxEb1eL3n/4suvxHvvf7B0/tOPP8SF8+eSz1ssFjGdTpP3bymKIgaDQfL+YDCIg8O/V+5sn74/yrJMPrMsy6jr9a/+/X4/Op1O8v6Vq9fiiSefWjp/95234/LnnyWfV1VVzGaz5H0AAGhTt+0AAACQajabrVW+VlW1cj6fz2MymdxprNuq6zr7e8qybCT7uv9gmM/nK+dVVTWSGwAA2uCTMgAAAAAAkIHCHQAAAAAAMlC4AwAAAABABgp3AAAAAADIQOEOAAAAAAAZKNwBAAAAACADhTsAAAAAAGSgcAcAAAAAgAwU7gAAAAAAkIHCHQAAAAAAMigiom47BAAAnITRaBRbW6eXzo9vHseNg4MGE6UpiiJ2dnZX7uzv70Vd331X+TPb27F5anPp/OjoMMbjcYOJAACgOQp3AAAAAADIwCdlAAAAAAAgA4U7AAAAAABkoHAHAAAAAIAMFO4AAAAAAJCBwh0AAAAAADJQuAMAAAAAQAYKdwAAAAAAyOA/Gw6q/ELWUYsAAAAASUVORK5CYII=";
@@ -70,7 +70,7 @@ function create_fragment(ctx) {
   return {
     c() {
       style = element("style");
-      t0 = text("html {\n			scroll-snap-type: y mandatory;\n		}");
+      t0 = text("html {\n			scroll-snap-type: y proximity;\n		}");
       t1 = space();
       div4 = element("div");
       div3 = element("div");
@@ -111,10 +111,10 @@ function create_fragment(ctx) {
       this.h();
     },
     l(nodes) {
-      const head_nodes = head_selector("svelte-n4vwhq", document.head);
+      const head_nodes = head_selector("svelte-197nvfo", document.head);
       style = claim_element(head_nodes, "STYLE", {});
       var style_nodes = children(style);
-      t0 = claim_text(style_nodes, "html {\n			scroll-snap-type: y mandatory;\n		}");
+      t0 = claim_text(style_nodes, "html {\n			scroll-snap-type: y proximity;\n		}");
       style_nodes.forEach(detach);
       head_nodes.forEach(detach);
       t1 = claim_space(nodes);

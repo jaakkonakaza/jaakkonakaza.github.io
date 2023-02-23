@@ -14,7 +14,7 @@ function blur(node, { delay = 0, duration: duration2 = 400, easing = cubicInOut,
     css: (_t, u) => `opacity: ${target_opacity - od * u}; filter: ${f} blur(${u * amount}px);`
   };
 }
-const duration = 200;
+const duration = 300;
 const blurIn = (node) => blur(node, { delay: 0, duration });
 const blurOut = (node) => blur(node, { duration });
 export {
