@@ -2,28 +2,21 @@
 	import { t, locale } from '$lib/translations';
 
 	$: lang = locale ?? 'en';
-	export let company: string;
-	export let role: string;
-	export let description: string;
-	export let period: string;
-	export let link: string | undefined = undefined;
+	export let name: string;
 </script>
 
 <div class="item">
 	<div class="info">
 		<div class="title">
-			<h2>{company}</h2>
-			<h2 class="role">{role}</h2>
+			<h2>{@html $t(`workInfo.${name}.company`)}</h2>
+			<h2 class="role">{@html $t(`workInfo.${name}.role`)}</h2>
 		</div>
 		<p>
-			{description}
-			{#if link}
-				(see <a href="/{$lang}/graphicDesign#{link}">Graphic Design</a>).
-			{/if}
+			{@html $t(`workInfo.${name}.description`)}
 		</p>
 	</div>
 	<div class="circle">
-		<p class="period">{period}</p>
+		<p class="period">{$t(`workInfo.${name}.period`)}</p>
 	</div>
 </div>
 
@@ -32,6 +25,7 @@
 		display: flex;
 		position: relative;
 		align-items: center;
+		word-wrap: break-word;
 	}
 	.circle {
 		width: 30px;
@@ -44,10 +38,11 @@
 		-webkit-backdrop-filter: blur(20px);
 	}
 	.period {
-		transform: rotate(-90deg) translateX(-50%);
+		transform: translateX(-50%) rotate(-90deg);
 		position: relative;
-		right: 35px;
-		top: 30px;
+		left: 50%;
+		margin-left: -35px;
+		width: fit-content;
 		white-space: nowrap;
 	}
 	.info {

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
+	import type { ProjectProps } from './+page.svelte';
+	import ProjectStatus from './ProjectStatus.svelte';
+	import { t } from '$lib/translations';
 
-	export let title: string;
-	export let description: string;
-	export let tech: string;
-
-	let popup = false;
+	export let projectInfo: ProjectProps;
+	export let selectedProject: ProjectProps | undefined;
 
 	let buttonRef: HTMLElement;
 
@@ -37,58 +37,25 @@
 	});
 </script>
 
-{#if popup}
-	<div
-		on:click|stopPropagation={() => (popup = false)}
-		on:keypress|stopPropagation={() => (popup = false)}
-		id="popup-overlay"
-	>
-		<div on:click|stopPropagation on:keypress|stopPropagation id="popup">
-			<h2>{title}</h2>
-			<p>{description}</p>
-			<small>{tech}</small>
-		</div>
+<button
+	on:click={() => (selectedProject = projectInfo)}
+	bind:this={buttonRef}
+	class="project {selectedProject ? 'popup-visible' : 'project-translate'}"
+>
+	<div class="state">
+		<ProjectStatus state={projectInfo.state} />
 	</div>
-{/if}
-
-<button on:click={() => (popup = true)} bind:this={buttonRef} class="project">
-	<h2>{title}</h2>
-	<p>{description}</p>
-	<small>{tech}</small>
+	<h2>{$t(`projectInfo.${projectInfo.id}.title`)}</h2>
+	<p>{$t(`projectInfo.${projectInfo.id}.description`)}</p>
+	<small>{projectInfo.tech}</small>
 </button>
 
 <style>
-	#popup-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		z-index: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: #00000060;
-	}
-
-	#popup {
-		border: 1px solid var(--fg-color);
-		border-radius: 1rem;
-		backdrop-filter: blur(20px) brightness(140%);
-		width: 80vw;
-		height: 86vh;
-		z-index: 2;
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
-	}
-
 	.project {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		text-align: start;
 		justify-content: space-between;
 		height: 10rem;
 
@@ -105,6 +72,22 @@
 		transform: translateZ(12px);
 	}
 
+	@media (max-width: 815px) {
+		.project {
+			height: 12rem;
+		}
+	}
+
+	.state {
+		align-self: center;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	.project-translate {
+		translate: 0px 0px 10px;
+	}
+
 	h2 {
 		margin-bottom: 0;
 	}
@@ -113,14 +96,20 @@
 		text-align: left;
 	}
 
-	.project:hover {
-		transform: perspective(var(--clientWidth)) rotateX(var(--rotateX)) rotateY(var(--rotateY))
-			scale3d(1, 1, 1);
+	.popup-visible {
+		transform: translateZ(0px) !important;
 	}
 
-	.project:active {
-		transform: perspective(var(--clientWidth)) rotateX(var(--rotateX)) rotateY(var(--rotateY))
-			scale3d(0.9, 0.9, 0.9);
+	@media (pointer: fine) {
+		.project:hover {
+			transform: perspective(var(--clientWidth)) rotateX(var(--rotateX)) rotateY(var(--rotateY))
+				scale3d(1, 1, 1);
+		}
+
+		.project:active {
+			transform: perspective(var(--clientWidth)) rotateX(var(--rotateX)) rotateY(var(--rotateY))
+				scale3d(0.9, 0.9, 0.9);
+		}
 	}
 
 	.project::after {

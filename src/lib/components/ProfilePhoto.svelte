@@ -4,6 +4,7 @@
 	import profilePhoto from '$lib/assets/profile-photo.jpg';
 	import type { Writable } from 'svelte/store';
 	import Name from './Name.svelte';
+	import { t } from '$lib/translations';
 
 	export let lang: Writable<string>;
 	export let darkMode: boolean;
@@ -19,7 +20,7 @@
 		alt=""
 	/>
 	{#if $page.route.id !== '/[lang]'}
-		<span in:blur out:blur class="home-link"> HOME </span>
+		<span in:blur out:blur class="home-link"> {$t('home')} </span>
 	{/if}
 </a>
 

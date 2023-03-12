@@ -1,6 +1,69 @@
+<script lang="ts" context="module">
+	export enum ProjectState {
+		Completed,
+		InProgress,
+		Planned
+	}
+
+	export type ProjectProps = {
+		id: string;
+		repoLink?: string;
+		projectLink?: string;
+		tech: string;
+		state: ProjectState;
+	};
+</script>
+
 <script lang="ts">
-	import { blurIn, blurOut } from '$lib/customBlur';
+	import { blurIn } from '$lib/customBlur';
+	import Popup from './Popup.svelte';
 	import Project from './Project.svelte';
+	import { t } from '$lib/translations';
+
+	const projects2023: Array<ProjectProps> = [
+		{
+			id: 'smile',
+			tech: 'Scala',
+			state: ProjectState.InProgress
+		},
+		{
+			id: 'prefecturePursuit',
+			tech: '???',
+			state: ProjectState.Planned
+		},
+		{
+			id: 'happaChat',
+			tech: 'SvelteKit / Kotlin / Swift',
+			state: ProjectState.Planned
+		},
+		{
+			id: 'aiCapitalist',
+			tech: '???',
+			state: ProjectState.Planned
+		},
+		{
+			id: 'modulatedMonstrosities',
+			tech: '???',
+			state: ProjectState.Planned
+		}
+	];
+
+	const projectsOld: Array<ProjectProps> = [
+		{
+			id: 'aPlusCourses',
+			tech: 'React / GitHub Pages',
+			repoLink: 'https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder',
+			projectLink: 'https://aalto-letech.github.io/aplus-courses-tutorial-builder/',
+			state: ProjectState.Completed
+		},
+		{
+			id: 'vanishedVisions',
+			tech: 'Scala.js',
+			state: ProjectState.Completed
+		}
+	];
+
+	let selectedProject: ProjectProps | undefined;
 </script>
 
 <svelte:head>
@@ -8,35 +71,18 @@
 </svelte:head>
 
 <div in:blurIn id="projects-container">
+	<Popup bind:selectedProject />
 	<div class="year">2023</div>
 	<div class="grid">
-		<Project
-			title="SMILE"
-			description="Library for creating and manipulating images"
-			tech="Scala"
-		/>
-		<Project
-			title="Prefecture Pursuit"
-			description="Browser game for learning the prefectures of Japan"
-			tech="???"
-		/>
-		<Project
-			title="happaChat"
-			description="Chat application for web, Android and iOS"
-			tech="SvelteKit \ Kotlin \ Swift"
-		/>
-
-		<Project title="AI Capitalist" description="AI powered stock trading bot" tech="???" />
-		<Project title="Modulated Monstrosities" description="Browser-based modular synth" tech="???" />
+		{#each projects2023 as projectInfo}
+			<Project bind:selectedProject {projectInfo} />
+		{/each}
 	</div>
 	<div class="year">2020-2022</div>
 	<div class="grid">
-		<Project
-			title="A+ Courses Tutorial Builder"
-			description="Web app for configuring IDE tutorials"
-			tech="React \ GitHub Pages"
-		/>
-		<Project title="Vanished Visions" description="Text adventure game" tech="Scala.js" />
+		{#each projectsOld as projectInfo}
+			<Project bind:selectedProject {projectInfo} />
+		{/each}
 	</div>
 </div>
 
@@ -63,7 +109,7 @@
 	.year {
 		text-align: center;
 		font-size: 2rem;
-		text-decoration: wavy underline;
+		text-decoration: underline;
 		padding: 1rem;
 	}
 </style>

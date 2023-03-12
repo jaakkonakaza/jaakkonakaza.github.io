@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let backgroundClass: string | undefined;
 	let backgroundRef: HTMLElement;
@@ -46,14 +46,14 @@
 	}
 
 	#background.green {
-		filter: hue-rotate(120deg);
+		filter: hue-rotate(120deg) saturate(1) brightness(1);
 	}
 	#background.green-hover {
 		filter: hue-rotate(120deg) saturate(0.3) brightness(0.8);
 	}
 
 	#background.blue {
-		filter: hue-rotate(180deg);
+		filter: hue-rotate(180deg) saturate(1) brightness(1);
 	}
 
 	#background.blue-hover {
@@ -61,19 +61,27 @@
 	}
 
 	#background.light-blue {
-		filter: hue-rotate(200deg);
+		filter: hue-rotate(200deg) saturate(1) brightness(1);
 	}
 
 	#background.pink {
-		filter: hue-rotate(-20deg);
+		filter: hue-rotate(-20deg) saturate(1) brightness(1);
+	}
+
+	#background.grey {
+		filter: hue-rotate(0) saturate(0) brightness(1);
+	}
+
+	#background.coral {
+		filter: hue-rotate(25deg) saturate(0.6) brightness(1);
 	}
 
 	#background.orange {
-		filter: hue-rotate(60deg);
+		filter: hue-rotate(50deg) saturate(1) brightness(1);
 	}
 
 	#background.orange-hover {
-		filter: hue-rotate(60deg) saturate(0.3) brightness(0.8);
+		filter: hue-rotate(50deg) saturate(0.3) brightness(0.8);
 	}
 
 	#background-noise {

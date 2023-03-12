@@ -4,7 +4,9 @@
 		Blue = 'blue',
 		LightBlue = 'light-blue',
 		Pink = 'pink',
-		Orange = 'orange'
+		Orange = 'orange',
+		Coral = 'coral',
+		Grey = 'grey'
 	}
 </script>
 
@@ -37,8 +39,12 @@
 			? BackgroundColor.Blue
 			: $page.url.hash === '#o1'
 			? BackgroundColor.LightBlue
-			: $page.url.hash === '#aPlusCourses'
+			: $page.url.hash === '#courses'
 			? BackgroundColor.Pink
+			: $page.url.hash === '#studios'
+			? BackgroundColor.Grey
+			: $page.url.hash === '#five'
+			? BackgroundColor.Coral
 			: $page.route.id === '/[lang]/graphicDesign'
 			? BackgroundColor.Orange
 			: undefined;
@@ -124,9 +130,10 @@
 						}}>{darkMode ? $t('lightMode') : $t('darkMode')}</button
 					>
 					<div id="languages">
-						<a data-sveltekit-preload-data="tap" href="/en">ENGLISH</a>
-						<a data-sveltekit-preload-data="tap" href="/fi">SUOMI</a>
-						<a data-sveltekit-preload-data="tap" href="/ja">日本語</a>
+						<a data-sveltekit-preload-data="tap" href="/en{$page.route.id?.substring(7)}">ENGLISH</a
+						>
+						<a data-sveltekit-preload-data="tap" href="/fi{$page.route.id?.substring(7)}">SUOMI</a>
+						<a data-sveltekit-preload-data="tap" href="/ja{$page.route.id?.substring(7)}">日本語</a>
 					</div>
 				</div>
 			{/if}
@@ -157,6 +164,7 @@
 	:global(.dark) #container {
 		--fg-color: #fffbfa;
 		--bg-color: #000000;
+		--bg-color-decimal: 0, 0, 0;
 	}
 
 	:global(a) {
@@ -174,6 +182,7 @@
 		background-attachment: fixed;
 		--fg-color: #262422;
 		--bg-color: #ffffff;
+		--bg-color-decimal: 255, 255, 255;
 		color: var(--fg-color);
 	}
 

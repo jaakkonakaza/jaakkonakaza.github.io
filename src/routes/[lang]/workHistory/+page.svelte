@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
-	import { blurIn, blurOut } from '$lib/customBlur';
+	import { blurIn } from '$lib/customBlur';
 	import WorkItem from './WorkItem.svelte';
 	import Arrow from './Arrow.svelte';
 </script>
@@ -10,26 +10,9 @@
 </svelte:head>
 
 <div in:blurIn id="work-container">
-	<WorkItem
-		company={$t('beamex')}
-		role={$t('beamexRole')}
-		description={$t('beamexDescription')}
-		period={$t('beamexPeriod')}
-	/>
-	<WorkItem
-		company={$t('aalto')}
-		role={$t('assistantRole')}
-		description={$t('assistantDescription')}
-		period={$t('assistantPeriod')}
-		link="o1"
-	/>
-	<WorkItem
-		company={$t('aalto')}
-		role={$t('aaltoRole')}
-		description={$t('aaltoDescription')}
-		period={$t('aaltoPeriod')}
-		link="aPlusCourses"
-	/>
+	<WorkItem name="beamex" />
+	<WorkItem name="assistant" />
+	<WorkItem name="courses" />
 	<div id="line">
 		{#each Array(3) as _, i}
 			<Arrow delay={400 + i * 300} {i} />
