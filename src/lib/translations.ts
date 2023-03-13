@@ -6,7 +6,7 @@ const japanese = {
 	name: '仲座ヤーッコ',
 	role: 'ソフト開発者',
 	about:
-		'私はフィンランド出身のソフトウェア開発者です。現在アールト大学でコンピュータサイエンスを学び、ソフトウェア開発者兼<wbr>ヘッド<wbr>ティーチング<wbr>アシスタント<wbr>として働いています。教育ツール、アプリケーション、ユーザーインターフェイスの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、Webアプリケーション開発のためのReact.jsとモバイルアプリケーション開発のためのReact Nativeに強い理解があります。また、グラフィックデザインにも長けており、いくつかのプロジェクトでロゴやブランディングのデザインを担当した経験もあります。ソフトウェア開発とデザインの専門知識を生かし、クライアントのニーズを満たす効率的でユーザーフレンドリーなソリューションを作成することができます。',
+		'私はフィンランド出身のソフトウェア開発者です。現在アールト大学でコンピューターサイエンスを学び、ソフトウェア開発者兼<wbr>ヘッド<wbr>ティーチング<wbr>アシスタント<wbr>として働いています。教育ツール、アプリケーション、ユーザーインターフェイスの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、Webアプリケーション開発のためのReact.jsとモバイルアプリケーション開発のためのReact Nativeに強い理解があります。また、グラフィックデザインにも長けており、いくつかのプロジェクトでロゴやブランディングのデザインを担当した経験もあります。ソフトウェア開発とデザインの専門知識を生かし、クライアントのニーズを満たす効率的でユーザーフレンドリーなソリューションを作成することができます。',
 	home: 'ホーム',
 	workHistory: '職歴',
 	projects: 'プロジェクト',
@@ -23,13 +23,13 @@ const japanese = {
 		assistant: {
 			company: 'アールト<wbr>大学',
 			role: 'ヘッド<wbr>ティーチング<wbr>アシスタント',
-			description: `Scalaによる入門プログラミングコースのヘッドティーチングアシスタントとして、私は年間約1000人の学生向けのコースを開発するチームの一員です。私の責任は、学生に対するガイダンスとサポートを提供すること、および採点目的の効果的な単体テストの作成と実装を含みます。2022年には、テストをScala 3に移行することで重要な役割を果たし、Docker技術の利用により採点プロセスの効率性を向上させるために取り組みました。さらに、グラフィックデザインのスキルを活用して、コースの視覚的魅力を高めました（<a href="/{$lang}/graphicDesign#o1">グラフィックデザイン</a>を参照）。\n\n<a href="https://plus.cs.aalto.fi/o1/">プログラミング１</a>`,
+			description: `Scalaによる入門プログラミングコースのヘッドティーチングアシスタントとして、私は年間約1000人の学生向けのコースを開発するチームの一員です。私の責任は、学生に対するガイダンスとサポートを提供すること、および採点目的の効果的な単体テストの作成と実装を含みます。2022年には、テストをScala 3に移行することで重要な役割を果たし、Docker技術の利用により採点プロセスの効率性を向上させるために取り組みました。さらに、グラフィックデザインのスキルを活用して、コースの視覚的魅力を高めました（<a href="/ja/graphicDesign#o1">グラフィックデザイン</a>を参照）。\n\n<a href="https://plus.cs.aalto.fi/o1/">プログラミング１</a>`,
 			period: '2021年6月 - 現在'
 		},
 		courses: {
 			company: 'アールト<wbr>大学',
 			role: 'ソフトウェア<wbr>エンジニア',
-			description: `IntelliJ IDEAのプラグイン開発チームのメンバーとして、Javaを始めとするプログラミング言語のスキルを磨きました。また、Python、Kotlin、Scala、Bashスクリプトなども扱ってきました。GitHub Actionsを使用して継続的インテグレーションを目的とした開発を行い、ロゴや<a href="https://github.com/Aalto-LeTech/aplus-courses">README</a>のビジュアル表現を含めたプロジェクト全体のデザインに貢献しました（<a href="/{$lang}/graphicDesign#courses">グラフィックデザイン</a>を参照）。\n\n2022年には、プラグイン向けのチュートリアルを作成するためのWebアプリケーションを設計・開発し、IntelliJでのチュートリアルのライブプレビューを提供するアプリケーションをReact.jsを使用して構築しました。このアプリケーションはGitHub Pagesを通じて公開されました。\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses チュートリアルビルダー</a>`,
+			description: `IntelliJ IDEAのプラグイン開発チームのメンバーとして、Javaを始めとするプログラミング言語のスキルを磨きました。また、Python、Kotlin、Scala、Bashスクリプトなども扱ってきました。GitHub Actionsを使用して継続的インテグレーションを目的とした開発を行い、ロゴや<a href="https://github.com/Aalto-LeTech/aplus-courses">README</a>のビジュアル表現を含めたプロジェクト全体のデザインに貢献しました（<a href="/ja/graphicDesign#courses">グラフィックデザイン</a>を参照）。\n\n2022年には、プラグイン向けのチュートリアルを作成するためのWebアプリケーションを設計・開発し、IntelliJでのチュートリアルのライブプレビューを提供するアプリケーションをReact.jsを使用して構築しました。このアプリケーションはGitHub Pagesを通じて公開されました。\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses チュートリアルビルダー</a>`,
 			period: '2021年1月 - 2022年12月'
 		}
 	},
@@ -130,13 +130,13 @@ const config: Config = {
 				assistant: {
 					company: 'Aalto University',
 					role: 'Head Teaching Assistant',
-					description: `As the Head Teaching Assistant for an introductory programming course in Scala, I am part of a team developing a course for approximately 1000 students each year. My responsibilities include providing guidance and support to students, as well as creating and implementing effective unit tests for grading purposes. In 2022, I was instrumental in transitioning the tests to Scala 3, and worked on improving the efficiency of the grading process through the utilization of Docker technology. Additionally, I used my skills in graphic design to enhance the visual appeal of the course (see <a href="/{$lang}/graphicDesign#o1">Graphic Design</a>).\n\n<a href="https://plus.cs.aalto.fi/o1/">Programming 1</a>`,
+					description: `As the Head Teaching Assistant for an introductory programming course in Scala, I am part of a team developing a course for approximately 1000 students each year. My responsibilities include providing guidance and support to students, as well as creating and implementing effective unit tests for grading purposes. In 2022, I was instrumental in transitioning the tests to Scala 3, and worked on improving the efficiency of the grading process through the utilization of Docker technology. Additionally, I used my skills in graphic design to enhance the visual appeal of the course (see <a href="/en/graphicDesign#o1">Graphic Design</a>).\n\n<a href="https://plus.cs.aalto.fi/o1/">Programming 1</a>`,
 					period: 'Jun 2021 - Present'
 				},
 				courses: {
 					company: 'Aalto University',
 					role: 'Software Engineer',
-					description: `As a team member for the development of a plugin for IntelliJ IDEA, I have honed my skills in Java as well as other programming languages such as Python, Kotlin, Scala, and Bash scripts. I have utilized GitHub Actions for Continuous Integration purposes and have contributed to the overall design and aesthetic of the project, including the creation of the logo and the visual representation of the <a href="https://github.com/Aalto-LeTech/aplus-courses">README</a> (see <a href="/{$lang}/graphicDesign#courses">Graphic Design</a>).\n\nIn 2022, I further demonstrated my abilities by designing and developing a web application for creating tutorials for the plugin. This application features a live preview of what the tutorial will look like in IntelliJ and was built using React.js. The app was published through GitHub Pages.\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses Tutorial Builder</a>`,
+					description: `As a team member for the development of a plugin for IntelliJ IDEA, I have honed my skills in Java as well as other programming languages such as Python, Kotlin, Scala, and Bash scripts. I have utilized GitHub Actions for Continuous Integration purposes and have contributed to the overall design and aesthetic of the project, including the creation of the logo and the visual representation of the <a href="https://github.com/Aalto-LeTech/aplus-courses">README</a> (see <a href="/en/graphicDesign#courses">Graphic Design</a>).\n\nIn 2022, I further demonstrated my abilities by designing and developing a web application for creating tutorials for the plugin. This application features a live preview of what the tutorial will look like in IntelliJ and was built using React.js. The app was published through GitHub Pages.\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses Tutorial Builder</a>`,
 					period: 'Jan 2021 - Dec 2022'
 				}
 			},
@@ -219,13 +219,13 @@ const config: Config = {
 				assistant: {
 					company: 'Aalto-yliopisto',
 					role: 'Pääkurssiassistentti',
-					description: `Toimin pääkurssiassistenttina Scala-alkeisohjelmointikurssilla, jota käy noin 1000 opiskelijalle vuosittain. Vastuullani on opiskelijoiden ohjaaminen ja tukeminen sekä tehokkaiden yksikkötestien luominen tehtävien automaattiseen arviointiin. Vuonna 2022 olin keskeisessä roolissa muuttamassa testit Scala 2:sta Scala 3:een ja työskentelin tehostaakseni arviointiprosessin tehokkuutta Dockerin avulla. Lisäksi suunnittelin kurssin uuden ulkoasun (ks. <a href="/{$lang}/graphicDesign#o1">Graafinen suunnittelu</a>).\n\n<a href="https://plus.cs.aalto.fi/o1/">Ohjelmointi 1</a>`,
+					description: `Toimin pääkurssiassistenttina Scala-alkeisohjelmointikurssilla, jota käy noin 1000 opiskelijalle vuosittain. Vastuullani on opiskelijoiden ohjaaminen ja tukeminen sekä tehokkaiden yksikkötestien luominen tehtävien automaattiseen arviointiin. Vuonna 2022 olin keskeisessä roolissa muuttamassa testit Scala 2:sta Scala 3:een ja työskentelin tehostaakseni arviointiprosessin tehokkuutta Dockerin avulla. Lisäksi suunnittelin kurssin uuden ulkoasun (ks. <a href="/fi/graphicDesign#o1">Graafinen suunnittelu</a>).\n\n<a href="https://plus.cs.aalto.fi/o1/">Ohjelmointi 1</a>`,
 					period: 'kesäkuu 2021 - nykyhetki'
 				},
 				courses: {
 					company: 'Aalto-yliopisto',
 					role: 'Ohjelmistokehittäjä',
-					description: `Aloitin Aalto-yliopistossa työskentelyn A+ Courses -IntelliJ IDEA-lisäosan kehityksen parissa. Tämä lisäosa on pääosin kirjoitettu Javalla, mutta projektin parissa olen käyttänyt myös Scalaa, Kotlinia, Pythonia, sekä TypeSciptiä. Olen kehittänyt GitHub Actions pipelinestä nopeamman ja lisännyt siihen toiminnallisuutta. Olen osallistunut projektin kokonaisvaltaiseen suunnitteluun ja ulkoasun suunnitteluun, mukaan lukien uusi logo ja <a href="https://github.com/Aalto-LeTech/aplus-courses">README</a>:n visuaalinen ulkoasu (ks. <a href="/{$lang}/graphicDesign#courses">Graafinen suunnittelu</a>).\n\nKehitimme lisäosaan tutoriaaliominaisuuden, jolla opetetaan opiskelijoita käyttämään IntelliJ IDEA:aa. Vuonna 2022 kehitin Reactilla työkalun tutoriaalikonfiguraatiotiedostojen luomiseen visuaalisesti.\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses Tutorial Builder</a>`,
+					description: `Aloitin Aalto-yliopistossa työskentelyn A+ Courses -IntelliJ IDEA-lisäosan kehityksen parissa. Tämä lisäosa on pääosin kirjoitettu Javalla, mutta projektin parissa olen käyttänyt myös Scalaa, Kotlinia, Pythonia, sekä TypeSciptiä. Olen kehittänyt GitHub Actions pipelinestä nopeamman ja lisännyt siihen toiminnallisuutta. Olen osallistunut projektin kokonaisvaltaiseen suunnitteluun ja ulkoasun suunnitteluun, mukaan lukien uusi logo ja <a href="https://github.com/Aalto-LeTech/aplus-courses">README</a>:n visuaalinen ulkoasu (ks. <a href="/fi/graphicDesign#courses">Graafinen suunnittelu</a>).\n\nKehitimme lisäosaan tutoriaaliominaisuuden, jolla opetetaan opiskelijoita käyttämään IntelliJ IDEA:aa. Vuonna 2022 kehitin Reactilla työkalun tutoriaalikonfiguraatiotiedostojen luomiseen visuaalisesti.\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses Tutorial Builder</a>`,
 					period: 'tammikuu 2021 - joulukuu 2022'
 				}
 			},
