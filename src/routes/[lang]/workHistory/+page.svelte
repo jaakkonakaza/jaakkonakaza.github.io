@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { t } from '$lib/translations';
 	import { blurIn } from '$lib/customBlur';
 	import WorkItem from './WorkItem.svelte';
 	import Arrow from './Arrow.svelte';

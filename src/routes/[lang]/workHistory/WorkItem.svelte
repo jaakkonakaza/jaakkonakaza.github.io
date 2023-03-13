@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { t, locale } from '$lib/translations';
+	import { t } from '$lib/translations';
 
-	$: lang = locale ?? 'en';
 	export let name: string;
 </script>
 

@@ -18,7 +18,6 @@
 	import { blurIn } from '$lib/customBlur';
 	import Popup from './Popup.svelte';
 	import Project from './Project.svelte';
-	import { t } from '$lib/translations';
 
 	const projects2023: Array<ProjectProps> = [
 		{
