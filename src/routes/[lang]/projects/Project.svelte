@@ -57,7 +57,7 @@
 		align-items: flex-start;
 		text-align: start;
 		justify-content: space-between;
-		height: 10rem;
+		height: 12rem;
 
 		color: var(--fg-color);
 		background-color: #ffffff00;
@@ -70,12 +70,6 @@
 		transform-style: preserve-3d;
 		will-change: transform;
 		transform: translateZ(12px);
-	}
-
-	@media (max-width: 815px) {
-		.project {
-			height: 12rem;
-		}
 	}
 
 	.state {
