@@ -17,8 +17,7 @@
 
 	import { t, locale } from '$lib/translations';
 	import { page } from '$app/stores';
-	import { blur } from 'svelte/transition';
-	import { blurIn, blurOut } from '$lib/customBlur';
+	import { blurIn, blurOut, BLUR_DURATION } from '$lib/customBlur';
 
 	$: lang = locale ?? 'en';
 
@@ -27,6 +26,7 @@
 	import NavLink from './NavLink.svelte';
 	import Background from '$lib/components/Background.svelte';
 
+	let darkModeTransition = true;
 	let darkMode = true;
 	let loaded = false;
 
@@ -57,9 +57,12 @@
 			: currentPageBackgroundColor;
 
 	const setDarkMode = (isDarkMode: boolean) => {
-		darkMode = isDarkMode;
-		const theme = isDarkMode ? 'dark' : '';
-		document.body.className = theme;
+		darkModeTransition = isDarkMode;
+		setTimeout(() => {
+			darkMode = isDarkMode;
+			const theme = isDarkMode ? 'dark' : '';
+			document.body.className = theme;
+		}, BLUR_DURATION);
 	};
 
 	const mobileWidth = 815;
@@ -68,6 +71,7 @@
 
 	onMount(async () => {
 		darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		darkModeTransition = darkMode;
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
 			setDarkMode(event.matches);
 		});
@@ -86,9 +90,9 @@
 	<meta name="theme-color" content={darkMode ? '#000000' : '#FFFFFF'} />
 </svelte:head>
 
-{#key loaded && darkMode}
-	<Background bind:backgroundClass />
-	<div in:blur id="container">
+<Background bind:backgroundClass />
+{#key loaded && darkModeTransition}
+	<div id="container">
 		<div />
 		<div class="column" id="page-content">
 			{#key $lang}

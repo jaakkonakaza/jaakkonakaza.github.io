@@ -42,7 +42,7 @@
 
 		background-size: cover;
 
-		transition: filter 2s;
+		transition: filter 2s, background-image 0.4s;
 	}
 
 	#background.green {

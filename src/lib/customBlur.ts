@@ -1,7 +1,7 @@
 import { blur } from 'svelte/transition';
 
-const duration = 300;
+export const BLUR_DURATION = 300;
 
-export const blurIn = (node: Element) => blur(node, { delay: 0, duration: duration });
+export const blurIn = (node: Element) => blur(node, { delay: 0, duration: BLUR_DURATION });
 
-export const blurOut = (node: Element) => blur(node, { duration: duration });
+export const blurOut = (node: Element) => blur(node, { duration: BLUR_DURATION });
