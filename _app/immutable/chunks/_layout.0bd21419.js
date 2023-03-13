@@ -1,1 +1,0 @@
-import{a as t}from"./translations.803c93da.js";const e=async({params:a})=>{const o=a.lang;return await t(o),{}},n=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{n as _,e as l};
