@@ -3,8 +3,8 @@
 </script>
 
 <div class="bubble">
-	<h1>{$t('name')}</h1>
-	<h2>{$t('role')}</h2>
+	<h1>{@html $t('name')}</h1>
+	<h2>{@html $t('role')}</h2>
 </div>
 
 <style>

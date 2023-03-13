@@ -1,4 +1,115 @@
 import i18n, { type Config } from 'sveltekit-i18n';
+import { loadDefaultJapaneseParser } from 'budoux';
+const parser = loadDefaultJapaneseParser();
+
+const japanese = {
+	name: '仲座ヤーッコ',
+	role: 'ソフト開発者',
+	about:
+		'私はフィンランド出身のソフトウェア開発者です。現在アールト大学でコンピュータサイエンスを学び、ソフトウェア開発者兼<wbr>ヘッド<wbr>ティーチング<wbr>アシスタント<wbr>として働いています。教育ツール、アプリケーション、ユーザーインターフェイスの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、Webアプリケーション開発のためのReact.jsとモバイルアプリケーション開発のためのReact Nativeに強い理解があります。また、グラフィックデザインにも長けており、いくつかのプロジェクトでロゴやブランディングのデザインを担当した経験もあります。ソフトウェア開発とデザインの専門知識を生かし、クライアントのニーズを満たす効率的でユーザーフレンドリーなソリューションを作成することができます。',
+	home: 'ホーム',
+	workHistory: '職歴',
+	projects: 'プロジェクト',
+	graphicDesign: 'グラフィックデザイン',
+	darkMode: 'ダークテーマ',
+	lightMode: 'ライトテーマ',
+	workInfo: {
+		beamex: {
+			company: 'Beamex',
+			role: 'ソフトウェアエンジニア',
+			description: `Androidを実行するスマートグラス向けアプリの開発において、私はReact Nativeの専門知識を活用し、機械学習を使用した工場の設備のキャリブレーションのためのソリューションを設計・構築するのに重要な貢献をしました。ユーザーフレンドリーなインターフェースを作成し、アプリの機能がクライアントのニーズを満たすように確認することにも大きな役割を果たしました。技術的な障害を克服するためにチームを支援するために私の問題解決スキルを活用し、Kotlinを使用してBLEペリフェラル通信のためのカスタムExpoモジュールと、オフラインでマシンビジョンモデルを実行するためのカスタムExpoモジュールの2つを開発することで私の柔軟性を示しました。元々、マシンビジョンモデルはクラウドで実行されており、非常に遅かったため、約4秒かかりましたが、私が最適化したオフライン版では約300msでした。また、コードの品質を維持するために、ユニットテストとコードスタイルチェックを自動的に実行するAzure DevOpsのCIパイプラインを設定しました。`,
+			period: '2022年10月 - 現在'
+		},
+		assistant: {
+			company: 'アールト<wbr>大学',
+			role: 'ヘッド<wbr>ティーチング<wbr>アシスタント',
+			description: `Scalaによる入門プログラミングコースのヘッドティーチングアシスタントとして、私は年間約1000人の学生向けのコースを開発するチームの一員です。私の責任は、学生に対するガイダンスとサポートを提供すること、および採点目的の効果的な単体テストの作成と実装を含みます。2022年には、テストをScala 3に移行することで重要な役割を果たし、Docker技術の利用により採点プロセスの効率性を向上させるために取り組みました。さらに、グラフィックデザインのスキルを活用して、コースの視覚的魅力を高めました（<a href="/{$lang}/graphicDesign#o1">グラフィックデザイン</a>を参照）。`,
+			period: '2021年6月 - 現在'
+		},
+		courses: {
+			company: 'アールト<wbr>大学',
+			role: 'ソフトウェア<wbr>エンジニア',
+			description: `IntelliJ IDEAのプラグイン開発チームのメンバーとして、Javaを始めとするプログラミング言語のスキルを磨きました。また、Python、Kotlin、Scala、Bashスクリプトなども扱ってきました。GitHub Actionsを使用して継続的インテグレーションを目的とした開発を行い、ロゴやREADMEのビジュアル表現を含めたプロジェクト全体のデザインに貢献しました（<a href="/{$lang}/graphicDesign#courses">グラフィックデザイン</a>を参照）。\n\n2022年には、プラグイン向けのチュートリアルを作成するためのWebアプリケーションを設計・開発し、IntelliJでのチュートリアルのライブプレビューを提供するアプリケーションをReact.jsを使用して構築しました。このアプリケーションはGitHub Pagesを通じて公開されました。`,
+			period: '2021年1月 - 2022年12月'
+		}
+	},
+	designInfo: {
+		courses: `<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a>は、IntelliJ用のプラグインです。これは、プログラミングコースで使用され、IDEの使用体験をスムーズにします。私はブランドデザインを担当し、プラグインのユーザーエクスペリエンスや外観のデザインに参加しています。ロゴはAと+の文字の組み合わせで、IntelliJブランディングのグラデーション豊富なスタイルからインスピレーションを受けています。`,
+		o1: `<a href="https://plus.cs.aalto.fi/o1/">Ohjelmointi 1</a>（プログラミング1）は、Scalaの入門プログラミングコースです。ロゴは、Scala 3ロゴに囲まれたフレンドリーでモダンなデザインになっており、Oは<a href="https://christinalassheikki.com/">Christina Lassheikki</a>のアートで埋められ、コースのイメージを表現しています。`,
+		studios: `私が将来的に始めるかもしれないウェブ開発スタジオのために、このロゴを作成しました。`,
+		five: `Fiveは、計画中のコースコミュニケーションプラットフォームです。学生は他の学生やコーススタッフから質問をして回答を得ることができます。それはフィンランドのグレーディングシステムで最高の成績（5）にちなんで名付けられています。ロゴは、5とスピーチバブルを組み合わせたもので、コミュニケーションを表しています。`
+	},
+	projectInfo: {
+		tech: '使用技術：',
+		repository: 'リポジトリ',
+		website: 'ウェブサイト',
+		status: {
+			completed: '完了',
+			inProgress: '進行中',
+			planned: '計画中'
+		},
+		smile: {
+			title: 'SMILe',
+			description: '画像の作成や操作に使用するライブラリ',
+			longDescription:
+				'SMILe [Scala Media Interactive Learning]は、現在Aalto大学のProgramming 1コースで取り組んでいるScala 3ライブラリです。 SMCLよりもシンプルで保守しやすいように設計されています。'
+		},
+		prefecturePursuit: {
+			title: 'Prefecture Pursuit',
+			description: '日本の都道府県を学ぶためのブラウザーゲーム',
+			longDescription:
+				'2022年には、日本の都道府県を学ぶための簡単なブラウザーゲームを作成しました。このプロジェクトを2023年に拡張して、より魅力的で完成度の高いものにする予定です。元のプロジェクトは、ライブラリを使用せずにHTMLとTypeScriptで作成されました。'
+		},
+		happaChat: {
+			title: 'happaChat',
+			description: 'ウェブ、Android、iOS向けのチャットアプリ',
+			longDescription:
+				'2022年には、Reactを使用してウェブ用のシンプルなチャットアプリケーションと、React Nativeを使用してモバイル用のアプリをDenoバックエンドで作成しました。2023年には、KotlinとSwiftを使用してAndroidとiOS用のネイティブアプリを作成する予定です。'
+		},
+		aiCapitalist: {
+			title: 'AI資本主義者',
+			description: 'AI駆動型の株式取引ボット',
+			longDescription:
+				'機械学習を使用する株式取引ボットを作成する予定です。複数の異なるアルゴリズムをテストして、最も優れたパフォーマンスを発揮するものを選択します。目標は、株式を自動で取引し、利益を上げるボットを作成することです。'
+		},
+		modulatedMonstrosities: {
+			title: 'モジュラーシンセサイザー',
+			description: 'ブラウザベースのモジュラーシンセサイザー',
+			longDescription:
+				'モジュラーシンセサイザーは、ブラウザベースのモジュラーシンセサイザーです。様々なモジュールを接続することで、異なる音を作成することができます。'
+		},
+		aPlusCourses: {
+			title: 'A+ Courses チュートリアルビルダー',
+			description: 'IDEチュートリアルの構成用Webアプリ',
+			longDescription:
+				'A+ Courses チュートリアルビルダーは、私が2022年夏に作成したIDEチュートリアルの構成用Webアプリです。このアプリは、A+ Courses IntelliJプラグインのプログラミングコースのチュートリアル作成に使用されます。このアプリは、TypeScriptとReactで書かれています。'
+		},
+		vanishedVisions: {
+			title: '失われたビジョン',
+			description: 'テキストアドベンチャーゲーム',
+			longDescription:
+				'失われたビジョンは、私が友人と一緒にプログラミングコースの課題として作成したテキストアドベンチャーゲームです。最初はサーバーで実行され、WebSocketsを介してクライアントと通信していました。その後、Scala.jsを使用してゲームをブラウザで実行できるように移植しました。'
+		}
+	}
+};
+
+const parseEntry: any = (key: string, value: string | object) => {
+	if (typeof value === 'object') {
+		return [
+			key,
+			Object.fromEntries(Object.entries(value).map(([key, value]) => parseEntry(key, value)))
+		];
+	} else {
+		return [key, value.length > 20 ? parser.translateHTMLString(value) : value];
+	}
+};
+
+// Run parser.translateHTMLString recursively for all fields
+const parsedJapanese = Object.fromEntries(
+	Object.entries(japanese).map(([key, value]) => parseEntry(key, value))
+);
+
+console.log(parsedJapanese);
 
 const config: Config = {
 	translations: {
@@ -180,96 +291,7 @@ const config: Config = {
 				}
 			}
 		},
-		ja: {
-			name: '仲座ヤーッコ',
-			role: 'ソフト開発者',
-			about:
-				'私はフィンランド出身のソフトウェア開発者です。現在アールト大学でコンピュータサイエンスを学び、ソフトウェア開発者兼ヘッドティーチングアシスタントとして働いています。教育ツール、アプリケーション、ユーザーインターフェイスの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、Webアプリケーション開発のためのReact.jsとモバイルアプリケーション開発のためのReact Nativeに強い理解があります。また、グラフィックデザインにも長けており、いくつかのプロジェクトでロゴやブランディングのデザインを担当した経験もあります。ソフトウェア開発とデザインの専門知識を生かし、クライアントのニーズを満たす効率的でユーザーフレンドリーなソリューションを作成することができます。',
-			home: 'ホーム',
-			workHistory: '職歴',
-			projects: 'プロジェクト',
-			graphicDesign: 'グラフィックデザイン',
-			darkMode: 'ダークテーマ',
-			lightMode: 'ライトテーマ',
-			workInfo: {
-				beamex: {
-					company: 'Beamex',
-					role: 'ソフトウェアエンジニア',
-					description: `Androidを実行するスマートグラス向けアプリの開発において、私はReact Nativeの専門知識を活用し、機械学習を使用した工場の設備のキャリブレーションのためのソリューションを設計・構築するのに重要な貢献をしました。ユーザーフレンドリーなインターフェースを作成し、アプリの機能がクライアントのニーズを満たすように確認することにも大きな役割を果たしました。技術的な障害を克服するためにチームを支援するために私の問題解決スキルを活用し、Kotlinを使用してBLEペリフェラル通信のためのカスタムExpoモジュールと、オフラインでマシンビジョンモデルを実行するためのカスタムExpoモジュールの2つを開発することで私の柔軟性を示しました。元々、マシンビジョンモデルはクラウドで実行されており、非常に遅かったため、約4秒かかりましたが、私が最適化したオフライン版では約300msでした。また、コードの品質を維持するために、ユニットテストとコードスタイルチェックを自動的に実行するAzure DevOpsのCIパイプラインを設定しました。`,
-					period: '2022年10月 - 現在'
-				},
-				assistant: {
-					company: 'アールト<wbr>大学',
-					role: 'ヘッド<wbr>ティーチング<wbr>アシスタント',
-					description: `Scalaによる入門プログラミングコースのヘッドティーチングアシスタントとして、私は年間約1000人の学生向けのコースを開発するチームの一員です。私の責任は、学生に対するガイダンスとサポートを提供すること、および採点目的の効果的な単体テストの作成と実装を含みます。2022年には、テストをScala 3に移行することで重要な役割を果たし、Docker技術の利用により採点プロセスの効率性を向上させるために取り組みました。さらに、グラフィックデザインのスキルを活用して、コースの視覚的魅力を高めました（<a href="/{$lang}/graphicDesign#o1">グラフィックデザイン</a>を参照）。`,
-					period: '2021年6月 - 現在'
-				},
-				courses: {
-					company: 'アールト<wbr>大学',
-					role: 'ソフトウェア<wbr>エンジニア',
-					description: `IntelliJ IDEAのプラグイン開発チームのメンバーとして、Javaを始めとするプログラミング言語のスキルを磨きました。また、Python、Kotlin、Scala、Bashスクリプトなども扱ってきました。GitHub Actionsを使用して継続的インテグレーションを目的とした開発を行い、ロゴやREADMEのビジュアル表現を含めたプロジェクト全体のデザインに貢献しました（<a href="/{$lang}/graphicDesign#courses">グラフィックデザイン</a>を参照）。\n\n2022年には、プラグイン向けのチュートリアルを作成するためのWebアプリケーションを設計・開発し、IntelliJでのチュートリアルのライブプレビューを提供するアプリケーションをReact.jsを使用して構築しました。このアプリケーションはGitHub Pagesを通じて公開されました。`,
-					period: '2021年1月 - 2022年12月'
-				}
-			},
-			designInfo: {
-				courses: `<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a>は、IntelliJ用のプラグインです。これは、プログラミングコースで使用され、IDEの使用体験をスムーズにします。私はブランドデザインを担当し、プラグインのユーザーエクスペリエンスや外観のデザインに参加しています。ロゴはAと+の文字の組み合わせで、IntelliJブランディングのグラデーション豊富なスタイルからインスピレーションを受けています。`,
-				o1: `<a href="https://plus.cs.aalto.fi/o1/">Ohjelmointi 1</a>（プログラミング1）は、Scalaの入門プログラミングコースです。ロゴは、Scala 3ロゴに囲まれたフレンドリーでモダンなデザインになっており、Oは<a href="https://christinalassheikki.com/">Christina Lassheikki</a>のアートで埋められ、コースのイメージを表現しています。`,
-				studios: `私が将来的に始めるかもしれないウェブ開発スタジオのために、このロゴを作成しました。`,
-				five: `Fiveは、計画中のコースコミュニケーションプラットフォームです。学生は他の学生やコーススタッフから質問をして回答を得ることができます。それはフィンランドのグレーディングシステムで最高の成績（5）にちなんで名付けられています。ロゴは、5とスピーチバブルを組み合わせたもので、コミュニケーションを表しています。`
-			},
-			projectInfo: {
-				tech: '使用技術：',
-				repository: 'リポジトリ',
-				website: 'ウェブサイト',
-				status: {
-					completed: '完了',
-					inProgress: '進行中',
-					planned: '計画中'
-				},
-				smile: {
-					title: 'SMILe',
-					description: '画像の作成や操作に使用するライブラリ',
-					longDescription:
-						'SMILe [Scala Media Interactive Learning]は、現在Aalto大学のProgramming 1コースで取り組んでいるScala 3ライブラリです。 SMCLよりもシンプルで保守しやすいように設計されています。'
-				},
-				prefecturePursuit: {
-					title: 'Prefecture Pursuit',
-					description: '日本の都道府県を学ぶためのブラウザーゲーム',
-					longDescription:
-						'2022年には、日本の都道府県を学ぶための簡単なブラウザーゲームを作成しました。このプロジェクトを2023年に拡張して、より魅力的で完成度の高いものにする予定です。元のプロジェクトは、ライブラリを使用せずにHTMLとTypeScriptで作成されました。'
-				},
-				happaChat: {
-					title: 'happaChat',
-					description: 'ウェブ、Android、iOS向けのチャットアプリ',
-					longDescription:
-						'2022年には、Reactを使用してウェブ用のシンプルなチャットアプリケーションと、React Nativeを使用してモバイル用のアプリをDenoバックエンドで作成しました。2023年には、KotlinとSwiftを使用してAndroidとiOS用のネイティブアプリを作成する予定です。'
-				},
-				aiCapitalist: {
-					title: 'AI資本主義者',
-					description: 'AI駆動型の株式取引ボット',
-					longDescription:
-						'機械学習を使用する株式取引ボットを作成する予定です。複数の異なるアルゴリズムをテストして、最も優れたパフォーマンスを発揮するものを選択します。目標は、株式を自動で取引し、利益を上げるボットを作成することです。'
-				},
-				modulatedMonstrosities: {
-					title: 'モジュラーシンセサイザー',
-					description: 'ブラウザベースのモジュラーシンセサイザー',
-					longDescription:
-						'モジュラーシンセサイザーは、ブラウザベースのモジュラーシンセサイザーです。様々なモジュールを接続することで、異なる音を作成することができます。'
-				},
-				aPlusCourses: {
-					title: 'A+ Courses チュートリアルビルダー',
-					description: 'IDEチュートリアルの構成用Webアプリ',
-					longDescription:
-						'A+ Courses チュートリアルビルダーは、私が2022年夏に作成したIDEチュートリアルの構成用Webアプリです。このアプリは、A+ Courses IntelliJプラグインのプログラミングコースのチュートリアル作成に使用されます。このアプリは、TypeScriptとReactで書かれています。'
-				},
-				vanishedVisions: {
-					title: '失われたビジョン',
-					description: 'テキストアドベンチャーゲーム',
-					longDescription:
-						'失われたビジョンは、私が友人と一緒にプログラミングコースの課題として作成したテキストアドベンチャーゲームです。最初はサーバーで実行され、WebSocketsを介してクライアントと通信していました。その後、Scala.jsを使用してゲームをブラウザで実行できるように移植しました。'
-				}
-			}
-		}
+		ja: parsedJapanese
 	}
 };
 

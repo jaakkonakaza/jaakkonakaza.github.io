@@ -16,10 +16,10 @@
 			<button class="close" on:click={() => (selectedProject = undefined)}>X</button>
 			<ProjectStatus state={selectedProject.state} />
 			<div class="title">
-				<h2>{$t(`projectInfo.${selectedProject.id}.title`)}</h2>
-				<p>{$t(`projectInfo.${selectedProject.id}.description`)}</p>
+				<h2>{@html $t(`projectInfo.${selectedProject.id}.title`)}</h2>
+				<p>{@html $t(`projectInfo.${selectedProject.id}.description`)}</p>
 			</div>
-			<p>{$t(`projectInfo.${selectedProject.id}.longDescription`)}</p>
+			<p>{@html $t(`projectInfo.${selectedProject.id}.longDescription`)}</p>
 			<small>
 				{$t('projectInfo.tech')}
 				{selectedProject.tech}

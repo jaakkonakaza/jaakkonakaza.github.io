@@ -45,8 +45,8 @@
 	<div class="state">
 		<ProjectStatus state={projectInfo.state} />
 	</div>
-	<h2>{$t(`projectInfo.${projectInfo.id}.title`)}</h2>
-	<p>{$t(`projectInfo.${projectInfo.id}.description`)}</p>
+	<h2>{@html $t(`projectInfo.${projectInfo.id}.title`)}</h2>
+	<p>{@html $t(`projectInfo.${projectInfo.id}.description`)}</p>
 	<small>{projectInfo.tech}</small>
 </button>
 

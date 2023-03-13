@@ -61,6 +61,8 @@
 	.period,
 	.info {
 		font-weight: 400;
+		word-break: keep-all;
+		overflow-wrap: break-word;
 	}
 
 	p {

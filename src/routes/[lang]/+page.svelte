@@ -13,7 +13,7 @@
 		<Name />
 	</div>
 	<p class="bubble">
-		{$t('about')}
+		{@html $t('about')}
 	</p>
 </div>
 
