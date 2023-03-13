@@ -88,6 +88,10 @@
 
 <svelte:head>
 	<meta name="theme-color" content={darkMode ? '#000000' : '#FFFFFF'} />
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
+	/>
 </svelte:head>
 
 <Background bind:backgroundClass />
@@ -128,17 +132,39 @@
 						<a href="https://github.com/jaakkonakaza">GitHub</a>
 						<a href="https://www.linkedin.com/in/jaakkonakaza/">LinkedIn</a>
 					</div>
-					<button
-						on:click={() => {
-							setDarkMode(!darkMode);
-						}}>{darkMode ? $t('lightMode') : $t('darkMode')}</button
-					>
 					<div id="languages">
 						<a data-sveltekit-preload-data="tap" href="/en{$page.route.id?.substring(7)}">ENGLISH</a
 						>
 						<a data-sveltekit-preload-data="tap" href="/fi{$page.route.id?.substring(7)}">SUOMI</a>
 						<a data-sveltekit-preload-data="tap" href="/ja{$page.route.id?.substring(7)}">日本語</a>
 					</div>
+					<button
+						class="theme-toggle {darkMode ? 'theme-toggle--toggled' : ''}"
+						type="button"
+						title="Toggle theme"
+						aria-label="Toggle theme"
+						on:click={() => setDarkMode(!darkMode)}
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true"
+							width="3rem"
+							height="3rem"
+							fill="currentColor"
+							class="theme-toggle__expand"
+							viewBox="0 0 32 32"
+						>
+							<clipPath id="theme-toggle__expand__cutout">
+								<path d="M0-11h25a1 1 0 0017 13v30H0Z" />
+							</clipPath>
+							<g clip-path="url(#theme-toggle__expand__cutout)">
+								<circle cx="16" cy="16" r="8.4" />
+								<path
+									d="M18.3 3.2c0 1.3-1 2.3-2.3 2.3s-2.3-1-2.3-2.3S14.7.9 16 .9s2.3 1 2.3 2.3zm-4.6 25.6c0-1.3 1-2.3 2.3-2.3s2.3 1 2.3 2.3-1 2.3-2.3 2.3-2.3-1-2.3-2.3zm15.1-10.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zM3.2 13.7c1.3 0 2.3 1 2.3 2.3s-1 2.3-2.3 2.3S.9 17.3.9 16s1-2.3 2.3-2.3zm5.8-7C9 7.9 7.9 9 6.7 9S4.4 8 4.4 6.7s1-2.3 2.3-2.3S9 5.4 9 6.7zm16.3 21c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zm2.4-21c0 1.3-1 2.3-2.3 2.3S23 7.9 23 6.7s1-2.3 2.3-2.3 2.4 1 2.4 2.3zM6.7 23C8 23 9 24 9 25.3s-1 2.3-2.3 2.3-2.3-1-2.3-2.3 1-2.3 2.3-2.3z"
+								/>
+							</g>
+						</svg>
+					</button>
 				</div>
 			{/if}
 		</nav>
@@ -266,7 +292,7 @@
 		}
 	}
 	a {
-		padding: 1rem;
+		padding: 0 1rem;
 		user-select: none;
 		cursor: pointer;
 	}
@@ -285,5 +311,20 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+	}
+
+	.theme-toggle {
+		border: none;
+		background: 0 0;
+		cursor: pointer;
+		border-radius: 100%;
+		width: 3rem;
+		height: 3rem;
+		align-self: center;
+	}
+	.theme-toggle svg {
+		color: var(--fg-color);
+		width: 2rem;
+		height: 2rem;
 	}
 </style>
