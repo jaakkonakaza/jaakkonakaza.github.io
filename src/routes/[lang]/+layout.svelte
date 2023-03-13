@@ -270,11 +270,11 @@
 		border: 1px solid var(--fg-color);
 		border-radius: 1rem;
 		padding: 0.5rem;
-		background-color: #fff5;
+		background-color: rgba(var(--bg-color-decimal), 0.5);
 		color: var(--fg-color);
 	}
 	button:hover {
-		background-color: #e7468090;
+		background-color: #e74680aa;
 	}
 
 	#languages {
