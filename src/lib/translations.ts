@@ -104,12 +104,9 @@ const parseEntry: any = (key: string, value: string | object) => {
 	}
 };
 
-// Run parser.translateHTMLString recursively for all fields
 const parsedJapanese = Object.fromEntries(
 	Object.entries(japanese).map(([key, value]) => parseEntry(key, value))
 );
-
-console.log(parsedJapanese);
 
 const config: Config = {
 	translations: {
