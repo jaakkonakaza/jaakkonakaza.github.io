@@ -188,7 +188,7 @@
 
 	:global(body) {
 		background-color: #ffffff;
-		animation: 3s ease-in-out 0s 1 fadeIn;
+		animation: 400ms ease-in-out 0s 1 fadeIn;
 	}
 
 	:global(.dark) #container {
