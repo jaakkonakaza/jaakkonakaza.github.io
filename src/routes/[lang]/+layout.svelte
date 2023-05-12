@@ -88,10 +88,6 @@
 
 <svelte:head>
 	<meta name="theme-color" content={darkMode ? '#000000' : '#FFFFFF'} />
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css"
-	/>
 </svelte:head>
 
 <Background bind:backgroundClass />
@@ -326,5 +322,55 @@
 		color: var(--fg-color);
 		width: 2rem;
 		height: 2rem;
+	}
+
+	/* https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/expand.min.css */
+
+	.theme-toggle {
+		--theme-toggle__expand--duration: 500ms;
+	}
+	.theme-toggle__expand g circle,
+	.theme-toggle__expand g path {
+		transform-origin: center;
+		transition: transform calc(var(--theme-toggle__expand--duration) * 0.65)
+			cubic-bezier(0, 0, 0, 1.25) calc(var(--theme-toggle__expand--duration) * 0.35);
+	}
+	.theme-toggle__expand :first-child path {
+		transition-property: transform, d;
+		transition-duration: calc(var(--theme-toggle__expand--duration) * 0.6);
+		transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
+	}
+	.theme-toggle input[type='checkbox']:checked ~ .theme-toggle__expand g circle,
+	.theme-toggle--toggled:not(label).theme-toggle .theme-toggle__expand g circle {
+		transform: scale(1.4);
+		transition-delay: 0s;
+	}
+	.theme-toggle input[type='checkbox']:checked ~ .theme-toggle__expand g path,
+	.theme-toggle--toggled:not(label).theme-toggle .theme-toggle__expand g path {
+		transform: scale(0.75);
+		transition-delay: 0s;
+	}
+	.theme-toggle input[type='checkbox']:checked ~ .theme-toggle__expand :first-child path,
+	.theme-toggle--toggled:not(label).theme-toggle .theme-toggle__expand :first-child path {
+		d: path('M-9 3h25a1 1 0 0017 13v30H0Z');
+		transition-delay: calc(var(--theme-toggle__expand--duration) * 0.4);
+		transition-timing-function: cubic-bezier(0, 0, 0, 1.25);
+	}
+	@supports not (d: path('')) {
+		.theme-toggle input[type='checkbox']:checked ~ .theme-toggle__expand :first-child path,
+		.theme-toggle--toggled:not(label).theme-toggle .theme-toggle__expand :first-child path {
+			transform: translate3d(-9px, 14px, 0);
+		}
+	}
+	.theme-toggle {
+		border: none;
+		background: 0 0;
+		cursor: pointer;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.theme-toggle:not(.theme-toggle--force-motion) * {
+			transition: none !important;
+		}
 	}
 </style>
