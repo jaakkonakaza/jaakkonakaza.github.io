@@ -1,6 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { importAssets } from 'svelte-preprocess-import-assets';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,7 +13,6 @@ const config = {
 			postcss: true
 		})
 	],
-
 	kit: {
 		adapter: adapter(),
 		prerender: {

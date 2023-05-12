@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import profilePhoto from '$lib/assets/profile-photo.jpg';
+	import profilePhoto from '$lib/assets/profile-photo.jpg?run';
+	import Img from '@zerodevx/svelte-img';
 	import type { Writable } from 'svelte/store';
 	import Name from './Name.svelte';
 	import { t } from '$lib/translations';
@@ -11,11 +12,16 @@
 </script>
 
 <a class="profile-photo-container" href="/{$lang}">
-	<img style="opacity: {darkMode ? 1 : 0.7}" class="profile-photo" src={profilePhoto} alt="" />
-	<img
+	<Img
 		style="opacity: {darkMode ? 1 : 0.7}"
 		class="profile-photo"
-		id="blur"
+		src={profilePhoto}
+		alt=""
+		loading="eager"
+	/>
+	<Img
+		style="opacity: {darkMode ? 1 : 0.7}"
+		class="profile-photo blur-profile-photo"
 		src={profilePhoto}
 		alt=""
 	/>
@@ -39,11 +45,12 @@
 	.profile-photo-container {
 		position: relative;
 	}
-	.profile-photo {
+	:global(.profile-photo) {
 		border-radius: 3rem;
 		width: 100%;
+		height: auto;
 	}
-	#blur {
+	:global(.blur-profile-photo) {
 		position: absolute;
 		z-index: -1;
 		left: 0;
@@ -61,7 +68,7 @@
 	}
 
 	@media (max-width: 815px) {
-		.profile-photo {
+		:global(.profile-photo) {
 			max-width: min(70vw, 20rem);
 		}
 		#name-container {

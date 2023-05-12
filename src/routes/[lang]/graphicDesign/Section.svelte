@@ -2,13 +2,14 @@
 	import type { SectionProps } from './+page.svelte';
 	import { autoHash } from '$lib/autoHash';
 	import { t } from '$lib/translations';
+	import Img from '@zerodevx/svelte-img';
 
 	export let section: SectionProps;
 </script>
 
 <section use:autoHash id={section.id} class="page">
-	<img src={section.image} alt="" width="2000" height="1000" />
-	<img class="blur" src={section.image} alt="" width="2000" height="1000" />
+	<Img class="section-img" src={section.image} alt="" width={2000} height={1000} />
+	<Img class="section-img blur-section-bg" src={section.image} alt="" width={2000} height={1000} />
 	<div class="info">
 		<h2>{section.title}</h2>
 		<p>
@@ -16,7 +17,7 @@
 		</p>
 	</div>
 	{#if section.imageFooter}
-		<img src={section.imageFooter} alt="" width="1500" height="50" />
+		<Img class="section-img" src={section.imageFooter} alt="" width={1500} height={50} />
 	{:else}
 		<div />
 	{/if}
@@ -34,7 +35,7 @@
 		padding: 0 2rem;
 	}
 
-	img {
+	:global(.section-img) {
 		width: 100%;
 		height: auto;
 	}
@@ -62,7 +63,7 @@
 			width: 92%;
 		}
 	}
-	.blur {
+	:global(.blur-section-bg) {
 		position: absolute;
 		left: 0;
 		top: 0;

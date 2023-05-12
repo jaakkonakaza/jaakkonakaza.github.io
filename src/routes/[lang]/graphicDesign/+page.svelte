@@ -2,18 +2,18 @@
 	export type SectionProps = {
 		id: string;
 		title: string;
-		image: string;
-		imageFooter?: string;
+		image: any[];
+		imageFooter?: any[];
 	};
 </script>
 
 <script lang="ts">
 	import { blurIn } from '$lib/customBlur';
-	import aPlusCourses from '$lib/assets/apluscourses.png';
-	import aPlusFooter from '$lib/assets/aplusfooter.png';
-	import o1 from '$lib/assets/o1.png';
-	import studios from '$lib/assets/studios.png';
-	import five from '$lib/assets/five.png';
+	import aPlusCourses from '$lib/assets/apluscourses.png?run';
+	import aPlusFooter from '$lib/assets/aplusfooter.png?run';
+	import o1 from '$lib/assets/o1.png?run';
+	import studios from '$lib/assets/studios.png?run';
+	import five from '$lib/assets/five.png?run';
 	import Section from './Section.svelte';
 
 	const sections: Array<SectionProps> = [
