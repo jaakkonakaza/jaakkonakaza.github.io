@@ -24,6 +24,7 @@
 		class="profile-photo blur-profile-photo"
 		src={profilePhoto}
 		alt=""
+		loading="eager"
 	/>
 	{#if $page.route.id !== '/[lang]'}
 		<span in:blur out:blur class="home-link"> {$t('home')} </span>
