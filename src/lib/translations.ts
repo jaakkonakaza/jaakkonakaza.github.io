@@ -1,12 +1,10 @@
 import i18n, { type Config } from 'sveltekit-i18n';
-import { loadDefaultJapaneseParser } from 'budoux';
-const parser = loadDefaultJapaneseParser();
 
 const japanese = {
 	name: '仲座ヤーッコ',
 	role: 'ソフト開発者',
 	about:
-		'私はフィンランド出身のソフトウェア開発者です。現在アールト大学でコンピューターサイエンスを学び、ソフトウェア開発者兼<wbr>ヘッド<wbr>ティーチング<wbr>アシスタント<wbr>として働いています。教育ツール、アプリケーション、ユーザーインターフェイスの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、Webアプリケーション開発のためのReact.jsとモバイルアプリケーション開発のためのReact Nativeに強い理解があります。また、グラフィックデザインにも長けており、いくつかのプロジェクトでロゴやブランディングのデザインを担当した経験もあります。ソフトウェア開発とデザインの専門知識を生かし、クライアントのニーズを満たす効率的でユーザーフレンドリーなソリューションを作成することができます。',
+		'私はフィンランド出身のソフトウェア開発者で、現在アールト大学でコンピューターサイエンスを専攻し、トゥルク大学で日本語を副専攻しています。アールト大学ではソフトウェア開発者兼主任教育アシスタントとして働いています。私は教育ツール、アプリケーション、ユーザーインターフェースの開発経験があります。得意なプログラミング言語はTypeScript、Java、Scalaで、React.jsを使ったWebアプリケーション開発、React Nativeを使ったモバイルアプリケーション開発に強い理解を持っています。また、ロゴやブランディングのデザインなど、グラフィックデザインにも熟練しています。私のソフトウェア開発とデザインの専門知識により、クライアントのニーズに応える効率的でユーザーフレンドリーなソリューションを創出することができます。',
 	home: 'ホーム',
 	workHistory: '職歴',
 	projects: 'プロジェクト',
@@ -17,8 +15,12 @@ const japanese = {
 		beamex: {
 			company: 'Beamex',
 			role: 'ソフトウェアエンジニア',
-			description: `Androidを実行するスマートグラス向けアプリの開発において、私はReact Nativeの専門知識を活用し、機械学習を使用した工場の設備のキャリブレーションのためのソリューションを設計・構築するのに重要な貢献をしました。ユーザーフレンドリーなインターフェースを作成し、アプリの機能がクライアントのニーズを満たすように確認することにも大きな役割を果たしました。技術的な障害を克服するためにチームを支援するために私の問題解決スキルを活用し、Kotlinを使用してBLEペリフェラル通信のためのカスタムExpoモジュールと、オフラインでマシンビジョンモデルを実行するためのカスタムExpoモジュールの2つを開発することで私の柔軟性を示しました。元々、マシンビジョンモデルはクラウドで実行されており、非常に遅かったため、約4秒かかりましたが、私が最適化したオフライン版では約300msでした。また、コードの品質を維持するために、ユニットテストとコードスタイルチェックを自動的に実行するAzure DevOpsのCIパイプラインを設定しました。`,
-			period: '2022年10月 - 現在'
+			description: `Androidベースのスマートグラス用のプロトタイプアプリの主要開発者として、私はReact Nativeのスキルを用いて、機械視覚を通じて工場設備のキャリブレーションを行うソリューションを設計しました。このプロジェクトは、世界的な医療関連企業に示され、ポジティブなフィードバックを受け、さらなる開発の舞台を設定しました。
+
+私は直感的なインターフェースの作成、技術的な課題の解決、そしてアプリがクライアントのニーズを満たすことを確実にするという重要な役割を果たしました。また、私はAzure DevOpsでCIパイプラインを設定し、自動テストとコードスタイルチェックを行いました。これにより、チームメンバーに最良のコーディング習慣と効率的なバージョン管理の使用方法について教えるという私の努力と共に、コード品質を維持しました。
+
+さらに、私はチームのブランディングを率い、アプリのデザインを近代化し、複雑な問題を解決し、アプリの機能を拡張しました。この成功した学生プロジェクトは、クオリティアワードランキングのトップ3に入りました。`,
+			period: '2022年10月 - 2023年5月'
 		},
 		assistant: {
 			company: 'アールト<wbr>大学',
@@ -100,7 +102,7 @@ const parseEntry: any = (key: string, value: string | object) => {
 			Object.fromEntries(Object.entries(value).map(([key, value]) => parseEntry(key, value)))
 		];
 	} else {
-		return [key, value.length > 20 ? parser.translateHTMLString(value) : value];
+		return [key, value.length > 20 ? value.replaceAll('。', '。<br>') : value];
 	}
 };
 
@@ -124,8 +126,12 @@ const config: Config = {
 				beamex: {
 					company: 'Beamex',
 					role: 'Software Engineer',
-					description: `As a key contributor to the development of an app for smart glasses running Android, I utilized my expertise in React Native to design and build a solution for calibrating factory equipment using machine vision. I played a significant role in creating a user-friendly interface and ensuring the functionality of the app met the needs of the client. My problem-solving skills were utilized to assist my team in overcoming technical obstacles, and I demonstrated my versatility by developing two custom Expo modules using Kotlin, one for BLE Peripheral communication and one for running the machine vision model offline. The original machine vision model was run in the cloud and it was very slow, taking about 4 seconds to run. My optimized offline version took about 300ms. I also set up a CI pipeline in Azure DevOps, running unit tests and code style checks automatically to maintain code quality.`,
-					period: 'Oct 2022 - Present'
+					description: `As a key developer on a prototype app for Android-based smart glasses, I used my React Native skills to design a solution for factory equipment calibration through machine vision. This project was showcased to global medical firms, receiving positive feedback and setting the stage for further development.
+
+I played a crucial role in creating an intuitive interface, solving technical challenges, and ensuring the app met client needs. I also set up a CI pipeline in Azure DevOps for automated testing and code style checks, which, along with my efforts in teaching team members about best coding practices and efficient use of version control, contributed to maintaining high code quality.
+
+Furthermore, I led the team's branding, modernized the app's design, resolved complex issues, and expanded the app's functionality. This successful student project was among the top three in the Quality Awards ranking.`,
+					period: 'Oct 2022 - May 2023'
 				},
 				assistant: {
 					company: 'Aalto University',
@@ -213,8 +219,12 @@ const config: Config = {
 				beamex: {
 					company: 'Beamex',
 					role: 'Ohjelmistokehittäjä',
-					description: `Olin keskeisessä osassa Android-käyttöjärjestelmää käyttävän älylasien sovelluksen kehityksessä. Sovellus on tarkoitettu tehdaslaitteiden kalibrointiin käyttäen konevisiota. Osallistuin käyttöliittymän käyttäjäystävällisyyden ja sovelluksen toiminnallisuuden kehittämiseen. TypeScriptin kirjoittamisen lisäksi kehitin kaksi natiivia Expo-moduulia Kotlinilla, toinen BLE-viestintään ja toinen AI-mallin ajamiseen laseilla. AI-malli oli alunperin pilvessä ajettu ja hyvin hidas, joten minun tehtäväni oli tehdä siitä offline-versio, johon ei tarvitse nettiyhteyttä. Pilvi-mallissa kesti 4s ja minun offline-mallissa noin 300ms. Loin myös CI-pipeline-prosessin Azure DevOpsissa, joka ajaa yksikkötestejä ja koodityylin tarkastuksia automaattisesti ylläpitääkseen koodin laatua.`,
-					period: 'lokakuu 2022 - nykyhetki'
+					description: `Toimin keskeisenä kehittäjänä prototyyppisovelluksessa, joka oli suunnattu Android-pohjaisille älylaseille. Käytin React Native -osaamistani suunnitellakseni ratkaisun tehdaslaitteiston kalibrointiin konenäön avulla. Tätä projektia esiteltiin maailmanlaajuisille lääkeyrityksille, ja se sai positiivista palautetta, mikä asetti perustan jatkokehitykselle.
+
+Olin ratkaisevassa roolissa luomassa intuitiivista käyttöliittymää, ratkaisemaan teknisiä haasteita ja varmistamassa, että sovellus vastasi asiakkaan tarpeita. Lisäksi loin Azure DevOpsissa CI-pipeline:n automaattisia testejä ja koodityylin tarkistuksia varten. Opetin tiimin jäseniä hyvistä koodauskäytännöistä ja tehokkaasta versionhallinnasta, mikä yhdessä edellä mainittujen toimenpiteiden kanssa auttoi ylläpitämään korkeaa koodin laatua.
+
+Johdin myös tiimin brändäystä, modernisoin sovelluksen designia, ratkaisin monimutkaisia ongelmia ja laajensin sovelluksen toiminnallisuutta. Tämä menestyksekäs opiskelijaprojekti sijoittui Quality Awards -kilpailussa kolmen parhaan joukkoon.`,
+					period: 'lokakuu 2022 - toukokuu 2023'
 				},
 				assistant: {
 					company: 'Aalto-yliopisto',

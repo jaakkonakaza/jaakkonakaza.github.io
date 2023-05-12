@@ -60,6 +60,9 @@
 	.period,
 	.info {
 		font-weight: 400;
+	}
+
+	.role {
 		word-break: keep-all;
 		overflow-wrap: break-word;
 	}
