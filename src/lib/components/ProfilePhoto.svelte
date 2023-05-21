@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import profilePhoto from '$lib/assets/profile-photo.jpg?run';
+	import profilePhoto from '$lib/assets/profile-photo.jpg?run&lqip=1';
 	import Img from '@zerodevx/svelte-img';
 	import type { Writable } from 'svelte/store';
 	import Name from './Name.svelte';
@@ -11,13 +11,15 @@
 	export let darkMode: boolean;
 </script>
 
-<a class="profile-photo-container" href="/{$lang}">
+<a class="profile-photo-container" href="/{$lang}" aria-label="Navigate home">
 	<Img
 		style="opacity: {darkMode ? 1 : 0.7}"
 		class="profile-photo"
 		src={profilePhoto}
 		alt=""
 		loading="eager"
+		width={1894}
+		height={1894}
 	/>
 	<Img
 		style="opacity: {darkMode ? 1 : 0.7}"
@@ -25,6 +27,8 @@
 		src={profilePhoto}
 		alt=""
 		loading="eager"
+		width={1894}
+		height={1894}
 	/>
 	{#if $page.route.id !== '/[lang]'}
 		<span in:blur out:blur class="home-link"> {$t('home')} </span>
@@ -50,6 +54,7 @@
 		border-radius: 3rem;
 		width: 100%;
 		height: auto;
+		background-color: #e74680;
 	}
 	:global(.blur-profile-photo) {
 		position: absolute;
@@ -70,7 +75,8 @@
 
 	@media (max-width: 815px) {
 		:global(.profile-photo) {
-			max-width: min(70vw, 20rem);
+			width: min(70vw, 20rem);
+			height: min(70vw, 20rem);
 		}
 		#name-container {
 			margin-top: -2rem;

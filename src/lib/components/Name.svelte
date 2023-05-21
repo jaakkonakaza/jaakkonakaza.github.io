@@ -13,6 +13,9 @@
 		font-family: 'Zen Antique Soft', serif;
 		font-size: 5vw;
 		font-weight: 400;
+		line-height: 1;
+		padding-bottom: 1rem;
+		font-display: optional;
 	}
 	h2 {
 		margin: 0;
@@ -29,6 +32,7 @@
 	@media (max-width: 815px) {
 		h1 {
 			font-size: min(12vw, 5rem);
+			min-height: min(12vw, 5rem);
 		}
 
 		h2 {

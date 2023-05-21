@@ -88,6 +88,14 @@
 
 <svelte:head>
 	<meta name="theme-color" content={darkMode ? '#000000' : '#FFFFFF'} />
+	<meta
+		name="description"
+		content={$locale === 'fi'
+			? 'Jaakko Nakaza on full-stack ohjelmistokehittäjä Suomesta, joka yhdistää ohjelmistokehityksen ja suunnittelun taidot käyttäjäystävällisten ratkaisujen luomiseen'
+			: $locale == 'ja'
+			? 'フィンランド出身のフルスタックソフトウェアエンジニア、仲座ヤーッコ、ソフトウェア開発とデザインの専門知識を組み合わせて、ユーザーフレンドリーなソリューションを作り出します'
+			: 'Jaakko Nakaza is a full-stack software engineer from Finland, combining expertise in software development and design to create user-friendly solutions'}
+	/>
 </svelte:head>
 
 <Background bind:backgroundClass />
