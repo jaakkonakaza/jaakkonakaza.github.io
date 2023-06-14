@@ -50,7 +50,7 @@
 	</style>
 </svelte:head>
 
-<div in:blurIn>
+<div in:blurIn|global style="margin: 1vh 0;">
 	<div id="graphic-container">
 		{#each sections as section}
 			<Section {section} />

@@ -31,7 +31,7 @@
 		height={1894}
 	/>
 	{#if $page.route.id !== '/[lang]'}
-		<span in:blur out:blur class="home-link"> {$t('home')} </span>
+		<span in:blur|global out:blur|global class="home-link"> {$t('home')} </span>
 	{/if}
 </a>
 

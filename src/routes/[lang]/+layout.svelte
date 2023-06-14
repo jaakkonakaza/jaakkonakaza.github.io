@@ -112,8 +112,8 @@
 			{#if !isMobileWidth || $page.route.id === '/[lang]'}
 				<div
 					class="column {$page.route.id !== '/[lang]' ? 'links-hidden' : ''}"
-					in:blurIn
-					out:blurOut
+					in:blurIn|global
+					out:blurOut|global
 				>
 					<div class="link-group">
 						<NavLink

@@ -8,7 +8,7 @@
 	<title>Jaakko Nakaza|Work History</title>
 </svelte:head>
 
-<div in:blurIn id="work-container">
+<div in:blurIn|global id="work-container">
 	<WorkItem name="beamex" />
 	<WorkItem name="assistant" />
 	<WorkItem name="courses" />

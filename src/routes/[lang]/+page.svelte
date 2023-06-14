@@ -8,7 +8,7 @@
 	<title>Jaakko Nakaza</title>
 </svelte:head>
 
-<div in:blurIn out:blurOut id="about-container">
+<div in:blurIn|global out:blurOut|global id="about-container">
 	<div id="name-container">
 		<Name />
 	</div>

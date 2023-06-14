@@ -17,7 +17,14 @@
 		</p>
 	</div>
 	{#if section.imageFooter}
-		<Img class="section-img" src={section.imageFooter} alt="" width={1500} height={50} />
+		<Img
+			class="section-img"
+			src={section.imageFooter}
+			style="display: flex;"
+			alt=""
+			width={1500}
+			height={50}
+		/>
 	{:else}
 		<div />
 	{/if}
@@ -44,11 +51,14 @@
 		flex-direction: column;
 		justify-content: space-between;
 		position: relative;
-		height: 100vh;
+		height: 98vh;
 		width: 100%;
 		scroll-snap-align: center;
 		backdrop-filter: blur(100px);
 		background-color: rgba(var(--bg-color-decimal), 0.5);
+		border: 1px solid var(--fg-color);
+		border-radius: 1rem;
+		overflow: hidden;
 	}
 
 	@media (max-width: 815px) {
