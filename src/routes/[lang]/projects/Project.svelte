@@ -7,6 +7,8 @@
 	export let projectInfo: ProjectProps;
 	export let selectedProject: ProjectProps | undefined;
 
+	$: projectIsSelected = selectedProject?.id === projectInfo.id;
+
 	let buttonRef: HTMLElement;
 
 	const THRESHOLD = 3;
@@ -14,13 +16,13 @@
 	const mouseMoveEvent = (ev: MouseEvent) => {
 		const { x, y } = buttonRef.getBoundingClientRect();
 		const { clientWidth, clientHeight, offsetLeft, offsetTop } = buttonRef;
-		const { clientX, clientY } = ev;
+		const { pageX, pageY } = ev;
 
-		buttonRef.style.setProperty('--x', `${clientX - x}`);
-		buttonRef.style.setProperty('--y', `${clientY - y}`);
+		buttonRef.style.setProperty('--x', `${pageX - x}`);
+		buttonRef.style.setProperty('--y', `${pageY - y}`);
 
-		const horizontal = (clientX - offsetLeft) / clientWidth;
-		const vertical = (clientY - offsetTop) / clientHeight;
+		const horizontal = (pageX - offsetLeft) / clientWidth;
+		const vertical = (pageY - offsetTop) / clientHeight;
 		const rotateX = (THRESHOLD / 2 - vertical * THRESHOLD).toFixed(2);
 		const rotateY = (horizontal * THRESHOLD - THRESHOLD / 2).toFixed(2);
 
@@ -38,16 +40,51 @@
 </script>
 
 <button
-	on:click={() => (selectedProject = projectInfo)}
+	on:click={() => {
+		if (!projectIsSelected) {
+			selectedProject = projectInfo;
+			setTimeout(() => buttonRef.scrollIntoView({ block: 'center', behavior: 'smooth' }), 110);
+		}
+	}}
 	bind:this={buttonRef}
-	class="project {selectedProject ? 'popup-visible' : 'project-translate'}"
+	class="project project-translate {projectIsSelected && 'selected-project'}"
 >
-	<div class="state">
-		<ProjectStatus state={projectInfo.state} />
-	</div>
-	<h2>{@html $t(`projectInfo.${projectInfo.id}.title`)}</h2>
-	<p>{@html $t(`projectInfo.${projectInfo.id}.description`)}</p>
-	<small>{projectInfo.tech}</small>
+	{#if selectedProject && projectIsSelected}
+		<button
+			class="close"
+			on:click={(e) => {
+				e.stopPropagation();
+				selectedProject = undefined;
+			}}>X</button
+		>
+		<ProjectStatus state={selectedProject.state} />
+		<div class="title">
+			<h2>{@html $t(`projectInfo.${selectedProject.id}.title`)}</h2>
+			<p>{@html $t(`projectInfo.${selectedProject.id}.description`)}</p>
+		</div>
+		<p>{@html $t(`projectInfo.${selectedProject.id}.longDescription`)}</p>
+		<small>
+			{$t('projectInfo.tech')}
+			{selectedProject.tech}
+			{#if selectedProject.repoLink}
+				| <a href={selectedProject.repoLink} target="_blank" rel="noopener noreferrer"
+					>{$t('projectInfo.repository')}</a
+				>
+			{/if}
+			{#if selectedProject.projectLink}
+				| <a href={selectedProject.projectLink} target="_blank" rel="noopener noreferrer"
+					>{$t('projectInfo.website')}</a
+				>
+			{/if}
+		</small>
+	{:else}
+		<div class="state">
+			<ProjectStatus state={projectInfo.state} />
+		</div>
+		<h2>{@html $t(`projectInfo.${projectInfo.id}.title`)}</h2>
+		<p>{@html $t(`projectInfo.${projectInfo.id}.description`)}</p>
+		<small>{projectInfo.tech}</small>
+	{/if}
 </button>
 
 <style>
@@ -70,6 +107,14 @@
 		transform-style: preserve-3d;
 		will-change: transform;
 		transform: translateZ(12px);
+
+		transition: width, height 100ms;
+	}
+
+	.selected-project {
+		width: 100%;
+		height: 30vh;
+		transform: translateZ(0px) !important;
 	}
 
 	.state {
@@ -90,10 +135,6 @@
 		text-align: left;
 	}
 
-	.popup-visible {
-		transform: translateZ(0px) !important;
-	}
-
 	@media (pointer: fine) {
 		.project:hover {
 			transform: perspective(var(--clientWidth)) rotateX(var(--rotateX)) rotateY(var(--rotateY))
@@ -106,7 +147,7 @@
 		}
 	}
 
-	.project::after {
+	.project:not(.selected-project)::after {
 		content: '';
 		position: absolute;
 		top: calc(var(--y, 0) * 1px - 400px);
@@ -121,5 +162,27 @@
 
 	.project:hover::after {
 		opacity: 0.4;
+	}
+
+	.close {
+		all: unset;
+		position: absolute;
+		top: 1rem;
+		right: 2rem;
+		padding: 1rem;
+		cursor: pointer;
+	}
+	.title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		gap: 1rem;
+	}
+
+	.title h2,
+	.title p {
+		margin: 0;
 	}
 </style>

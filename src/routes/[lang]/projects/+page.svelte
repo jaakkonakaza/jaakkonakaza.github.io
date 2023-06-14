@@ -18,6 +18,7 @@
 	import { blurIn } from '$lib/customBlur';
 	import Popup from './Popup.svelte';
 	import Project from './Project.svelte';
+	let selectedProject: ProjectProps | undefined;
 
 	const projects2023: Array<ProjectProps> = [
 		{
@@ -61,16 +62,14 @@
 			state: ProjectState.Completed
 		}
 	];
-
-	let selectedProject: ProjectProps | undefined;
 </script>
 
 <svelte:head>
 	<title>Jaakko Nakaza|Projects</title>
 </svelte:head>
 
-<div in:blurIn id="projects-container">
-	<Popup bind:selectedProject />
+<div in:blurIn|global id="projects-container">
+	<!-- <Popup bind:selectedProject /> -->
 	<div class="year">2023</div>
 	<div class="grid">
 		{#each projects2023 as projectInfo}
@@ -91,12 +90,13 @@
 		flex-direction: column;
 		align-items: stretch;
 		gap: 2rem;
+		margin-bottom: 2rem;
 	}
 
 	.grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
 	}
 
 	@media (max-width: 1220px) {

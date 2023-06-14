@@ -2,6 +2,7 @@
 	import type { ProjectProps } from './+page.svelte';
 	import ProjectStatus from './ProjectStatus.svelte';
 	import { t } from '$lib/translations';
+	import { blur } from 'svelte/transition';
 
 	export let selectedProject: ProjectProps | undefined;
 </script>
@@ -11,6 +12,8 @@
 		on:click|stopPropagation={() => (selectedProject = undefined)}
 		on:keypress|stopPropagation={() => (selectedProject = undefined)}
 		id="popup-overlay"
+		in:blur|global
+		out:blur|global
 	>
 		<div on:click|stopPropagation on:keypress|stopPropagation id="popup">
 			<button class="close" on:click={() => (selectedProject = undefined)}>X</button>
