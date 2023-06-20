@@ -2,8 +2,10 @@
 	export type SectionProps = {
 		id: string;
 		title: string;
+		slideshow?: boolean;
 		image: any[];
 		imageFooter?: any[];
+		caption?: string[];
 	};
 </script>
 
@@ -12,6 +14,7 @@
 	import aPlusCourses from '$lib/assets/apluscourses.png?run&lqip=1';
 	import aPlusFooter from '$lib/assets/aplusfooter.png?run&lqip=1';
 	import o1 from '$lib/assets/o1.png?run&lqip=1';
+	import o12023 from '$lib/assets/o1-2023.png?run&lqip=1';
 	import studios from '$lib/assets/studios.png?run&lqip=1';
 	import five from '$lib/assets/five.png?run&lqip=1';
 	import Section from './Section.svelte';
@@ -26,7 +29,9 @@
 		{
 			id: 'o1',
 			title: 'Ohjelmointi 1',
-			image: o1
+			slideshow: true,
+			image: [o1, o12023],
+			caption: ['2022', '2023']
 		},
 		{
 			id: 'studios',
