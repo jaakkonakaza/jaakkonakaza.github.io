@@ -102,6 +102,7 @@
 	@media (max-width: 1220px) {
 		.grid {
 			grid-template-columns: 1fr 1fr;
+			justify-content: center;
 		}
 	}
 

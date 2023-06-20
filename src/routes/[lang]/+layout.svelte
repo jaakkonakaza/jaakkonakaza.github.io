@@ -65,6 +65,11 @@
 		}, BLUR_DURATION);
 	};
 
+	let contentRef: HTMLElement;
+	const scrollToContent = () => {
+		contentRef.scrollIntoView({ behavior: 'smooth' });
+	};
+
 	const mobileWidth = 815;
 	let isMobileWidth = false;
 	let resizeObserver: ResizeObserver;
@@ -102,7 +107,7 @@
 {#key loaded && darkModeTransition}
 	<div id="container">
 		<div />
-		<div class="column" id="page-content">
+		<div class="column" id="page-content" bind:this={contentRef}>
 			{#key $lang}
 				<slot />
 			{/key}
@@ -169,6 +174,11 @@
 							</g>
 						</svg>
 					</button>
+					{#if isMobileWidth}
+						<button on:click={scrollToContent} id="go-down">
+							<span>About</span><span>V</span>
+						</button>
+					{/if}
 				</div>
 			{/if}
 		</nav>
@@ -249,6 +259,20 @@
 	#page-content {
 		margin-right: 3rem;
 	}
+
+	#go-down {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		color: #ffffff;
+		position: sticky;
+		bottom: 0.5rem;
+		background-color: #000000;
+		width: 100%;
+		height: 4rem;
+		cursor: pointer;
+	}
+
 	@media (max-width: 815px) {
 		#container {
 			grid-template-columns: 1fr;

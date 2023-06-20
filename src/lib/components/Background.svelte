@@ -5,6 +5,7 @@
 	let backgroundRef: HTMLElement;
 
 	const mouseMoveEvent = (ev: MouseEvent) => {
+		if (backgroundRef === null) return;
 		const { x, y } = backgroundRef.getBoundingClientRect();
 		const { clientWidth, clientHeight } = backgroundRef;
 		const { clientX, clientY } = ev;

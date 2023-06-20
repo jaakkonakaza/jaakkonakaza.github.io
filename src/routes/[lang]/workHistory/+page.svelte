@@ -16,6 +16,7 @@
 		{#each Array(3) as _, i}
 			<Arrow delay={400 + i * 300} {i} />
 		{/each}
+		<div id="line-base" />
 	</div>
 </div>
 
@@ -48,6 +49,17 @@
 		top: 0;
 		bottom: 0;
 		width: 1px;
+		z-index: -1;
+	}
+
+	#line-base {
+		background: var(--fg-color);
+		content: '';
+		right: -10px;
+		position: absolute;
+		bottom: 0;
+		height: 1px;
+		width: 20px;
 		z-index: -1;
 	}
 </style>
