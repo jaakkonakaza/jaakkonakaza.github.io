@@ -27,8 +27,15 @@
 <section use:autoHash id={section.id} class="page">
 	{#key heroImage}
 		<div id="hero-container">
-			<Img class="section-img" src={heroImage} alt="" width={2000} height={1000} />
-			<Img class="section-img blur-section-bg" src={heroImage} alt="" width={2000} height={1000} />
+			<Img class="section-img" src={heroImage} alt="" width={2000} height={1000} loading="eager" />
+			<Img
+				class="section-img blur-section-bg"
+				src={heroImage}
+				alt=""
+				width={2000}
+				height={1000}
+				loading="eager"
+			/>
 			{#if section.slideshow}
 				<div id="slide-progress-bar" />
 			{/if}
@@ -51,6 +58,7 @@
 			alt=""
 			width={1500}
 			height={50}
+			loading="eager"
 		/>
 	{:else}
 		<div />

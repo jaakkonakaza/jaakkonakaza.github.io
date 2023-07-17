@@ -106,12 +106,20 @@
 <Background bind:backgroundClass />
 {#key loaded && darkModeTransition}
 	<div id="container">
-		<div />
-		<div class="column" id="page-content" bind:this={contentRef}>
-			{#key $lang}
-				<slot />
-			{/key}
+		<div class="jaakko-nakaza">
+			{#if !isMobileWidth}
+				<span
+					>JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA
+					JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO
+					NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA
+					JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO
+					NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA
+					JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO
+					NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA JAAKKO NAKAZA
+				</span>
+			{/if}
 		</div>
+
 		<nav class="column" id="nav-content">
 			<ProfilePhoto {darkMode} {lang} />
 			{#if !isMobileWidth || $page.route.id === '/[lang]'}
@@ -137,15 +145,48 @@
 							location="graphicDesign"
 						/>
 					</div>
-					<div class="link-group">
-						<a href="https://github.com/jaakkonakaza">GitHub</a>
-						<a href="https://www.linkedin.com/in/jaakkonakaza/">LinkedIn</a>
-					</div>
+
 					<div id="languages">
 						<a data-sveltekit-preload-data="tap" href="/en{$page.route.id?.substring(7)}">ENGLISH</a
 						>
 						<a data-sveltekit-preload-data="tap" href="/fi{$page.route.id?.substring(7)}">SUOMI</a>
 						<a data-sveltekit-preload-data="tap" href="/ja{$page.route.id?.substring(7)}">日本語</a>
+					</div>
+					<div id="socials">
+						<a href="https://github.com/jaakkonakaza"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-github"
+								><path
+									d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+								/></svg
+							></a
+						>
+						<a href="https://www.linkedin.com/in/jaakkonakaza/"
+							><svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="feather feather-linkedin"
+								><path
+									d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+								/><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg
+							>
+						</a>
 					</div>
 					<button
 						class="theme-toggle {darkMode ? 'theme-toggle--toggled' : ''}"
@@ -182,6 +223,12 @@
 				</div>
 			{/if}
 		</nav>
+		<div />
+		<div class="column" id="page-content" bind:this={contentRef}>
+			{#key $lang}
+				<slot />
+			{/key}
+		</div>
 		<div />
 	</div>
 {/key}
@@ -221,7 +268,8 @@
 		font-family: 'Zen Kaku Gothic New', sans-serif;
 		color: var(--fg-color);
 		display: grid;
-		grid-template-columns: 1fr 55vw 20rem 1fr;
+		/* grid-template-columns: 1fr 55vw 20rem 1fr; */
+		grid-template-columns: 1fr 20rem 1fr 50vw 0.5fr;
 		grid-template-rows: 1fr;
 		background-attachment: fixed;
 		--fg-color: #262422;
@@ -234,7 +282,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0;
-		gap: 2rem;
+		gap: 5rem;
 	}
 
 	.link-group {
@@ -243,9 +291,24 @@
 		gap: 1rem;
 	}
 
-	.link-group a {
-		font-weight: 900;
-		padding: 0.2rem 0rem;
+	:global(.link-group a),
+	#languages a,
+	#socials a {
+		padding: 0;
+		color: var(--fg-color);
+		opacity: 0.8;
+		text-transform: uppercase;
+		text-decoration: line-through;
+		font-size: 1.2rem;
+	}
+
+	#languages a {
+		padding: 0px 0.3em;
+	}
+
+	:global(.link-group a):hover,
+	#languages a:hover {
+		text-decoration: none;
 	}
 
 	#nav-content {
@@ -335,7 +398,8 @@
 		background-color: #e74680aa;
 	}
 
-	#languages {
+	#languages,
+	#socials {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -404,5 +468,20 @@
 		.theme-toggle:not(.theme-toggle--force-motion) * {
 			transition: none !important;
 		}
+	}
+
+	.jaakko-nakaza {
+		display: flex;
+		justify-content: center;
+	}
+
+	.jaakko-nakaza span {
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		white-space: nowrap;
+		user-select: none;
+		text-overflow: clip;
+		height: 100%;
+		overflow: hidden;
 	}
 </style>

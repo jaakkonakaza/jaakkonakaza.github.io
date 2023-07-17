@@ -23,11 +23,17 @@
 
 <style>
 	a {
-		font-weight: 900;
-		padding: 0.2rem 0rem;
-		color: #e74680;
+		/* font-weight: 900; */
+		/* padding: 0.2rem 0rem; */
+		/* color: #b6b6b6;
 		user-select: none;
 		cursor: pointer;
+		text-transform: uppercase;
+		text-decoration: line-through;
+		font-size: 1.2rem; */
+	}
+	a:hover {
+		/* text-decoration: ; */
 	}
 	@media (max-width: 815px) {
 		a {
