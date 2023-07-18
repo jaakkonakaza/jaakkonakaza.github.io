@@ -365,7 +365,6 @@
 			grid-row-start: 2;
 			align-items: center;
 			position: relative;
-			scroll-snap-align: start;
 			height: auto;
 		}
 
