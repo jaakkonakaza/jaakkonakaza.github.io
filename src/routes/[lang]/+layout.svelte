@@ -298,7 +298,7 @@
 		color: var(--fg-color);
 		opacity: 0.8;
 		text-transform: uppercase;
-		text-decoration: line-through;
+		text-decoration: overline;
 		font-size: 1.2rem;
 	}
 
