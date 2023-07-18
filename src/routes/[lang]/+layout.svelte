@@ -481,7 +481,7 @@
 		white-space: nowrap;
 		user-select: none;
 		text-overflow: clip;
-		height: 100%;
+		max-height: 100%;
 		overflow: hidden;
 	}
 </style>
