@@ -303,7 +303,7 @@
 	}
 
 	#languages a {
-		padding: 0px 0.3em;
+		padding: 0px 0.5em;
 	}
 
 	:global(.link-group a):hover,
@@ -370,7 +370,6 @@
 
 		.link-group {
 			align-items: center;
-			gap: 0rem;
 		}
 
 		.link-group a {
