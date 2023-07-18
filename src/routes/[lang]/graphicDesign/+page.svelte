@@ -48,11 +48,6 @@
 
 <svelte:head>
 	<title>Jaakko Nakaza|Graphic Design</title>
-	<style>
-		html {
-			scroll-snap-type: y proximity;
-		}
-	</style>
 </svelte:head>
 
 <div in:blurIn|global style="margin: 1vh 0;">
@@ -68,7 +63,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10rem;
+		gap: 2rem;
 		padding-right: 5rem;
 	}
 

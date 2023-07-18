@@ -117,9 +117,8 @@
 		flex-direction: column;
 		justify-content: space-between;
 		position: relative;
-		height: 98vh;
+		min-height: 70vh;
 		width: 100%;
-		scroll-snap-align: center;
 		backdrop-filter: blur(100px);
 		background-color: rgba(var(--bg-color-decimal), 0.5);
 		border: 1px solid var(--fg-color);
