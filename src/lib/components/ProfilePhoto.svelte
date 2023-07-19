@@ -2,6 +2,7 @@
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import profilePhoto from '$lib/assets/profile-photo.jpg?run&lqip=1';
+	import profilePhotoLight from '$lib/assets/profile-photo-light.png?run&lqip=1';
 	import Img from '@zerodevx/svelte-img';
 	import type { Writable } from 'svelte/store';
 	import Name from './Name.svelte';
@@ -11,20 +12,20 @@
 	export let darkMode: boolean;
 </script>
 
+
 <a class="profile-photo-container" href="/{$lang}" aria-label="Navigate home">
 	<Img
-		style="opacity: {darkMode ? 1 : 0.7}"
+		style="opacity: {0.7}"
 		class="profile-photo"
-		src={profilePhoto}
+		src={darkMode ? profilePhoto : profilePhotoLight} 
 		alt=""
 		loading="eager"
 		width={1894}
 		height={1894}
 	/>
 	<Img
-		style="opacity: {darkMode ? 1 : 0.7}"
 		class="profile-photo blur-profile-photo"
-		src={profilePhoto}
+		src={darkMode ? profilePhoto : profilePhotoLight}
 		alt=""
 		loading="eager"
 		width={1894}
@@ -42,13 +43,15 @@
 <style>
 	.home-link {
 		position: absolute;
-		bottom: 10%;
-		left: 50%;
-		font-size: 2rem;
-		text-decoration: underline;
+		width: 100%;
+		text-align: center;
+		font-size: 1.2rem;
+		opacity: 0.8;
+		text-decoration: overline;
 	}
 	.profile-photo-container {
 		position: relative;
+		margin-bottom: 1.5rem;
 	}
 	:global(.profile-photo) {
 		border-radius: 3rem;
@@ -64,7 +67,7 @@
 		filter: blur(24px);
 	}
 	a {
-		color: #e74680;
+		color: var(--fg-color);
 		user-select: none;
 		cursor: pointer;
 	}
