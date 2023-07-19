@@ -52,6 +52,7 @@
 	.profile-photo-container {
 		position: relative;
 		margin-bottom: 1.5rem;
+		align-self: center;
 	}
 	:global(.profile-photo) {
 		border-radius: 3rem;

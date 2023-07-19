@@ -278,7 +278,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 0;
-		gap: 5rem;
+		gap: max(2rem, 6vh);
 	}
 
 	.link-group {
@@ -295,7 +295,7 @@
 		opacity: 0.8;
 		text-transform: uppercase;
 		text-decoration: overline;
-		font-size: 1.2rem;
+		font-size: min(1.2rem, 2.5vh);
 	}
 
 	#languages a {
@@ -375,6 +375,9 @@
 		.links-hidden {
 			display: initial;
 		}
+	}
+
+	@media (max-height: 815px) {
 	}
 	a {
 		padding: 0 1rem;
