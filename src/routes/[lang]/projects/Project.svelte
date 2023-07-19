@@ -109,12 +109,16 @@
 		transform: translateZ(12px);
 
 		transition: width, height 100ms;
+
+		cursor: pointer;
 	}
 
 	.selected-project {
 		width: 100%;
 		height: 30vh;
 		transform: translateZ(0px) !important;
+
+		cursor: unset;
 	}
 
 	.state {

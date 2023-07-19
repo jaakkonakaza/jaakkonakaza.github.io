@@ -120,14 +120,10 @@
 			{/if}
 		</div>
 
-		<nav class="column" id="nav-content">
+		<nav in:blurIn|global out:blurOut|global class="column" id="nav-content">
 			<ProfilePhoto {darkMode} {lang} />
 			{#if !isMobileWidth || $page.route.id === '/[lang]'}
-				<div
-					class="column {$page.route.id !== '/[lang]' ? 'links-hidden' : ''}"
-					in:blurIn|global
-					out:blurOut|global
-				>
+				<div class="column {$page.route.id !== '/[lang]' ? 'links-hidden' : ''}">
 					<div class="link-group">
 						<NavLink
 							bind:backgroundColor
@@ -481,6 +477,7 @@
 		text-overflow: clip;
 		max-height: 100%;
 		overflow: hidden;
+		transition: color 1s;
 	}
 
 	:global(picture) {
