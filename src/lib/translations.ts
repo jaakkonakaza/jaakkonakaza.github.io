@@ -219,7 +219,7 @@ Furthermore, I led the team's branding, modernized the app's design, resolved co
 			workInfo: {
 				beamex: {
 					company: 'Beamex',
-					role: 'Ohjelmistokehittäjä',
+					role: 'Ohjelmisto&shykehittäjä',
 					description: `Toimin keskeisenä kehittäjänä prototyyppisovelluksessa, joka oli suunnattu Android-pohjaisille älylaseille. Käytin React Native -osaamistani suunnitellakseni ratkaisun tehdaslaitteiston kalibrointiin konenäön avulla. Tätä projektia esiteltiin maailmanlaajuisille lääkeyrityksille, ja se sai positiivista palautetta, mikä asetti perustan jatkokehitykselle.
 
 Olin ratkaisevassa roolissa luomassa intuitiivista käyttöliittymää, ratkaisemaan teknisiä haasteita ja varmistamassa, että sovellus vastasi asiakkaan tarpeita. Lisäksi loin Azure DevOpsissa CI-pipeline:n automaattisia testejä ja koodityylin tarkistuksia varten. Opetin tiimin jäseniä hyvistä koodauskäytännöistä ja tehokkaasta versionhallinnasta, mikä yhdessä edellä mainittujen toimenpiteiden kanssa auttoi ylläpitämään korkeaa koodin laatua.
@@ -229,13 +229,13 @@ Johdin myös tiimin brändäystä, modernisoin sovelluksen designia, ratkaisin m
 				},
 				assistant: {
 					company: 'Aalto-yliopisto',
-					role: 'Pääkurssiassistentti',
+					role: 'Pää&shykurssi&shyassistentti',
 					description: `Toimin pääkurssiassistenttina Scala-alkeisohjelmointikurssilla, jota käy noin 1000 opiskelijalle vuosittain. Vastuullani on opiskelijoiden ohjaaminen ja tukeminen sekä tehokkaiden yksikkötestien luominen tehtävien automaattiseen arviointiin. Vuonna 2022 olin keskeisessä roolissa muuttamassa testit Scala 2:sta Scala 3:een ja työskentelin tehostaakseni arviointiprosessin tehokkuutta Dockerin avulla. Lisäksi suunnittelin kurssin uuden ulkoasun (ks. <a href="/fi/graphicDesign#o1">Graafinen suunnittelu</a>).\n\n<a href="https://plus.cs.aalto.fi/o1/">Ohjelmointi 1</a>`,
 					period: 'kesäkuu 2021 - nykyhetki'
 				},
 				courses: {
 					company: 'Aalto-yliopisto',
-					role: 'Ohjelmistokehittäjä',
+					role: 'Ohjelmisto&shykehittäjä',
 					description: `Kun aloitin yliopisto-opintoni ja osallistuin ohjelmoinnin johdantokurssille, huomasin, että kurssilla tehtävien palauttamiseen käyttämisestä IDE-laajennuksesta puuttui ominaisuuksia, jotka olisivat hyödyllisiä minulle. Löysin laajennuksen repositorion verkosta ja huomasin, että se oli avoimen lähdekoodin projekti. Laajennus on kirjoitettu Javalla, johon minulla ei ollut aiempaa kokemusta, mutta halusin silti yrittää kontribuoida. Avasin vetopyynnön, ja kun tiimi hyväksyi sen ja yhdisti muutokset, he kysyivät, haluaisinko työskennellä lisää ongelmien parissa. Yliopisto palkkasi minut kurssin päätyttyä.\n<hr>Aloitin Aalto-yliopistossa työskentelyn A+ Courses -IntelliJ IDEA-lisäosan kehityksen parissa. Tämä lisäosa on pääosin kirjoitettu Javalla, mutta projektin parissa olen käyttänyt myös Scalaa, Kotlinia, Pythonia, sekä TypeSciptiä. Olen kehittänyt GitHub Actions pipelinestä nopeamman ja lisännyt siihen toiminnallisuutta. Olen osallistunut projektin kokonaisvaltaiseen suunnitteluun ja ulkoasun suunnitteluun, mukaan lukien uusi logo ja <a href="https://github.com/Aalto-LeTech/aplus-courses">README</a>:n visuaalinen ulkoasu (ks. <a href="/fi/graphicDesign#courses">Graafinen suunnittelu</a>).\n\nKehitimme lisäosaan tutoriaaliominaisuuden, jolla opetetaan opiskelijoita käyttämään IntelliJ IDEA:aa. Vuonna 2022 kehitin Reactilla työkalun tutoriaalikonfiguraatiotiedostojen luomiseen visuaalisesti.\n\n<a href="https://github.com/Aalto-LeTech/aplus-courses">A+ Courses</a> / <a href="https://github.com/Aalto-LeTech/aplus-courses-tutorial-builder">A+ Courses Tutorial Builder</a>`,
 					period: 'tammikuu 2021 - joulukuu 2022'
 				}
