@@ -126,10 +126,6 @@
 		overflow: hidden;
 	}
 
-	:global(picture) {
-		display: flex;
-	}
-
 	@media (max-width: 815px) {
 		#graphic-container {
 			margin-top: 5rem;

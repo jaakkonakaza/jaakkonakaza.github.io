@@ -482,4 +482,8 @@
 		max-height: 100%;
 		overflow: hidden;
 	}
+
+	:global(picture) {
+		display: flex;
+	}
 </style>
